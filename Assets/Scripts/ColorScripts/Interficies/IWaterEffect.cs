@@ -4,5 +4,7 @@ using UnityEngine;
 
 public interface IWaterEffect : IColorEffect
 {
-    void ApplyEffect(GameObject player);
+    void InitializeEffect(GameObject target);
+    void ApplyEffect(GameObject target);
+    void RemoveEffect(GameObject target);
 }

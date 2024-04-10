@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaterEffect : IWaterEffect
+public class WaterEffect : MonoBehaviour, IWaterEffect
 {
     private Color effectColor;
     private ColorType colorType;
@@ -22,7 +22,7 @@ public class WaterEffect : IWaterEffect
         Debug.Log("APLICANDO EFECTO");
     }
 
-        void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         // Verifica si el objeto entrante es el jugador u otro objeto de interés
         if (other.gameObject.tag == "Player") // Asegúrate de que el jugador tenga asignado el tag "Player"

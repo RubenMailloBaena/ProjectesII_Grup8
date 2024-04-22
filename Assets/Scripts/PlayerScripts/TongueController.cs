@@ -1,14 +1,28 @@
 using UnityEngine;
 using System;
+using UnityEditor.PackageManager;
+using Unity.VisualScripting;
 
 public class TongueController : MonoBehaviour
 {
+    //Singletone pattern
+    private static TongueController instance;
+    public static TongueController Instance {  
+        get {
+            if (instance == null)
+                instance = FindAnyObjectByType<TongueController>();
+            return instance;
+        } }
+
+    [Header("OTHER GAMEOBJECTS")]
     [SerializeField] private Transform tongueEnd;
     [SerializeField] private Transform tongueOrigin;
 
+    [Header("TONGUE PARAMETERS")]
     [SerializeField] private float tongueSpeed;
     [SerializeField] private float maxTongueDistance;
     [SerializeField] private float detectionRadius;
+    [SerializeField] private LayerMask tongueCanCollide;
 
     private ColorType currentColorType;
 
@@ -16,102 +30,90 @@ public class TongueController : MonoBehaviour
     private bool canShootAgain = true;
     private bool getDirectionAgain = true;
     private bool canCheckCollisions = true;
+    private bool inWater = false;
 
     private Vector3 firstDirection;
-    private bool pointingUp = false;
-    private bool pointingDown = false;
-    private bool pointingStraight = false;
 
-    public static event Action onShootingTongue;
-    public static event Action onNotMovingTongue;
+    public event Action onShootingTongue;
+    public event Action onNotMovingTongue;
+    public event Action<Vector3> shootDirection;
 
     private LineRenderer lineRenderer;
     private ColorManager colorManager;
     private SpriteRenderer spriteRenderer;
 
-    private void Start()
+    private void Awake()
     {
+        //line renderer
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.positionCount = 2;
 
+        //color manager
         colorManager = FindAnyObjectByType<ColorManager>(); 
 
+        //sprite renderer
         spriteRenderer = GetComponent<SpriteRenderer>();
         ChangePlayerColor(ColorType.Default);
     }
 
     private void FixedUpdate()
     {
-        //assignar posiciones al line renderer
         lineRenderer.SetPosition(0, tongueOrigin.position);
         lineRenderer.SetPosition(1, tongueEnd.position);
 
         ShootTongue();
         CheckTongueCollisions();
         CheckMaxTongueDistance();
+        ChangePlayerColor(currentColorType);
     }
 
     private void ShootTongue() {
         if (shootTongue) {
-            Debug.Log("Shooting tongue");
             Vector3 shootDirection = GetShootingDirection();
-            tongueEnd.position += shootDirection * tongueSpeed;
+            tongueEnd.position += shootDirection * tongueSpeed * Time.fixedDeltaTime;
         }
         else
         {
             if (Vector3.Distance(tongueOrigin.position, tongueEnd.position) != 0)
             {
-                tongueEnd.position = Vector3.MoveTowards(tongueEnd.position, tongueOrigin.position, tongueSpeed);
+                tongueEnd.position = Vector3.MoveTowards(tongueEnd.position, tongueOrigin.position, tongueSpeed*Time.fixedDeltaTime);
             }
-            else 
+            else    
             {
                 canShootAgain = true;
                 getDirectionAgain = true;
-                canCheckCollisions = true;
+                canCheckCollisions = false;
                 onNotMovingTongue?.Invoke();
             }
         }
     }
 
     private Vector3 GetShootingDirection() {
-        if (getDirectionAgain) {
-
-            if (pointingUp && !pointingStraight && !pointingDown)
-                firstDirection = transform.up;
-
-            else if (pointingUp && pointingStraight && !pointingDown)
-                firstDirection = transform.up + transform.right;
-
-            else if (pointingDown && !pointingStraight && !pointingUp)
-                firstDirection = -transform.up;
-
-            else if (pointingDown && pointingStraight && !pointingUp)
-                firstDirection = -transform.up + transform.right;
-
-            else
-                firstDirection = transform.right;
-
+        if (getDirectionAgain)
+        {
+            Vector3 mousePositionWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            firstDirection = mousePositionWorld - tongueOrigin.transform.position;
+            firstDirection.z = 0.0f;
             getDirectionAgain = false;
         }
-        return firstDirection;
+        shootDirection?.Invoke(firstDirection.normalized);
+        return firstDirection.normalized;
     }
 
 
     private void CheckTongueCollisions() {
-        if (canCheckCollisions) { 
-            Collider2D[] hitColliders = Physics2D.OverlapCircleAll(tongueEnd.position, detectionRadius);
+        if (canCheckCollisions) {
+            Collider2D[] hitColliders = Physics2D.OverlapCircleAll(tongueEnd.position, detectionRadius, tongueCanCollide);
 
             for (int i = 0; i < hitColliders.Length; i++) {
-                if (hitColliders[i].gameObject.tag.Equals("Ground")) {
-                    shootTongue = false;
-                    canCheckCollisions = false;
-                    break;
+;               if (hitColliders[i].gameObject.tag.Equals("Door")) {
+                    hitColliders[i].gameObject.GetComponent<NextLevelDoor>().DoorCollided();
                 }
                 else if (hitColliders[i].gameObject.tag.Equals("PaintableObstacle")) {
-                    shootTongue = false;
-                    canCheckCollisions = false;
                     ChangeObjectEffect(hitColliders[i].gameObject);
                 }
+                shootTongue = false;
+                canCheckCollisions = false;
             }
         }
     }
@@ -119,11 +121,7 @@ public class TongueController : MonoBehaviour
 
     private void ChangeObjectEffect(GameObject target) {
         IColorEffect currentEffect = colorManager.GetColorEffect(currentColorType);
-        if(currentEffect != null){
-            ObstacleEffectLogic colorableObject = target.GetComponent<ObstacleEffectLogic>();
-            colorableObject.ApplyEffect(currentEffect);
-        }
-        
+        target.GetComponent<ObstacleEffectLogic>().ApplyEffect(currentEffect);
     }
 
 
@@ -131,7 +129,7 @@ public class TongueController : MonoBehaviour
     {
         float currentDistance = Vector3.Distance(tongueOrigin.position, tongueEnd.position);
 
-        if (currentDistance >= maxTongueDistance || currentDistance <= -maxTongueDistance) {
+        if (currentDistance >= maxTongueDistance) {
             shootTongue = false;
         }
     }
@@ -143,48 +141,33 @@ public class TongueController : MonoBehaviour
 
 
     private void setShootTongue() {
-        Debug.Log("Shoot Tongue");
-        if (canShootAgain) { 
+        if (canShootAgain && !inWater) { 
             shootTongue = true;
             canShootAgain = false;
+            canCheckCollisions = true;
             onShootingTongue?.Invoke();
         }
     }
 
-    private void setPointingUp(){
-        pointingUp = !pointingUp;
-        Debug.Log(pointingUp);
+    private void InWater() {
+        inWater = !inWater;
     }
-
-    private void setPointingDown(){
-        pointingDown = !pointingDown;
-    }
-
-    private void setPointingStraight(){
-        pointingStraight = !pointingStraight;
-    }
-
-
 
     private void OnEnable()
     {
         PlayerInputs.onShoot += setShootTongue;
-        PlayerInputs.onShootUp += setPointingUp;
-        PlayerInputs.onShootDown += setPointingDown;
-        PlayerInputs.onShootStraight += setPointingStraight;
         PlayerInputs.onChangeColor += ChangePlayerColor;
+        WaterEffect.onWater += InWater;
+        ColorManager.onGetColorBack += ChangePlayerColor;
     }
 
     private void OnDisable()
     {
         PlayerInputs.onShoot -= setShootTongue;
-        PlayerInputs.onShootUp -= setPointingUp;
-        PlayerInputs.onShootDown -= setPointingDown;
-        PlayerInputs.onShootStraight -= setPointingStraight;
         PlayerInputs.onChangeColor -= ChangePlayerColor;
+        WaterEffect.onWater -= InWater;
+        ColorManager.onGetColorBack -= ChangePlayerColor;
     }
-
-
 
     private void OnDrawGizmos()
     {

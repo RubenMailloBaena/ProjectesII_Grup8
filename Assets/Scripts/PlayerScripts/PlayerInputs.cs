@@ -5,11 +5,13 @@ using System;
 
 public class PlayerInputs : MonoBehaviour
 {
+    [Header("BLOQUEAR EFECTOS ESCENAS")]
+    [SerializeField] private bool cantUseStrech = false;
+    [SerializeField] private bool cantUseElastic = false;
+    [SerializeField] private bool cantUseWater = false;
+
+    [Header("CONTROLES")]
     [SerializeField] private KeyCode shootKey;
-    [SerializeField] private KeyCode upKey;
-    [SerializeField] private KeyCode downKey;
-    [SerializeField] private KeyCode leftKey;
-    [SerializeField] private KeyCode rightKey;
     [SerializeField] private KeyCode jumpKey;
 
     [SerializeField] private KeyCode ElasticKey;
@@ -18,15 +20,6 @@ public class PlayerInputs : MonoBehaviour
 
     //Tecla para disparar
     public static event Action onShoot;
-
-    //Disparar hacia arriba
-    public static event Action onShootUp;
-
-    //Disparar hacia abajo
-    public static event Action onShootDown;
-
-    //Disparar a los lados
-    public static event Action onShootStraight;
 
     //Movimiento
     public static event Action onJump;
@@ -37,38 +30,20 @@ public class PlayerInputs : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(shootKey) || Input.GetButtonDown("Fire1"))
+        if (Input.GetKeyDown(shootKey) || Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Mouse0))
             onShoot?.Invoke();
-
-        if (Input.GetKeyDown(upKey))
-            onShootUp?.Invoke();
-
-        if (Input.GetKeyUp(upKey))
-            onShootUp?.Invoke();
-
-        if (Input.GetKeyDown(downKey))
-            onShootDown?.Invoke();
-
-        if (Input.GetKeyUp(downKey))
-            onShootDown?.Invoke();
-
-        if (Input.GetKeyDown(rightKey) || Input.GetKeyDown(leftKey))
-            onShootStraight?.Invoke();
-
-        if (Input.GetKeyUp(rightKey) || Input.GetKeyUp(leftKey))
-            onShootStraight?.Invoke();
 
         if(Input.GetKeyDown(jumpKey))
             onJump?.Invoke();
 
         //COLORS
-        if (Input.GetKeyDown(ElasticKey)) 
+        if (Input.GetKeyDown(ElasticKey) && !cantUseElastic) 
             onChangeColor?.Invoke(ColorType.Elastic);
 
-        if (Input.GetKeyDown(WaterKey))
+        if (Input.GetKeyDown(WaterKey) && !cantUseWater)
             onChangeColor?.Invoke(ColorType.Water);
 
-        if (Input.GetKeyDown(StrechKey))
+        if (Input.GetKeyDown(StrechKey) && !cantUseStrech)
             onChangeColor?.Invoke(ColorType.Strech);
     }
 }

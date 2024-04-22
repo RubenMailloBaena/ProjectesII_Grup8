@@ -33,17 +33,19 @@ public class ElasticEffect : IElasticEffect
     {
         Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
 
-        Vector2 direction = -(obstacle.transform.position - player.transform.position).normalized;
-        float jumpHeight = Mathf.Abs(player.GetComponent<CharacterMovement>().getLastJumpPosition().y - obstacle.transform.position.y);
+        float jumpHeight = Mathf.Abs(player.GetComponent<CharacterMovement>().getLastJumpPosition().y 
+            - (obstacle.transform.position.y + obstacle.transform.localScale.y / 2));
 
+        
         float totalForce = minImpulse + (jumpHeight * hightMultiplier);
-
-        //FALTA OBTENER EL VECTOR EN EL QUE APLCAR LA FUERZA
-
-        Debug.Log(direction);
-        //rb.velocity = new Vector2(0, totalForce);
-        rb.velocity = direction * totalForce;
-        Debug.Log("result: " + direction * totalForce);
+        Debug.Log(totalForce);
+        
+        if (totalForce >= 150)
+        {
+            totalForce = totalForce / 2f;
+        }
+        
+        rb.velocity = player.transform.up * totalForce;
 
 
     }
@@ -51,7 +53,6 @@ public class ElasticEffect : IElasticEffect
     public void RemoveEffect(GameObject target)
     {
         target.GetComponent<SpriteRenderer>().color = previousColor;
-        obstacle.GetComponent<Rigidbody2D>().sharedMaterial = null;
     }
 
     public ColorType getColorType()

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,8 @@ public class WaterEffect : MonoBehaviour, IWaterEffect
 
     private Color previousColor;
 
+    public static event Action onWater;
+
     public WaterEffect(Color color, ColorType colorType) { 
         effectColor = color;
         this.colorType = colorType; 
@@ -19,11 +22,22 @@ public class WaterEffect : MonoBehaviour, IWaterEffect
         previousColor = target.GetComponent<SpriteRenderer>().color;
         target.GetComponent<SpriteRenderer>().color = effectColor;
         target.GetComponent<BoxCollider2D>().isTrigger = true;
-        Debug.Log("APLICANDO EFECTO");
+
+        //COMPROBEN QUE AL INICIALITZAR EL JUGADOR NO ESTIGUI A SOBRE
+        Collider2D[] collider = Physics2D.OverlapBoxAll(target.transform.position, target.transform.localScale, 0f);
+
+        for (int i = 0; i < collider.Length; i++)
+        {
+            if (collider[i].gameObject.CompareTag("Player"))
+            {
+                onWater?.Invoke();
+            }
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
+<<<<<<< HEAD
         // Verifica si el objeto entrante es el jugador u otro objeto de interés
         if (other.gameObject.tag == "Player") // Asegúrate de que el jugador tenga asignado el tag "Player"
         {
@@ -62,6 +76,9 @@ public class WaterEffect : MonoBehaviour, IWaterEffect
 
         // Restablecer otros efectos aquí
         Debug.Log("Removiendo efecto de agua");
+=======
+        onWater?.Invoke();
+>>>>>>> Second-Version
     }
 
     public ColorType getColorType()
@@ -69,4 +86,19 @@ public class WaterEffect : MonoBehaviour, IWaterEffect
         return colorType;
     }
 
+<<<<<<< HEAD
+=======
+    public void RemoveEffect(GameObject target)
+    {
+        Collider2D[] collider = Physics2D.OverlapBoxAll(target.transform.position, target.transform.localScale, 0f);
+
+        for (int i = 0; i < collider.Length; i++) {
+            if (collider[i].gameObject.CompareTag("Player")) {
+                onWater?.Invoke();
+            }
+        }
+        target.GetComponent<SpriteRenderer>().color = previousColor;
+        target.GetComponent<BoxCollider2D>().isTrigger = false;
+    }
+>>>>>>> Second-Version
 }

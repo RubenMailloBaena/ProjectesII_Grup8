@@ -38,6 +38,7 @@ public class PlayerAnimations : MonoBehaviour
 
             case PlayerAnim.Shoot:
                 ChangeAnimationState(shootName); break;
+
             case PlayerAnim.Fall:
                 ChangeAnimationState(fallName); break; 
 

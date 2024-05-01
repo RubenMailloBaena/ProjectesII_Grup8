@@ -132,7 +132,7 @@ public class CharacterMovement : MonoBehaviour
         if (isGrounded && !inWater)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Jump);
+            
         } 
         else if (inWater)
         {
@@ -149,12 +149,11 @@ public class CharacterMovement : MonoBehaviour
 
         if (rb.velocity.y>3 && !isGrounded) //jump
             PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Jump);
-        else if (rb.velocity.y < 3 && !isGrounded) //jump
+        else if (rb.velocity.y < 3 && !isGrounded) //fall
             PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Fall);
         else if (movementDirection.x != 0 && isGrounded) //walk
             PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Walk);
-        else if (movementDirection.x == 0 && isGrounded) //idle
-            PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Idle);
+        else PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Idle);
     }
 
 

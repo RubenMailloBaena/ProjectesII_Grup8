@@ -19,6 +19,7 @@ public class PlayerAnimations : MonoBehaviour
     [SerializeField] private string jumpname;
     [SerializeField] private string walkName;
     [SerializeField] private string shootName;
+    [SerializeField] private string fallName;
     private string currentState;
 
 
@@ -37,6 +38,8 @@ public class PlayerAnimations : MonoBehaviour
 
             case PlayerAnim.Shoot:
                 ChangeAnimationState(shootName); break;
+            case PlayerAnim.Fall:
+                ChangeAnimationState(fallName); break; 
 
             default: throw new System.Exception("error"); 
         }
@@ -55,5 +58,6 @@ public enum PlayerAnim
     Idle,
     Jump,
     Walk,
-    Shoot
+    Shoot,
+    Fall,
 }

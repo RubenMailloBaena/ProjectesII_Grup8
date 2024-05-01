@@ -52,6 +52,7 @@ public class CharacterMovement : MonoBehaviour
     {
         movementDirection.x = Input.GetAxisRaw("Horizontal");
         ManagePlayerAnimations();
+        JumpAnimationLogic();
     }
 
     private void FixedUpdate()
@@ -105,13 +106,11 @@ public class CharacterMovement : MonoBehaviour
             if (collider.gameObject.layer == 6) //gorund layer
             {
                 isGrounded = true;
-                jumpAnimation = false;
                 lastJumpPosition = transform.position;
             }
             else if (collider.gameObject.layer == 7) //obstacles
             { 
                 isGrounded = true;
-                jumpAnimation = false;
                 if (collider.gameObject.GetComponent<ObstacleEffectLogic>().getCurrentColorType() != ColorType.Elastic)
                     lastJumpPosition = transform.position;
             }
@@ -130,10 +129,10 @@ public class CharacterMovement : MonoBehaviour
     }
 
     private void PlayerJump() {
-        jumpAnimation = true;
         if (isGrounded && !inWater)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Jump);
         } 
         else if (inWater)
         {
@@ -141,11 +140,17 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
+    private void JumpAnimationLogic() {
+        Debug.Log("speed:" + rb.velocity.y);
+    }
+
     private void ManagePlayerAnimations() {
         Debug.Log(movementDirection.x);
 
-        if (jumpAnimation) //jump
+        if (rb.velocity.y>3 && !isGrounded) //jump
             PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Jump);
+        else if (rb.velocity.y < 3 && !isGrounded) //jump
+            PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Fall);
         else if (movementDirection.x != 0 && isGrounded) //walk
             PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Walk);
         else if (movementDirection.x == 0 && isGrounded) //idle

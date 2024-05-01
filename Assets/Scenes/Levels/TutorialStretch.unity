@@ -2563,7 +2563,7 @@ SpriteRenderer:
   m_Size: {x: 4.39, y: 3.49}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1001378333
@@ -23833,6 +23833,10 @@ PrefabInstance:
     - target: {fileID: -5593858733002335637, guid: f3b6e749cdd5d904d9cc6cf32bdd4f61, type: 3}
       propertyPath: cantUseElastic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2271160574764062175, guid: f3b6e749cdd5d904d9cc6cf32bdd4f61, type: 3}
+      propertyPath: fallName
+      value: PlayerFall
       objectReference: {fileID: 0}
     - target: {fileID: 3336242206432462131, guid: f3b6e749cdd5d904d9cc6cf32bdd4f61, type: 3}
       propertyPath: m_Name

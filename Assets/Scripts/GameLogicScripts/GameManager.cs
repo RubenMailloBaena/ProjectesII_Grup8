@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
         animator = prefabInstance.GetComponent<Animator>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         ManagePauseGame();    
     }

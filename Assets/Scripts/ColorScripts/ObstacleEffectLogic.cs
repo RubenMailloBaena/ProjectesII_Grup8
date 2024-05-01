@@ -66,7 +66,7 @@ public class ObstacleEffectLogic : MonoBehaviour
         player = GameObject.Find("Player");
     }
 
-    void Update()
+    void FixedUpdate()
     {
         StrechEffect();
         RevertStrechEffect();

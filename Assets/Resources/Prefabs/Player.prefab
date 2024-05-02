@@ -641,7 +641,8 @@ MonoBehaviour:
   tongueSpeed: 30
   maxTongueDistance: 15
   detectionRadius: 0.25
-  maxAngleToShoot: 95
+  maxAngleToShoot: 90
+  extraAngleToShoot: 30
   tongueCanCollide:
     serializedVersion: 2
     m_Bits: 448

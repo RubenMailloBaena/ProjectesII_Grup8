@@ -30,9 +30,11 @@ public class TongueController : MonoBehaviour
     [SerializeField] private float maxTongueDistance;
     [SerializeField] private float detectionRadius;
     [SerializeField] private float maxAngleToShoot;
+    [SerializeField] private float extraAngleToShoot;
     [SerializeField] private LayerMask tongueCanCollide;
 
     private bool shootTongue = false;
+    private bool cancelShoot = false;
     private bool canShootAgain = true;
     private bool getDirectionAgain = true;
     private bool canCheckCollisions = true;
@@ -84,9 +86,11 @@ public class TongueController : MonoBehaviour
 
     private void ShootTongue() {
         if (shootTongue) {
-            shootDirection = GetShootingDirection();
+            GetShootingDirection();
             CheckIfShootingBack();
-            tongueEnd.position += shootDirection * tongueSpeed * Time.fixedDeltaTime;
+            if (!cancelShoot) { 
+                tongueEnd.position += shootDirection * tongueSpeed * Time.fixedDeltaTime;
+            }
         }
         else
         {
@@ -97,6 +101,7 @@ public class TongueController : MonoBehaviour
             else    
             {
                 canShootAgain = true;
+                cancelShoot = false;
                 getDirectionAgain = true;
                 canCheckCollisions = false;
                 onNotMovingTongue?.Invoke();
@@ -104,7 +109,7 @@ public class TongueController : MonoBehaviour
         }
     }
 
-    private Vector3 GetShootingDirection() {
+    private void GetShootingDirection() {
         if (getDirectionAgain)
         {
             Vector3 mousePositionWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -112,7 +117,7 @@ public class TongueController : MonoBehaviour
             firstDirection.z = 0.0f;
             getDirectionAgain = false;
         }
-        return firstDirection.normalized;
+        shootDirection = firstDirection.normalized;
     }
 
     private void CheckIfShootingBack() {
@@ -124,7 +129,21 @@ public class TongueController : MonoBehaviour
         float angle = Vector2.Angle(shootDirection, playerRight);
 
         if (angle > maxAngleToShoot) { //disparando a la espalda
-            shootTongue = false;
+            Debug.Log("Top: " + Vector2.Angle(shootDirection, transform.up));
+            Debug.Log("Down: " + Vector2.Angle(shootDirection, -transform.up));
+            if (Vector2.Angle(shootDirection, transform.up) < extraAngleToShoot)
+            {
+                shootDirection = Vector2.up;
+            }
+            else if (Vector2.Angle(shootDirection, -transform.up) < extraAngleToShoot)
+            {
+                shootDirection = -Vector2.up;
+            }
+            else
+            {
+                shootTongue = false;
+                cancelShoot = true;
+            }
         }
     }
 
@@ -203,6 +222,10 @@ public class TongueController : MonoBehaviour
 
     public float GetMaxAngleToShoot() {
         return maxAngleToShoot;
+    }
+
+    public float GetExtraAngleToShoot() {
+        return extraAngleToShoot;
     }
 
     private void OnEnable()

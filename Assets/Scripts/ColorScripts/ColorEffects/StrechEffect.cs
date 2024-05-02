@@ -43,17 +43,8 @@ public class StrechEffect : IStrechEffect
 
     public void ApplyEffect()
     {
-        Debug.Log(colliders.Length);
         if (colliders.Length == 1 || hits.Length == 1)
             StrechObject(false);
-
-        //colliders = Physics2D.OverlapBoxAll(new Vector2(obstacle.transform.position.x, obstacle.transform.position.y + colYsize / 2), 
-        //    new Vector2(obstacle.transform.localScale.x - colXsize, obstacle.transform.localScale.y - colYsize), 0, layerMask);
-
-        //RaycastHit2D[] hits = Physics2D.RaycastAll(obstacle.transform.position, obstacle.transform.up, obstacle.transform.localScale.y / 2, layerMask);
-        //if (hits.Length == 1) {
-        //    StrechObject(false);
-        //}
     }
 
     private void StrechObject(bool inverted) {

@@ -40,6 +40,7 @@ public class CharacterMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool facingRight = true;
+    private bool jumpAnimation = true;
 
     private void Awake()
     {

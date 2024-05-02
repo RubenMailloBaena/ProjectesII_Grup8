@@ -26,10 +26,6 @@ public class ColorManager : MonoBehaviour
     [SerializeField] private float stretchMultiplier;
     [SerializeField] private LayerMask strechLayerMask;
 
-    //Water
-    [Header("WATER")]
-    [SerializeField] private LayerMask waterLayerMask;
-
     private void Start()
     {
         DefaultObject = new DefaultEffect(Color.white, ColorType.Default);
@@ -49,7 +45,7 @@ public class ColorManager : MonoBehaviour
                 if (waterAssigned)
                     return DefaultObject;
                 waterAssigned = true;
-                return new WaterEffect(waterColor, ColorType.Water, waterLayerMask);
+                return new WaterEffect(waterColor, ColorType.Water);
 
             case ColorType.Strech:
                 if (strechAssigned)

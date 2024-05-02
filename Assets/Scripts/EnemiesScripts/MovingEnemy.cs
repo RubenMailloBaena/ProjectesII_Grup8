@@ -3,7 +3,6 @@ using UnityEngine;
 public class MovingEnemy : MonoBehaviour
 {
     [SerializeField] private EnemyType enemyType;
-    [SerializeField] private GameObject spriteHolder;
     [SerializeField] private Sprite enemySprite;
     [SerializeField] private float enemySpeed;
     [SerializeField] private Transform pointA, pointB;
@@ -25,7 +24,7 @@ public class MovingEnemy : MonoBehaviour
             pointA.position = new Vector2(transform.position.x, pointA.position.y);
             pointB.position = new Vector2(transform.position.x, pointB.position.y);
         }
-        spriteHolder.GetComponent<SpriteRenderer>().sprite = enemySprite;
+        GetComponent<SpriteRenderer>().sprite = enemySprite;
 
         finalPositionA = pointA.position;
         finalPositionB = pointB.position;

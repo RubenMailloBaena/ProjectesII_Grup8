@@ -13,11 +13,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3841238381927919906, guid: 6559964e1ef7413469feb60911a46a84, type: 3}
       propertyPath: m_Size.x
-      value: 4
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3841238381927919906, guid: 6559964e1ef7413469feb60911a46a84, type: 3}
       propertyPath: m_Size.y
-      value: 3.5
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 3841238381927919907, guid: 6559964e1ef7413469feb60911a46a84, type: 3}
       propertyPath: m_RootOrder
@@ -65,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3841238381927919910, guid: 6559964e1ef7413469feb60911a46a84, type: 3}
       propertyPath: m_Name
-      value: MovingEnemy (3)
+      value: Eagle
       objectReference: {fileID: 0}
     - target: {fileID: 3841238382112812477, guid: 6559964e1ef7413469feb60911a46a84, type: 3}
       propertyPath: m_LocalPosition.x

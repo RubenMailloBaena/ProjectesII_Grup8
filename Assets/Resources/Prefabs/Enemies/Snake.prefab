@@ -25,11 +25,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3841238381927919906, guid: 6559964e1ef7413469feb60911a46a84, type: 3}
       propertyPath: m_Size.x
-      value: 5.6
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3841238381927919906, guid: 6559964e1ef7413469feb60911a46a84, type: 3}
       propertyPath: m_Size.y
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3841238381927919906, guid: 6559964e1ef7413469feb60911a46a84, type: 3}
       propertyPath: m_Offset.x
@@ -85,7 +85,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3841238381927919910, guid: 6559964e1ef7413469feb60911a46a84, type: 3}
       propertyPath: m_Name
-      value: MovingEnemy (5)
+      value: Snake
       objectReference: {fileID: 0}
     - target: {fileID: 3841238382112812477, guid: 6559964e1ef7413469feb60911a46a84, type: 3}
       propertyPath: m_LocalPosition.x

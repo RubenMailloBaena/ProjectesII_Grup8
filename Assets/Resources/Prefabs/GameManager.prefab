@@ -75,6 +75,9 @@ MonoBehaviour:
   strechLayerMask:
     serializedVersion: 2
     m_Bits: 448
+  waterLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &-6885249382805150738
 MonoBehaviour:
   m_ObjectHideFlags: 0

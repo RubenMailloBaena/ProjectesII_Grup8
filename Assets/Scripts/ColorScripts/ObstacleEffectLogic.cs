@@ -136,33 +136,7 @@ public class ObstacleEffectLogic : MonoBehaviour
             }
         }
     }
-    
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (currentColorEffect != null)
-    //    {
-    //        if (currentColorType == ColorType.Water && collision.gameObject.CompareTag("Player"))
-    //        {
-    //            Debug.Log("trigger enter");
-    //            IWaterEffect effect = currentColorEffect as IWaterEffect;
-    //            effect.ApplyEffect();
-    //        }
-    //    }
-    //}
-
-    //private void OnTriggerExit2D(Collider2D collision)
-    //{
-    //    if (currentColorEffect != null)
-    //    {
-    //        if (currentColorType == ColorType.Water && collision.gameObject.CompareTag("Player"))
-    //        {
-    //            Debug.Log("trigger exit");
-    //            IWaterEffect effect = currentColorEffect as IWaterEffect;
-    //            effect.ApplyEffect();
-    //        }
-    //    }
-    //}
+   
 
     public Vector3 getInitialScale()
     {

@@ -129,8 +129,6 @@ public class TongueController : MonoBehaviour
         float angle = Vector2.Angle(shootDirection, playerRight);
 
         if (angle > maxAngleToShoot) { //disparando a la espalda
-            Debug.Log("Top: " + Vector2.Angle(shootDirection, transform.up));
-            Debug.Log("Down: " + Vector2.Angle(shootDirection, -transform.up));
             if (Vector2.Angle(shootDirection, transform.up) < extraAngleToShoot)
             {
                 shootDirection = Vector2.up;
@@ -226,6 +224,10 @@ public class TongueController : MonoBehaviour
 
     public float GetExtraAngleToShoot() {
         return extraAngleToShoot;
+    }
+
+    public Vector3 GetShootDirection() {
+        return shootDirection;
     }
 
     private void OnEnable()

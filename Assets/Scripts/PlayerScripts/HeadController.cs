@@ -16,6 +16,7 @@ public class HeadController : MonoBehaviour
 
     private bool canRotateHead = true;
     private bool lookAtTongue = true;
+    private bool cancelLookAt = false;
 
     private void Update()
     {
@@ -41,23 +42,40 @@ public class HeadController : MonoBehaviour
         }
         else //mirar directament a la direccio mentres disparem la llengua 
         {
-            if (lookAtTongue && ShootingFront())
-                playerHead.transform.right = directionToLook * Mathf.Sign(transform.localScale.x);
+            if (lookAtTongue) {
+                ShootingFront();
+                Debug.Log(directionToLook);
+                if(!cancelLookAt)
+                    playerHead.transform.right = directionToLook * Mathf.Sign(transform.localScale.x);
+            }
             lookAtTongue = false;
+            cancelLookAt = false;
         }
     }
 
-    private bool ShootingFront()
+    private void ShootingFront()
     {
         Vector2 playerRight = transform.right;
 
         if (!CharacterMovement.Instance.GetFacingRight())
             playerRight = -transform.right;
 
-        if (Vector2.Angle(directionToLook, playerRight) < TongueController.Instance.GetMaxAngleToShoot())
-            return true;
+        Debug.Log(Vector2.Angle(directionToLook, playerRight));
 
-        return false;
+        if (Vector2.Angle(directionToLook, playerRight) > TongueController.Instance.GetMaxAngleToShoot()) {
+            if (Vector2.Angle(directionToLook, transform.up) < TongueController.Instance.GetExtraAngleToShoot())
+            {
+                directionToLook = transform.up;
+            }
+            else if (Vector2.Angle(directionToLook, -transform.up) < TongueController.Instance.GetExtraAngleToShoot())
+            {
+                directionToLook = -transform.up;
+            }
+            else 
+            {
+                cancelLookAt = true;
+            }
+        }
     }
 
     private void OnDrawGizmos()

@@ -18,17 +18,19 @@ public class StrechEffect : IStrechEffect
     private bool doneRevertingEffect = false;
     private bool revertedColor = false;
 
-    private float colXsize = 0.7f, colYsize = 2;
+    private float colXsize = 0.7f;
+    private float colYsize = 2;
     private Collider2D[] colliders = new Collider2D[1];
     private RaycastHit2D[] hits = new RaycastHit2D[1];
         
-    public StrechEffect(Color color, ColorType colorType, float multiplier, float inverseStrechMultiplier,LayerMask layerMask)
+    public StrechEffect(Color color, ColorType colorType, float multiplier, float inverseStrechMultiplier, float colXsize,LayerMask layerMask)
     {
         effectColor = color;
         this.colorType = colorType;
         stretchAmount = multiplier;
         this.layerMask = layerMask;
         this.inverseStrechMultiplier = inverseStrechMultiplier;
+        this.colXsize = colXsize;
     }
 
     public void InitializeEffect(GameObject target)

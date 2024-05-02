@@ -31,19 +31,16 @@ public class WaterEffect : IWaterEffect
     public void ApplyEffect()
     {
         Collider2D[] collisions = Physics2D.OverlapBoxAll(actualTarget.transform.position, actualTarget.transform.localScale, 0f, waterLayermask);
-        Debug.Log(collisions.Length);
 
         if (collisions.Length != 0 && !effectApplied)
         {
             onWater?.Invoke();
             effectApplied = true;
-            Debug.Log("WATER IF");
         }
         else if (collisions.Length == 0 && effectApplied)
         {
             onWater.Invoke();
             effectApplied = false;
-            Debug.Log("WATER ELSE");
         }
     }
 

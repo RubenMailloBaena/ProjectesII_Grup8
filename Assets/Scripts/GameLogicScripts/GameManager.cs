@@ -47,17 +47,17 @@ public class GameManager : MonoBehaviour
         ManagePauseGame();    
     }
     private void ManagePauseGame() {
-        Debug.Log(pauseUIInstance + " " + gamePaused);
-
         if (gamePaused)
         {
             pauseUIInstance.SetActive(true);
             Time.timeScale = 0f;
+            Cursor.visible = false;
         }
         else
         {
             pauseUIInstance.SetActive(false);
             Time.timeScale = 1f;
+            Cursor.visible = true;
         }
     }
 

@@ -718,10 +718,10 @@ MonoBehaviour:
   bottomYSize: 0.15
   bottomOffset: -0.08
   leftXSize: 0.15
-  leftYSize: 3
+  leftYSize: 2.2
   leftOffset: -0.15
   rightXSize: 0.15
-  rightYSize: 3
+  rightYSize: 2.2
   rightOffset: -0.15
   layerMask:
     serializedVersion: 2

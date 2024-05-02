@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 0
   enemySprite: {fileID: 1661785133474645221, guid: 1314111029ca75241a2d6cf60b26dcfa, type: 3}
-  enemySpeed: 3
+  enemySpeed: 10
   pointA: {fileID: 3841238382380638338}
   pointB: {fileID: 3841238382112812477}
 --- !u!61 &3841238381927919906

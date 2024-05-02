@@ -18,8 +18,9 @@ public class StrechEffect : IStrechEffect
     private bool doneRevertingEffect = false;
     private bool revertedColor = false;
 
-    private float colXsize = 3, colYsize = 2;
-    
+    private float colXsize = 0.8f, colYsize = 2;
+    private Collider2D[] colliders = new Collider2D[1];
+        
     public StrechEffect(Color color, ColorType colorType, float multiplier, float inverseStrechMultiplier,LayerMask layerMask)
     {
         effectColor = color;
@@ -39,11 +40,12 @@ public class StrechEffect : IStrechEffect
 
     public void ApplyEffect()
     {
-        Collider2D[] colliders = Physics2D.OverlapBoxAll(new Vector2(obstacle.transform.position.x, obstacle.transform.position.y + colYsize / 2), 
-            new Vector2(obstacle.transform.localScale.x - colXsize, obstacle.transform.localScale.y - colYsize), 0, layerMask);
-
+        Debug.Log(colliders.Length);
         if (colliders.Length == 1)
             StrechObject(false);
+
+        //colliders = Physics2D.OverlapBoxAll(new Vector2(obstacle.transform.position.x, obstacle.transform.position.y + colYsize / 2), 
+        //    new Vector2(obstacle.transform.localScale.x - colXsize, obstacle.transform.localScale.y - colYsize), 0, layerMask);
 
         //RaycastHit2D[] hits = Physics2D.RaycastAll(obstacle.transform.position, obstacle.transform.up, obstacle.transform.localScale.y / 2, layerMask);
         //if (hits.Length == 1) {
@@ -53,6 +55,8 @@ public class StrechEffect : IStrechEffect
 
     private void StrechObject(bool inverted) {
         int obstacleRotation = (int)obstacle.transform.eulerAngles.z;
+        Vector2 collisionPosition = Vector2.zero;
+        Vector2 collisionSize = Vector2.zero;
 
         switch (obstacleRotation) {
 
@@ -61,6 +65,11 @@ public class StrechEffect : IStrechEffect
                     obstacle.transform.position = new Vector2(obstacle.transform.position.x - (stretchAmount / 2), obstacle.transform.position.y);
                 else
                     obstacle.transform.position = new Vector2(obstacle.transform.position.x + (inverseStrechMultiplier / 2), obstacle.transform.position.y);
+
+                collisionPosition = new Vector2(obstacle.transform.position.x - (colYsize / 2) - (stretchAmount / 2), obstacle.transform.position.y);
+
+                
+
                 break;
 
 
@@ -69,6 +78,10 @@ public class StrechEffect : IStrechEffect
                     obstacle.transform.position = new Vector2(obstacle.transform.localPosition.x, obstacle.transform.localPosition.y - (stretchAmount / 2));
                 else
                     obstacle.transform.position = new Vector2(obstacle.transform.localPosition.x, obstacle.transform.localPosition.y + (inverseStrechMultiplier / 2));
+
+                collisionPosition = new Vector2(obstacle.transform.position.x, obstacle.transform.position.y - (colYsize / 2) );
+                collisionSize = new Vector2(obstacle.transform.localScale.x * colXsize, obstacle.transform.localScale.y - colYsize );
+                
                 break;
 
 
@@ -77,6 +90,12 @@ public class StrechEffect : IStrechEffect
                     obstacle.transform.position = new Vector2(obstacle.transform.position.x + (stretchAmount / 2), obstacle.transform.position.y);
                 else
                     obstacle.transform.position = new Vector2(obstacle.transform.position.x - (inverseStrechMultiplier / 2), obstacle.transform.position.y);
+
+                colliders = Physics2D.OverlapBoxAll(new Vector2(obstacle.transform.position.x, obstacle.transform.position.y + colYsize / 2),
+                    new Vector2(obstacle.transform.localScale.x - colXsize, obstacle.transform.localScale.y - colYsize), 0, layerMask);
+
+
+
                 break;
 
 
@@ -85,11 +104,17 @@ public class StrechEffect : IStrechEffect
                     obstacle.transform.position = new Vector2(obstacle.transform.localPosition.x, obstacle.transform.localPosition.y + (stretchAmount / 2));
                 else
                     obstacle.transform.position = new Vector2(obstacle.transform.position.x, obstacle.transform.position.y - (inverseStrechMultiplier / 2));
-                    break;
+
+                collisionPosition = new Vector2(obstacle.transform.position.x, obstacle.transform.position.y + (colYsize / 2) + (stretchAmount / 2));
+                collisionSize = new Vector2(obstacle.transform.localScale.x * colXsize, obstacle.transform.localScale.y - colYsize + stretchAmount);
+
+                break;
 
         }
 
-        if(!inverted)
+        colliders = Physics2D.OverlapBoxAll(collisionPosition, collisionSize, 0, layerMask);
+
+        if (!inverted)
             obstacle.transform.localScale = new Vector2(obstacle.transform.localScale.x, obstacle.transform.localScale.y + stretchAmount);
         else
             obstacle.transform.localScale = new Vector2(obstacle.transform.localScale.x, obstacle.transform.localScale.y - inverseStrechMultiplier);

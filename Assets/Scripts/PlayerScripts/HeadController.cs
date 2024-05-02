@@ -25,7 +25,7 @@ public class HeadController : MonoBehaviour
 
     private void RotatePlayerHead() {
         mousePositionWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePositionWorld.z = 0;
+        mousePositionWorld.z = 0.0f;
 
         directionToLook = (mousePositionWorld - playerHead.transform.position).normalized;
 

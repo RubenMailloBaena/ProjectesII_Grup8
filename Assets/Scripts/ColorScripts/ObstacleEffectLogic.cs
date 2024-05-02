@@ -164,7 +164,7 @@ public class ObstacleEffectLogic : MonoBehaviour
 
         if (currentColorType == ColorType.Strech) {
             Gizmos.color = Color.blue;
-            Gizmos.DrawCube(new Vector2(transform.position.x, transform.position.y + 1), new Vector2(transform.localScale.x - 3, transform.localScale.y - 2));
+            Gizmos.DrawCube(new Vector2(transform.position.x, transform.position.y + 1), new Vector2(transform.localScale.x * 0.8f, transform.localScale.y - 2));
         }
     }
 

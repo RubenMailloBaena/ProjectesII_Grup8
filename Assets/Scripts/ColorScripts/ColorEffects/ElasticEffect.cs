@@ -39,7 +39,6 @@ public class ElasticEffect : IElasticEffect
 
         
         float totalForce = minImpulse + (jumpHeight * hightMultiplier);
-        Debug.Log(totalForce);
         
         if (totalForce >= 150)
         {

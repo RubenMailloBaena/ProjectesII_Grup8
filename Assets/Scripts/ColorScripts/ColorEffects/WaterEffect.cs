@@ -11,6 +11,7 @@ public class WaterEffect : IWaterEffect
     private Color previousColor;
     private GameObject actualTarget;
     private bool effectApplied = false;
+    private Collider2D[] collisions;
 
     public static event Action onWater;
 
@@ -30,7 +31,7 @@ public class WaterEffect : IWaterEffect
 
     public void ApplyEffect()
     {
-        Collider2D[] collisions = Physics2D.OverlapBoxAll(actualTarget.transform.position, actualTarget.transform.localScale, 0f, waterLayermask);
+        collisions = Physics2D.OverlapBoxAll(actualTarget.transform.position, actualTarget.transform.localScale, 0f, waterLayermask);
 
         if (collisions.Length != 0 && !effectApplied)
         {
@@ -46,6 +47,9 @@ public class WaterEffect : IWaterEffect
 
     public void RemoveEffect(GameObject target)
     {
+        if(collisions.Length != 0 && effectApplied)
+            onWater.Invoke();
+
         target.GetComponent<SpriteRenderer>().color = previousColor;
         target.GetComponent<BoxCollider2D>().isTrigger = false;
     }

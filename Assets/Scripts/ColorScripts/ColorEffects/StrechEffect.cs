@@ -18,7 +18,7 @@ public class StrechEffect : IStrechEffect
     private bool doneRevertingEffect = false;
     private bool revertedColor = false;
 
-    private float colXsize = 0.8f, colYsize = 2;
+    private float colXsize = 0.7f, colYsize = 2;
     private Collider2D[] colliders = new Collider2D[1];
         
     public StrechEffect(Color color, ColorType colorType, float multiplier, float inverseStrechMultiplier,LayerMask layerMask)
@@ -60,20 +60,22 @@ public class StrechEffect : IStrechEffect
 
         switch (obstacleRotation) {
 
-            case 90: 
+            case 90: //izquierda
                 if(!inverted)
                     obstacle.transform.position = new Vector2(obstacle.transform.position.x - (stretchAmount / 2), obstacle.transform.position.y);
                 else
                     obstacle.transform.position = new Vector2(obstacle.transform.position.x + (inverseStrechMultiplier / 2), obstacle.transform.position.y);
 
-                collisionPosition = new Vector2(obstacle.transform.position.x - (colYsize / 2) - (stretchAmount / 2), obstacle.transform.position.y);
+                collisionPosition = new Vector2(obstacle.transform.position.x - (colYsize / 2), obstacle.transform.position.y);
+                collisionSize = new Vector2(obstacle.transform.localScale.x * colXsize, obstacle.transform.localScale.y - colYsize);
 
-                
+                //collisionPosition = new Vector2(obstacle.transform.position.x, obstacle.transform.position.y - (colYsize / 2));
+                //collisionSize = new Vector2(obstacle.transform.localScale.x * colXsize, obstacle.transform.localScale.y - colYsize);
 
                 break;
 
 
-            case 180:
+            case 180: //abajo
                 if (!inverted)
                     obstacle.transform.position = new Vector2(obstacle.transform.localPosition.x, obstacle.transform.localPosition.y - (stretchAmount / 2));
                 else
@@ -85,7 +87,7 @@ public class StrechEffect : IStrechEffect
                 break;
 
 
-            case 270:
+            case 270: //derecha
                 if (!inverted)
                     obstacle.transform.position = new Vector2(obstacle.transform.position.x + (stretchAmount / 2), obstacle.transform.position.y);
                 else
@@ -99,14 +101,14 @@ public class StrechEffect : IStrechEffect
                 break;
 
 
-            default:
+            default: //arriba
                 if (!inverted)
                     obstacle.transform.position = new Vector2(obstacle.transform.localPosition.x, obstacle.transform.localPosition.y + (stretchAmount / 2));
                 else
                     obstacle.transform.position = new Vector2(obstacle.transform.position.x, obstacle.transform.position.y - (inverseStrechMultiplier / 2));
 
-                collisionPosition = new Vector2(obstacle.transform.position.x, obstacle.transform.position.y + (colYsize / 2) + (stretchAmount / 2));
-                collisionSize = new Vector2(obstacle.transform.localScale.x * colXsize, obstacle.transform.localScale.y - colYsize + stretchAmount);
+                collisionPosition = new Vector2(obstacle.transform.position.x, obstacle.transform.position.y + (colYsize / 2) );
+                collisionSize = new Vector2(obstacle.transform.localScale.x * colXsize, obstacle.transform.localScale.y - colYsize );
 
                 break;
 

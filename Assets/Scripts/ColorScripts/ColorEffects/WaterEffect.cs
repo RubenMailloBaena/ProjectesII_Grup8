@@ -7,47 +7,45 @@ public class WaterEffect : IWaterEffect
 {
     private Color effectColor;
     private ColorType colorType;
+    private LayerMask waterLayermask;
     private Color previousColor;
+    private GameObject actualTarget;
+    private bool effectApplied = false;
 
     public static event Action onWater;
 
-    public WaterEffect(Color color, ColorType colorType) { 
+    public WaterEffect(Color color, ColorType colorType, LayerMask waterLayermask) { 
         effectColor = color;
         this.colorType = colorType;
+        this.waterLayermask = waterLayermask;
     }
 
     public void InitializeEffect(GameObject target)
     {
-        previousColor = target.GetComponent<SpriteRenderer>().color;
-        target.GetComponent<SpriteRenderer>().color = effectColor;
-        target.GetComponent<BoxCollider2D>().isTrigger = true;
-
-        //COMPROBEN QUE AL INICIALITZAR EL JUGADOR NO ESTIGUI A SOBRE
-        Collider2D[] collider = Physics2D.OverlapBoxAll(target.transform.position, target.transform.localScale, 0f);
-
-        for (int i = 0; i < collider.Length; i++)
-        {
-            if (collider[i].gameObject.CompareTag("Player"))
-            {
-                onWater?.Invoke();
-            }
-        }
+        actualTarget = target;
+        previousColor = actualTarget.GetComponent<SpriteRenderer>().color;
+        actualTarget.GetComponent<SpriteRenderer>().color = effectColor;
+        actualTarget.GetComponent<BoxCollider2D>().isTrigger = true;
     }
 
     public void ApplyEffect()
     {
-        onWater?.Invoke();
+        Collider2D[] collisions = Physics2D.OverlapBoxAll(actualTarget.transform.position, actualTarget.transform.localScale, 0f, waterLayermask);
+
+        if (collisions.Length != 0 && !effectApplied)
+        {
+            onWater?.Invoke();
+            effectApplied = true;
+        }
+        else if (collisions.Length == 0 && effectApplied)
+        {
+            onWater.Invoke();
+            effectApplied = false;
+        }
     }
 
     public void RemoveEffect(GameObject target)
     {
-        Collider2D[] collider = Physics2D.OverlapBoxAll(target.transform.position, target.transform.localScale, 0f);
-
-        for (int i = 0; i < collider.Length; i++) {
-            if (collider[i].gameObject.CompareTag("Player")) {
-                onWater?.Invoke();
-            }
-        }
         target.GetComponent<SpriteRenderer>().color = previousColor;
         target.GetComponent<BoxCollider2D>().isTrigger = false;
     }

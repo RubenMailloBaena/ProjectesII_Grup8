@@ -70,7 +70,10 @@ public class ObstacleEffectLogic : MonoBehaviour
     {
         StrechEffect();
         RevertStrechEffect();
+
         CheckPlayerDistance();
+
+        WaterEffect();
     }
 
     private void CheckPlayerDistance()
@@ -111,7 +114,8 @@ public class ObstacleEffectLogic : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) //ELASTIC LOGIC
+    //ELASTIC LOGIC
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (currentColorEffect != null)
         {
@@ -124,30 +128,15 @@ public class ObstacleEffectLogic : MonoBehaviour
     }
 
     //WATER LOGIC
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (currentColorEffect != null)
-        {
-            if (currentColorType == ColorType.Water && collision.gameObject.CompareTag("Player"))
-            {
+    private void WaterEffect() {
+        if (currentColorEffect != null) {
+            if (currentColorType == ColorType.Water) {
                 IWaterEffect effect = currentColorEffect as IWaterEffect;
                 effect.ApplyEffect();
             }
         }
     }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (currentColorEffect != null)
-        {
-            if (currentColorType == ColorType.Water && collision.gameObject.CompareTag("Player"))
-            {
-                IWaterEffect effect = currentColorEffect as IWaterEffect;
-                effect.ApplyEffect();
-            }
-        }
-    }
+   
 
     public Vector3 getInitialScale()
     {

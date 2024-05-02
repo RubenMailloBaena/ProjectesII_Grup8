@@ -47,7 +47,6 @@ public class PlayerAnimations : MonoBehaviour
     }
     private void ChangeAnimationState(string newState)
     {
-        Debug.Log(newState);
         if (currentState == newState) return;
         animator.Play(newState);
         currentState = newState;

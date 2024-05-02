@@ -4,17 +4,13 @@ using UnityEngine;
 
 public class FlyController : MonoBehaviour
 {
-    void Start()
-    {
-        Cursor.visible = false;
-    }
-
     void Update()
     {
+        if (Time.timeScale != 0) {
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePosition.z = 0f;
 
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePosition.z = 0f; 
-
-        transform.position = mousePosition;
+            transform.position = mousePosition;
+        }
     }
 }

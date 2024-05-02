@@ -40,7 +40,6 @@ public class CharacterMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool facingRight = true;
-    private bool jumpAnimation = true;
 
     private void Awake()
     {
@@ -52,7 +51,6 @@ public class CharacterMovement : MonoBehaviour
     {
         movementDirection.x = Input.GetAxisRaw("Horizontal");
         ManagePlayerAnimations();
-        JumpAnimationLogic();
     }
 
     private void FixedUpdate()
@@ -140,13 +138,8 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
-    private void JumpAnimationLogic() {
-        Debug.Log("speed:" + rb.velocity.y);
-    }
 
     private void ManagePlayerAnimations() {
-        Debug.Log(movementDirection.x);
-
         if (rb.velocity.y > 3 && !isGrounded)
         { //jump
             PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Jump);

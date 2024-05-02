@@ -16,7 +16,6 @@ public class PaintBody : MonoBehaviour
     private void Start()
     {
         bodyChildCount = bodySpritesParent.transform.childCount;
-        Debug.Log(bodyChildCount);
     }
 
     private void PaintPlayer(Color color) {

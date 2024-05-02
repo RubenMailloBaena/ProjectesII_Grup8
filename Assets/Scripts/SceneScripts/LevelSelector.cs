@@ -6,24 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class LevelSelector : MonoBehaviour
 {
-    void Update()
+    void Start()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            SceneManager.LoadScene("InitialMenu");
-        }
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            SceneManager.LoadScene("TutorialBounce");
-        }
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            SceneManager.LoadScene("TutorialWater");
-        }
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            SceneManager.LoadScene("TutorialStretch");
-        }
+        Cursor.visible = true;
     }
 
     public void LevelChanger(String name)

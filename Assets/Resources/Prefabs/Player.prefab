@@ -407,7 +407,7 @@ MonoBehaviour:
   jumpname: PlayerJump
   walkName: PlayerWalk
   shootName: PlayerShoot
-  fallName: 
+  fallName: PlayerFall
 --- !u!50 &3336242206432462128
 Rigidbody2D:
   serializedVersion: 4

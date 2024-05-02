@@ -40,7 +40,7 @@ public class CharacterMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool facingRight = true;
-    private bool jumpAnimation = false;
+    private bool jumpAnimation = true;
 
     private void Awake()
     {
@@ -147,10 +147,13 @@ public class CharacterMovement : MonoBehaviour
     private void ManagePlayerAnimations() {
         Debug.Log(movementDirection.x);
 
-        if (rb.velocity.y>3 && !isGrounded) //jump
+        if (rb.velocity.y > 3 && !isGrounded)
+        { //jump
             PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Jump);
-        else if (rb.velocity.y < 3 && !isGrounded) //fall
+        }
+        else if (rb.velocity.y < 3 && !isGrounded) { 
             PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Fall);
+        } //fall
         else if (movementDirection.x != 0 && isGrounded) //walk
             PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Walk);
         else PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Idle);

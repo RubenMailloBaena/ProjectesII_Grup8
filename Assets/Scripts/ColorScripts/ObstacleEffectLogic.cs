@@ -161,6 +161,11 @@ public class ObstacleEffectLogic : MonoBehaviour
             Vector3 direction = (player.transform.position - transform.position).normalized;
             Gizmos.DrawLine(transform.position, transform.position + direction * maxPlayerDistance);
         }
+
+        if (currentColorType == ColorType.Strech) {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawCube(new Vector2(transform.position.x, transform.position.y + 1), new Vector2(transform.localScale.x - 3, transform.localScale.y - 2));
+        }
     }
 
 

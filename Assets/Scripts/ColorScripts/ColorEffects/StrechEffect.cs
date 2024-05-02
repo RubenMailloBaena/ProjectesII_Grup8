@@ -17,6 +17,8 @@ public class StrechEffect : IStrechEffect
 
     private bool doneRevertingEffect = false;
     private bool revertedColor = false;
+
+    private float colXsize = 3, colYsize = 2;
     
     public StrechEffect(Color color, ColorType colorType, float multiplier, float inverseStrechMultiplier,LayerMask layerMask)
     {
@@ -37,10 +39,16 @@ public class StrechEffect : IStrechEffect
 
     public void ApplyEffect()
     {
-        RaycastHit2D[] hits = Physics2D.RaycastAll(obstacle.transform.position, obstacle.transform.up, obstacle.transform.localScale.y / 2, layerMask);
-        if (hits.Length == 1) {
+        Collider2D[] colliders = Physics2D.OverlapBoxAll(new Vector2(obstacle.transform.position.x, obstacle.transform.position.y + colYsize / 2), 
+            new Vector2(obstacle.transform.localScale.x - colXsize, obstacle.transform.localScale.y - colYsize), 0, layerMask);
+
+        if (colliders.Length == 1)
             StrechObject(false);
-        }
+
+        //RaycastHit2D[] hits = Physics2D.RaycastAll(obstacle.transform.position, obstacle.transform.up, obstacle.transform.localScale.y / 2, layerMask);
+        //if (hits.Length == 1) {
+        //    StrechObject(false);
+        //}
     }
 
     private void StrechObject(bool inverted) {

@@ -13,27 +13,26 @@ public class PaintBody : MonoBehaviour
 
     private Color lastColor = Color.black;
 
-    private void Start()
-    {
-        bodyChildCount = bodySpritesParent.transform.childCount;
-    }
-
     private void PaintPlayer(Color color) {
         
         if(color != lastColor){
-            HeadSprite.GetComponent<SpriteRenderer>().material.color = color;
-
-            for (int i = 0; i < bodyChildCount; i++)
-            {
-                Transform child = bodySpritesParent.transform.GetChild(i);
-                SpriteRenderer childRender = child.GetComponent<SpriteRenderer>();
-
-                if(childRender != null)
-                    childRender.material.color = color;
-            }
+            ChangeColors(HeadSprite, color);
+            ChangeColors(bodySpritesParent, color);
             lastColor = color;
         }
         
+    }
+    
+    private void ChangeColors(GameObject target, Color color) {
+        bodyChildCount = target.transform.childCount;
+        for (int i = 0; i < bodyChildCount; i++)
+        {
+            Transform child = target.transform.GetChild(i);
+            SpriteRenderer childRender = child.GetComponent<SpriteRenderer>();
+
+            if (childRender != null)
+                childRender.material.color = color;
+        }
     }
 
 

@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1624200350982299878}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.19, y: 0.19, z: 0.19}
+  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3841238381927919907}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8398517256273244271, guid: 592bb28b4f55fdc459e7cea7dcd9fcde, type: 3}
+  m_Sprite: {fileID: 1661785133474645221, guid: 1314111029ca75241a2d6cf60b26dcfa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -187,8 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 0
   spriteHolder: {fileID: 1624200350982299878}
-  snakeSprite: {fileID: 3489084567938264477, guid: 1a12efde1188c3a4e86f1478675d3411, type: 3}
-  eagleSprite: {fileID: 8398517256273244271, guid: 592bb28b4f55fdc459e7cea7dcd9fcde, type: 3}
+  enemySprite: {fileID: 0}
   enemySpeed: 3
   pointA: {fileID: 3841238382380638338}
   pointB: {fileID: 3841238382112812477}
@@ -205,7 +204,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.22037172, y: -0.62057686}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -216,7 +215,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.6577082, y: 1.2504296}
   m_EdgeRadius: 0
 --- !u!1 &3841238382112812482
 GameObject:

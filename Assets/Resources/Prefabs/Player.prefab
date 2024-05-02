@@ -711,17 +711,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5d15a65ff49eb44c8eb6a6ddbaf9672, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  topXSize: 1.5
+  topXSize: 1
   topYSize: 0.15
   topOffset: -0.08
-  bottomXSize: 1.5
+  bottomXSize: 1
   bottomYSize: 0.15
   bottomOffset: -0.08
   leftXSize: 0.15
-  leftYSize: 4
+  leftYSize: 3
   leftOffset: -0.15
   rightXSize: 0.15
-  rightYSize: 4
+  rightYSize: 3
   rightOffset: -0.15
   layerMask:
     serializedVersion: 2

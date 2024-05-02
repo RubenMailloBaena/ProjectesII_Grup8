@@ -67,7 +67,7 @@ public class PlayerSquashed : MonoBehaviour
             GameManager.Instance.MoveToCheckPoint();
     }
 
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position + new Vector3(0, transform.localScale.y + topOffset, 0), new Vector2(topXSize, topYSize));

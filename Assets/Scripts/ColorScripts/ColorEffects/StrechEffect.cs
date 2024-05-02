@@ -8,6 +8,7 @@ public class StrechEffect : IStrechEffect
     private Color effectColor;
     private ColorType colorType;
     private float stretchAmount;
+    private float inverseStrechMultiplier;
     private LayerMask layerMask;
     
     private Color previousColor;
@@ -17,12 +18,13 @@ public class StrechEffect : IStrechEffect
     private bool doneRevertingEffect = false;
     private bool revertedColor = false;
     
-    public StrechEffect(Color color, ColorType colorType, float multiplier, LayerMask layerMask)
+    public StrechEffect(Color color, ColorType colorType, float multiplier, float inverseStrechMultiplier,LayerMask layerMask)
     {
         effectColor = color;
         this.colorType = colorType;
         stretchAmount = multiplier;
         this.layerMask = layerMask;
+        this.inverseStrechMultiplier = inverseStrechMultiplier;
     }
 
     public void InitializeEffect(GameObject target)
@@ -50,7 +52,7 @@ public class StrechEffect : IStrechEffect
                 if(!inverted)
                     obstacle.transform.position = new Vector2(obstacle.transform.position.x - (stretchAmount / 2), obstacle.transform.position.y);
                 else
-                    obstacle.transform.position = new Vector2(obstacle.transform.position.x + (stretchAmount / 2), obstacle.transform.position.y);
+                    obstacle.transform.position = new Vector2(obstacle.transform.position.x + (inverseStrechMultiplier / 2), obstacle.transform.position.y);
                 break;
 
 
@@ -58,7 +60,7 @@ public class StrechEffect : IStrechEffect
                 if (!inverted)
                     obstacle.transform.position = new Vector2(obstacle.transform.localPosition.x, obstacle.transform.localPosition.y - (stretchAmount / 2));
                 else
-                    obstacle.transform.position = new Vector2(obstacle.transform.localPosition.x, obstacle.transform.localPosition.y + (stretchAmount / 2));
+                    obstacle.transform.position = new Vector2(obstacle.transform.localPosition.x, obstacle.transform.localPosition.y + (inverseStrechMultiplier / 2));
                 break;
 
 
@@ -66,7 +68,7 @@ public class StrechEffect : IStrechEffect
                 if (!inverted)
                     obstacle.transform.position = new Vector2(obstacle.transform.position.x + (stretchAmount / 2), obstacle.transform.position.y);
                 else
-                    obstacle.transform.position = new Vector2(obstacle.transform.position.x - (stretchAmount / 2), obstacle.transform.position.y);
+                    obstacle.transform.position = new Vector2(obstacle.transform.position.x - (inverseStrechMultiplier / 2), obstacle.transform.position.y);
                 break;
 
 
@@ -74,7 +76,7 @@ public class StrechEffect : IStrechEffect
                 if (!inverted)
                     obstacle.transform.position = new Vector2(obstacle.transform.localPosition.x, obstacle.transform.localPosition.y + (stretchAmount / 2));
                 else
-                    obstacle.transform.position = new Vector2(obstacle.transform.position.x, obstacle.transform.position.y - (stretchAmount / 2));
+                    obstacle.transform.position = new Vector2(obstacle.transform.position.x, obstacle.transform.position.y - (inverseStrechMultiplier / 2));
                     break;
 
         }
@@ -82,7 +84,7 @@ public class StrechEffect : IStrechEffect
         if(!inverted)
             obstacle.transform.localScale = new Vector2(obstacle.transform.localScale.x, obstacle.transform.localScale.y + stretchAmount);
         else
-            obstacle.transform.localScale = new Vector2(obstacle.transform.localScale.x, obstacle.transform.localScale.y - stretchAmount);
+            obstacle.transform.localScale = new Vector2(obstacle.transform.localScale.x, obstacle.transform.localScale.y - inverseStrechMultiplier);
     }
 
     public void RemoveEffect(GameObject target)

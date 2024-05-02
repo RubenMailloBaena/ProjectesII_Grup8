@@ -72,6 +72,7 @@ MonoBehaviour:
   elasticMinImpulse: 2.5
   elasticHeightMultiplier: 8
   stretchMultiplier: 0.2
+  inverseStrechMultiplier: 0.1
   strechLayerMask:
     serializedVersion: 2
     m_Bits: 448

@@ -111,7 +111,8 @@ public class ObstacleEffectLogic : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) //ELASTIC LOGIC
+    //ELASTIC LOGIC
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (currentColorEffect != null)
         {

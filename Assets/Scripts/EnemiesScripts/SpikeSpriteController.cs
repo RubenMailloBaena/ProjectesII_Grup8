@@ -8,9 +8,9 @@ public class SpikeSpriteController : MonoBehaviour
     [SerializeField] Sprite[] possibleSprites;
     private void Start()
     {
-        Debug.Log(possibleSprites.Length);
-        if(spriteSelected > possibleSprites.Length-1 || spriteSelected < 0)
-            GetComponent<SpriteRenderer>().sprite = possibleSprites[0];
+
+        if (spriteSelected > possibleSprites.Length - 1 || spriteSelected < 0)
+            GetComponent<SpriteRenderer>().sprite = possibleSprites[Random.Range(0,6)];
         else
             GetComponent<SpriteRenderer>().sprite = possibleSprites[spriteSelected];
     }

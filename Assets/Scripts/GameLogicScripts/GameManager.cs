@@ -69,11 +69,11 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator WaitForRevive()
     {
-      
-        deathPartciles.Play();
-        yield return new WaitForSeconds(deathPartciles.main.duration);
-        Debug.Log("Tendrian que salir las particulas");
-        deathPartciles.Stop();
+
+        //deathPartciles.Play();
+        //yield return new WaitForSeconds(deathPartciles.main.duration);
+        //Debug.Log("Tendrian que salir las particulas");
+        //deathPartciles.Stop();
         animator.SetTrigger("End");
         yield return new WaitForSeconds(deathTime);
         CharacterMovement.Instance.SetPlayerPosition(checkPoints[currentIndex].transform.position);

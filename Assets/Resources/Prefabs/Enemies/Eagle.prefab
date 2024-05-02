@@ -7,17 +7,49 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3841238381927919904, guid: 6559964e1ef7413469feb60911a46a84, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8769411506769135980, guid: ca97f72df842c5e4d9d50dd261022cc3, type: 3}
     - target: {fileID: 3841238381927919905, guid: 6559964e1ef7413469feb60911a46a84, type: 3}
       propertyPath: enemyType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3841238381927919905, guid: 6559964e1ef7413469feb60911a46a84, type: 3}
+      propertyPath: enemySprite
+      value: 
+      objectReference: {fileID: 8769411506769135980, guid: ca97f72df842c5e4d9d50dd261022cc3, type: 3}
     - target: {fileID: 3841238381927919906, guid: 6559964e1ef7413469feb60911a46a84, type: 3}
       propertyPath: m_Size.x
-      value: 20
+      value: 13.116743
       objectReference: {fileID: 0}
     - target: {fileID: 3841238381927919906, guid: 6559964e1ef7413469feb60911a46a84, type: 3}
       propertyPath: m_Size.y
-      value: 18
+      value: 11.176146
+      objectReference: {fileID: 0}
+    - target: {fileID: 3841238381927919906, guid: 6559964e1ef7413469feb60911a46a84, type: 3}
+      propertyPath: m_Offset.x
+      value: -1.2433071
+      objectReference: {fileID: 0}
+    - target: {fileID: 3841238381927919906, guid: 6559964e1ef7413469feb60911a46a84, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.43868947
+      objectReference: {fileID: 0}
+    - target: {fileID: 3841238381927919906, guid: 6559964e1ef7413469feb60911a46a84, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.w
+      value: 6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3841238381927919906, guid: 6559964e1ef7413469feb60911a46a84, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.x
+      value: 12.432054
+      objectReference: {fileID: 0}
+    - target: {fileID: 3841238381927919906, guid: 6559964e1ef7413469feb60911a46a84, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.y
+      value: 8.190001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3841238381927919906, guid: 6559964e1ef7413469feb60911a46a84, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.z
+      value: 9.101503
       objectReference: {fileID: 0}
     - target: {fileID: 3841238381927919907, guid: 6559964e1ef7413469feb60911a46a84, type: 3}
       propertyPath: m_RootOrder

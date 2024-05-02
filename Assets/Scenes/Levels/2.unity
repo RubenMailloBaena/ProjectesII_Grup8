@@ -429,8 +429,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7118091426386535753, guid: a46b4531592457e48a545d87db99defc, type: 3}
+      propertyPath: m_Size.y
+      value: 11.17615
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118091426386535753, guid: a46b4531592457e48a545d87db99defc, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.22037125
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118091426386535753, guid: a46b4531592457e48a545d87db99defc, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.08265543
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118091426386535753, guid: a46b4531592457e48a545d87db99defc, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.w
+      value: 6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118091426386535753, guid: a46b4531592457e48a545d87db99defc, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.x
+      value: 12.432054
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118091426386535753, guid: a46b4531592457e48a545d87db99defc, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.y
+      value: 8.190001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118091426386535753, guid: a46b4531592457e48a545d87db99defc, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.z
+      value: 9.101503
+      objectReference: {fileID: 0}
     - target: {fileID: 7118091426386535754, guid: a46b4531592457e48a545d87db99defc, type: 3}
       propertyPath: enemySprite
+      value: 
+      objectReference: {fileID: 8769411506769135980, guid: ca97f72df842c5e4d9d50dd261022cc3, type: 3}
+    - target: {fileID: 7118091426386535755, guid: a46b4531592457e48a545d87db99defc, type: 3}
+      propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 8769411506769135980, guid: ca97f72df842c5e4d9d50dd261022cc3, type: 3}
     - target: {fileID: 7118091426386535757, guid: a46b4531592457e48a545d87db99defc, type: 3}

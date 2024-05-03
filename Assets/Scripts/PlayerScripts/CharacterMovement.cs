@@ -140,10 +140,13 @@ public class CharacterMovement : MonoBehaviour
 
 
     private void ManagePlayerAnimations() {
-        if (rb.velocity.y > 3 && !isGrounded)
+        if (rb.velocity.y > 3 && !isGrounded&& !inWater)
         { //jump
             PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Jump);
         }
+        else if (rb.velocity.y > 0 &&  inWater) 
+            PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Swim);
+        else if (rb.velocity.y < 0 && inWater) PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.SwimDown);
         else if (rb.velocity.y < 3 && !isGrounded) { 
             PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Fall);
         } //fall

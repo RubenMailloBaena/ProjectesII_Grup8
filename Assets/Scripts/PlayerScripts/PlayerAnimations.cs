@@ -20,6 +20,8 @@ public class PlayerAnimations : MonoBehaviour
     [SerializeField] private string walkName;
     [SerializeField] private string shootName;
     [SerializeField] private string fallName;
+    [SerializeField] private string swimlName;
+    [SerializeField] private string swimDownName;
     private string currentState;
 
 
@@ -40,7 +42,13 @@ public class PlayerAnimations : MonoBehaviour
                 ChangeAnimationState(shootName); break;
 
             case PlayerAnim.Fall:
-                ChangeAnimationState(fallName); break; 
+                ChangeAnimationState(fallName); break;
+
+            case PlayerAnim.Swim:
+                ChangeAnimationState(swimlName); break;
+
+            case PlayerAnim.SwimDown:
+                ChangeAnimationState(swimDownName); break;
 
             default: throw new System.Exception("error"); 
         }
@@ -60,4 +68,6 @@ public enum PlayerAnim
     Walk,
     Shoot,
     Fall,
+    Swim,
+    SwimDown
 }

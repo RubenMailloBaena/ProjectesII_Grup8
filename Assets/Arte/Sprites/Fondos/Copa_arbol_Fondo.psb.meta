@@ -34,7 +34,7 @@ ScriptedImporter:
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
     spritePixelsToUnits: 100
-    spriteBorder: {x: 0, y: 621, z: 0, w: 32}
+    spriteBorder: {x: 0, y: 621, z: 10, w: 32}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
     cubemapConvolution: 0
@@ -73,7 +73,7 @@ ScriptedImporter:
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
-    border: {x: 0, y: 621, z: 0, w: 32}
+    border: {x: 0, y: 621, z: 10, w: 32}
     rect:
       serializedVersion: 2
       x: 0
@@ -98,7 +98,19 @@ ScriptedImporter:
       - {x: 922, y: 305.5}
       - {x: 922, y: 493.5}
     vertices: []
-    spritePhysicsOutline: []
+    spritePhysicsOutline:
+    - outline:
+      - {x: -282, y: 664.5}
+      - {x: -761, y: 610.5}
+      - {x: -928, y: 316.5}
+      - {x: -928, y: 196.5}
+      - {x: -833, y: 99.5}
+      - {x: -489, y: -62.5}
+      - {x: 296, y: -62.5}
+      - {x: 631, y: -30.5}
+      - {x: 921, y: 124.5}
+      - {x: 921, y: 461.5}
+      - {x: 495, y: 664.5}
     indices: 
     edges: []
     tessellationDetail: 0

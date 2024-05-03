@@ -210,7 +210,7 @@ public class TongueController : MonoBehaviour
             onShootingTongue?.Invoke();
 
             //SHOOT ANIMATION
-            PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Shoot);
+            //PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Shoot);
         }
     }
 

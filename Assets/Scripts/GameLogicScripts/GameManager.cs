@@ -74,6 +74,9 @@ public class GameManager : MonoBehaviour
         //yield return new WaitForSeconds(deathPartciles.main.duration);
         //Debug.Log("Tendrian que salir las particulas");
         //deathPartciles.Stop();
+       
+        PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Die);
+
         animator.SetTrigger("End");
         yield return new WaitForSeconds(deathTime);
         CharacterMovement.Instance.SetPlayerPosition(checkPoints[currentIndex].transform.position);

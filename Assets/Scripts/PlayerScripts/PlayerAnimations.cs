@@ -15,13 +15,14 @@ public class PlayerAnimations : MonoBehaviour
     }
 
     [SerializeField] private Animator animator;
-    [SerializeField] private string idleName;
-    [SerializeField] private string jumpname;
-    [SerializeField] private string walkName;
-    [SerializeField] private string shootName;
-    [SerializeField] private string fallName;
-    [SerializeField] private string swimlName;
-    [SerializeField] private string swimDownName;
+    private string idleName="PlayerIdle";
+    private string jumpname = "PlayerJump";
+    private string walkName = "PlayerWalk";
+    private string shootName = "PlayerShoot";
+    private string fallName = "PlayerFall";
+    private string swimName = "PlayerSwim";
+    private string swimDownName = "PlayerSwimDown";
+    private string dieName = "PlayerDie";
     private string currentState;
 
 
@@ -45,10 +46,12 @@ public class PlayerAnimations : MonoBehaviour
                 ChangeAnimationState(fallName); break;
 
             case PlayerAnim.Swim:
-                ChangeAnimationState(swimlName); break;
+                ChangeAnimationState(swimName); break;
 
             case PlayerAnim.SwimDown:
                 ChangeAnimationState(swimDownName); break;
+            case PlayerAnim.Die:
+                ChangeAnimationState(dieName); break;
 
             default: throw new System.Exception("error"); 
         }
@@ -69,5 +72,6 @@ public enum PlayerAnim
     Shoot,
     Fall,
     Swim,
-    SwimDown
+    SwimDown,
+    Die
 }

@@ -26823,6 +26823,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2271160574764062175, guid: f3b6e749cdd5d904d9cc6cf32bdd4f61, type: 3}
+      propertyPath: swimName
+      value: PlayerSwim
+      objectReference: {fileID: 0}
+    - target: {fileID: 2271160574764062175, guid: f3b6e749cdd5d904d9cc6cf32bdd4f61, type: 3}
       propertyPath: swimlName
       value: PlayerSwim
       objectReference: {fileID: 0}

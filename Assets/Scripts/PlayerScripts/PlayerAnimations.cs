@@ -50,6 +50,7 @@ public class PlayerAnimations : MonoBehaviour
 
             case PlayerAnim.SwimDown:
                 ChangeAnimationState(swimDownName); break;
+
             case PlayerAnim.Die:
                 ChangeAnimationState(dieName); break;
 

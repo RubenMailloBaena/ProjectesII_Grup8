@@ -44,7 +44,6 @@ public class HeadController : MonoBehaviour
         {
             if (lookAtTongue) {
                 ShootingFront();
-                Debug.Log(directionToLook);
                 if(!cancelLookAt)
                     playerHead.transform.right = directionToLook * Mathf.Sign(transform.localScale.x);
             }
@@ -59,8 +58,6 @@ public class HeadController : MonoBehaviour
 
         if (!CharacterMovement.Instance.GetFacingRight())
             playerRight = -transform.right;
-
-        Debug.Log(Vector2.Angle(directionToLook, playerRight));
 
         if (Vector2.Angle(directionToLook, playerRight) > TongueController.Instance.GetMaxAngleToShoot()) {
             if (Vector2.Angle(directionToLook, transform.up) < TongueController.Instance.GetExtraAngleToShoot())

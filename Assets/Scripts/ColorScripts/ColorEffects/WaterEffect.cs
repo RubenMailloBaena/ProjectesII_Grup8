@@ -31,7 +31,7 @@ public class WaterEffect : IWaterEffect
 
     public void ApplyEffect()
     {
-        Debug.Log(actualTarget.transform.position + " " + actualTarget.transform.localScale);
+        //Debug.Log(actualTarget.transform.position + " " + actualTarget.transform.localScale);
 
         collisions = Physics2D.OverlapBoxAll(actualTarget.transform.position, actualTarget.transform.localScale, 0f, waterLayermask);
 
@@ -39,6 +39,7 @@ public class WaterEffect : IWaterEffect
         {
             onWater?.Invoke();
             effectApplied = true;
+            Debug.Log("Effect Applied");
         }
         else if (collisions.Length == 0 && effectApplied)
         {

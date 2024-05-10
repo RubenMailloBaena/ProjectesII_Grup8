@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerAnimations : MonoBehaviour
@@ -27,7 +28,9 @@ public class PlayerAnimations : MonoBehaviour
     private string dieName = "PlayerDie";
     private string openName = "Open";
     private string closeName = "Close";
+    private string idleHeadName = "Idle";
     private string currentState;
+    private string headstate;
 
 
     public void ChangeAnimation(PlayerAnim newAnim)
@@ -61,28 +64,35 @@ public class PlayerAnimations : MonoBehaviour
             default: throw new System.Exception("error"); 
         }
     }
-
+    
     public void ChangeHeadAnimation(HeadAnim newAnim)
     {
 
         switch (newAnim)
         {
+
             case HeadAnim.Open:
-                ChangeAnimationState(openName); break;
+                ChangeHeadAnimationState(openName); break;
 
             case HeadAnim.Close:
-                ChangeAnimationState (closeName); break;
-
+                ChangeHeadAnimationState(closeName); break;
+            
+            case HeadAnim.IdleHead:
+                ChangeHeadAnimationState(idleHeadName);
+                break;
+            
 
             default: throw new System.Exception("error");
         }
     }
     
+ 
+    
     private void ChangeHeadAnimationState(string newState)
     {
-        if (currentState == newState) return;
+        if (headstate == newState) return;
         head.Play(newState);
-        currentState = newState;
+        headstate = newState;
     }
     
 
@@ -105,8 +115,9 @@ public enum PlayerAnim
     SwimDown,
     Die
 }
-public enum headAnim
+public enum HeadAnim
 {
     Open, 
-    Close
+    Close,
+    IdleHead
 }

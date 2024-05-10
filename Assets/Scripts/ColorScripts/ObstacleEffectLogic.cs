@@ -63,7 +63,7 @@ public class ObstacleEffectLogic : MonoBehaviour
         currentColorType = ColorType.Default;
         initialScale = transform.localScale;
 
-        player = GameObject.Find("Player");
+        player = GameObject.Find("TongueOrigin"); 
     }
 
     void FixedUpdate()
@@ -153,7 +153,7 @@ public class ObstacleEffectLogic : MonoBehaviour
         ApplyEffect(FindAnyObjectByType<ColorManager>().GetColorEffect(colorType));
     }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         if (currentColorType != ColorType.Default && player != null)
         {

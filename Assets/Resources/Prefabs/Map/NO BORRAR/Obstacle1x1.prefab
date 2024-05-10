@@ -186,6 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxPlayerDistance: 40
+  player: {fileID: 3336242206432462131, guid: 35c88b3923127f549b98fe3fda96b355, type: 3}
 --- !u!61 &6420849012949836114
 BoxCollider2D:
   m_ObjectHideFlags: 0

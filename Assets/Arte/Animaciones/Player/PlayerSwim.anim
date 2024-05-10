@@ -350,7 +350,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0, y: 0, z: 3.107}
+        value: {x: 0, y: 0, z: 14.729}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -359,7 +359,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.33333334
-        value: {x: 0, y: 0, z: 5.374}
+        value: {x: 0, y: 0, z: 8.961}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -368,7 +368,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.6
-        value: {x: 0, y: 0, z: 3.107}
+        value: {x: 0, y: 0, z: 12.553}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -947,7 +947,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.33333334
-        value: {x: 1.6467708, y: 0.11285204, z: 0.010000013}
+        value: {x: 1.7398863, y: 0.1646864, z: 0.010000015}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -3668,7 +3668,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: 1.6467708
+        value: 1.7398863
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -3705,7 +3705,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: 0.11285204
+        value: 0.1646864
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -3742,7 +3742,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: 0.010000013
+        value: 0.010000015
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -3844,7 +3844,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 3.107
+        value: 14.729
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -3853,7 +3853,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: 5.374
+        value: 8.961
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -3862,7 +3862,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.6
-        value: 3.107
+        value: 12.553
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -6527,7 +6527,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Pelv/cos/torax
+    path: Pelv/cos/torax/mandivula
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -6537,7 +6537,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Pelv/cos/torax
+    path: Pelv/cos/torax/mandivula
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -6547,7 +6547,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Pelv/cos/torax
+    path: Pelv/cos/torax/mandivula
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -6647,7 +6647,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Pelv/cos/torax/mandivula
+    path: Pelv/cos/torax
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -6657,7 +6657,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Pelv/cos/torax/mandivula
+    path: Pelv/cos/torax
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -6667,7 +6667,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Pelv/cos/torax/mandivula
+    path: Pelv/cos/torax
     classID: 4
     script: {fileID: 0}
   m_HasGenericRootTransform: 0

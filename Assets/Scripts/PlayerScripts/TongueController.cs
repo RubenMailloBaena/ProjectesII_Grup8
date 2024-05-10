@@ -208,7 +208,7 @@ public class TongueController : MonoBehaviour
             canShootAgain = false;
             canCheckCollisions = true;
             onShootingTongue?.Invoke();
-            PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Shoot);
+            PlayerAnimations.Instance.ChangeHeadAnimation(HeadAnim.Open);
         }
     }
 

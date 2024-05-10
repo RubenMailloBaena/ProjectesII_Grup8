@@ -64,6 +64,7 @@ public class ObstacleEffectLogic : MonoBehaviour
         initialScale = transform.localScale;
 
         player = GameObject.Find("Player");
+        Debug.Log(player); 
     }
 
     void FixedUpdate()
@@ -81,10 +82,11 @@ public class ObstacleEffectLogic : MonoBehaviour
         //Si el jugador esta muy lejos, devolvemos el color
         if (currentColorType != ColorType.Default)
         {
-            if (Vector3.Distance(transform.position, player.transform.position) >= maxPlayerDistance)
-            {
-                RemoveAllEffects(ColorType.Default);
-            }
+            //Debug.Log( player.transform.position);
+            //if (Vector3.Distance(transform.position, player.transform.position) >= maxPlayerDistance)
+            //{
+            //    RemoveAllEffects(ColorType.Default);
+            //}
         }
     }
 

@@ -54,7 +54,6 @@ public class StrechEffect : IStrechEffect
         topSprite = parentObject.transform.Find("Sprite Holder/TopSprite").gameObject;
         extendablePart = parentObject.transform.Find("Sprite Holder/ExtendablePart").gameObject;
         movingPart = parentObject.transform.Find("MovingObstacle").gameObject;
-        Debug.Log(movingPart);
     }
 
     public void ApplyEffect()

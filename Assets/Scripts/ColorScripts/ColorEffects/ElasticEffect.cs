@@ -25,6 +25,7 @@ public class ElasticEffect : IElasticEffect
 
     public void InitializeEffect(GameObject target)
     {
+        Debug.Log("inside " + target.gameObject.name);
         obstacle = target;
         previousColor = target.GetComponent<SpriteRenderer>().color;
         target.GetComponent<SpriteRenderer>().color = effectColor;

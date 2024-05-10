@@ -28,7 +28,7 @@ public class HeadController : MonoBehaviour
         mousePositionWorld.z = 0.0f;
 
         directionToLook = (mousePositionWorld - playerHead.transform.position).normalized;
-
+        directionToLook.z = 0.0f;
         if (canRotateHead)
         {
             playerHead.transform.right = directionToLook * Mathf.Sign(transform.localScale.x);

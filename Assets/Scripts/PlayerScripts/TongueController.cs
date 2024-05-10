@@ -100,6 +100,7 @@ public class TongueController : MonoBehaviour
             }
             else    
             {
+                PlayerAnimations.Instance.ChangeHeadAnimation(HeadAnim.Close);
                 canShootAgain = true;
                 cancelShoot = false;
                 getDirectionAgain = true;
@@ -203,12 +204,13 @@ public class TongueController : MonoBehaviour
     }
 
     private void setShootTongue() {
-        if (canShootAgain && !inWater) { 
+        if (canShootAgain && !inWater) {
+            PlayerAnimations.Instance.ChangeHeadAnimation(HeadAnim.Open);
             shootTongue = true;
             canShootAgain = false;
             canCheckCollisions = true;
             onShootingTongue?.Invoke();
-            PlayerAnimations.Instance.ChangeHeadAnimation(HeadAnim.Open);
+            
         }
     }
 

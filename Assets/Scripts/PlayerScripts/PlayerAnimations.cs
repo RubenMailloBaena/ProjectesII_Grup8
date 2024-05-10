@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,7 @@ public class PlayerAnimations : MonoBehaviour
     }
 
     [SerializeField] private Animator animator;
+    [SerializeField] private Animator head;
     private string idleName="PlayerIdle";
     private string jumpname = "PlayerJump";
     private string walkName = "PlayerWalk";
@@ -23,6 +25,8 @@ public class PlayerAnimations : MonoBehaviour
     private string swimName = "PlayerSwim";
     private string swimDownName = "PlayerSwimDown";
     private string dieName = "PlayerDie";
+    private string openName = "Open";
+    private string closeName = "Close";
     private string currentState;
 
 
@@ -57,6 +61,31 @@ public class PlayerAnimations : MonoBehaviour
             default: throw new System.Exception("error"); 
         }
     }
+
+    public void ChangeHeadAnimation(HeadAnim newAnim)
+    {
+
+        switch (newAnim)
+        {
+            case HeadAnim.Open:
+                ChangeAnimationState(openName); break;
+
+            case HeadAnim.Close:
+                ChangeAnimationState (closeName); break;
+
+
+            default: throw new System.Exception("error");
+        }
+    }
+    
+    private void ChangeHeadAnimationState(string newState)
+    {
+        if (currentState == newState) return;
+        head.Play(newState);
+        currentState = newState;
+    }
+    
+
     private void ChangeAnimationState(string newState)
     {
         if (currentState == newState) return;
@@ -75,4 +104,9 @@ public enum PlayerAnim
     Swim,
     SwimDown,
     Die
+}
+public enum headAnim
+{
+    Open, 
+    Close
 }

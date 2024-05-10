@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class HeadAnimations : MonoBehaviour
 {
-    private static PlayerAnimations instance;
-    public static PlayerAnimations Instance
+    private static HeadAnimations instance;
+    public static HeadAnimations Instance
     {
         get
         {
             if (instance == null)
-                instance = FindAnyObjectByType<PlayerAnimations>();
+                instance = FindAnyObjectByType<HeadAnimations>();
             return instance;
         }
     }

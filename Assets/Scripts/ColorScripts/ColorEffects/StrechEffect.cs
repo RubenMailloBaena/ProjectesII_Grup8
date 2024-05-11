@@ -10,6 +10,7 @@ public class StrechEffect : IStrechEffect
     private ColorType colorType;
     private float stretchAmount;
     private float inverseStrechMultiplier;
+    private float extendSpriteVelocity;
     private LayerMask layerMask;
     private Color previousColor;
     private Vector3 initialScale;
@@ -20,6 +21,7 @@ public class StrechEffect : IStrechEffect
     private GameObject movingPart;
     private GameObject topSprite; //la part de d'alt de la plataforma
     private GameObject extendablePart; //part extensible de la plataforma
+    private SpriteRenderer extendableSprite;
 
     //control logic
     private bool doneRevertingEffect = false;
@@ -30,7 +32,7 @@ public class StrechEffect : IStrechEffect
     private Collider2D[] colliders = new Collider2D[1];
     private RaycastHit2D[] hits = new RaycastHit2D[1];
         
-    public StrechEffect(Color color, ColorType colorType, float multiplier, float inverseStrechMultiplier, float colXsize,LayerMask layerMask)
+    public StrechEffect(Color color, ColorType colorType, float multiplier, float inverseStrechMultiplier, float extendSpriteVelocity, float colXsize,LayerMask layerMask)
     {
         effectColor = color;
         this.colorType = colorType;
@@ -38,6 +40,7 @@ public class StrechEffect : IStrechEffect
         this.layerMask = layerMask;
         this.inverseStrechMultiplier = inverseStrechMultiplier;
         this.colXsize = colXsize;
+        this.extendSpriteVelocity = extendSpriteVelocity;
     }
 
     public void InitializeEffect(GameObject target)
@@ -52,8 +55,9 @@ public class StrechEffect : IStrechEffect
         this.currentObstacle = currentObstacle;
         parentObject = currentObstacle.transform.parent.transform.parent.gameObject;
         topSprite = parentObject.transform.Find("Sprite Holder/TopSprite").gameObject;
-        extendablePart = parentObject.transform.Find("Sprite Holder/ExtendablePart").gameObject;
         movingPart = parentObject.transform.Find("MovingObstacle").gameObject;
+        extendablePart = parentObject.transform.Find("Sprite Holder/ExtendablePart").gameObject;
+        extendableSprite = extendablePart.GetComponent<SpriteRenderer>();
     }
 
     public void ApplyEffect()
@@ -74,11 +78,15 @@ public class StrechEffect : IStrechEffect
                 if (!inverted){
                     movingPart.transform.position = new Vector2(movingPart.transform.position.x - (stretchAmount / 2), movingPart.transform.position.y);
 
+                    //sprite
+                    extendablePart.transform.position = new Vector2(extendablePart.transform.position.x - (stretchAmount / 2), extendablePart.transform.position.y);
                     topSprite.transform.position = new Vector2(topSprite.transform.position.x - stretchAmount, topSprite.transform.position.y);
                 }
                 else {
                     movingPart.transform.position = new Vector2(movingPart.transform.position.x + (inverseStrechMultiplier / 2), movingPart.transform.position.y);
 
+                    //sprite
+                    extendablePart.transform.position = new Vector2(extendablePart.transform.position.x + (inverseStrechMultiplier / 2), extendablePart.transform.position.y);
                     topSprite.transform.position = new Vector2(topSprite.transform.position.x + inverseStrechMultiplier, topSprite.transform.position.y);
                 }
 
@@ -94,11 +102,15 @@ public class StrechEffect : IStrechEffect
                 if (!inverted){
                     movingPart.transform.position = new Vector2(movingPart.transform.position.x, movingPart.transform.position.y - (stretchAmount / 2));
 
+                    //sprite
+                    extendablePart.transform.position = new Vector2(extendablePart.transform.position.x, extendablePart.transform.position.y - (stretchAmount / 2));
                     topSprite.transform.position = new Vector2(topSprite.transform.position.x, topSprite.transform.position.y - stretchAmount);
                 }
                 else {
                     movingPart.transform.position = new Vector2(movingPart.transform.position.x, movingPart.transform.position.y + (inverseStrechMultiplier / 2));
 
+                    //sprite
+                    extendablePart.transform.position = new Vector2(extendablePart.transform.position.x, extendablePart.transform.position.y + (inverseStrechMultiplier / 2));
                     topSprite.transform.position = new Vector2(topSprite.transform.position.x, topSprite.transform.position.y + inverseStrechMultiplier);
                 }
 
@@ -116,11 +128,15 @@ public class StrechEffect : IStrechEffect
                 if (!inverted) {
                     movingPart.transform.position = new Vector2(movingPart.transform.position.x + (stretchAmount / 2), movingPart.transform.position.y);
 
+                    //sprite
+                    extendablePart.transform.position = new Vector2(extendablePart.transform.position.x + (stretchAmount / 2), extendablePart.transform.position.y);
                     topSprite.transform.position = new Vector2(topSprite.transform.position.x + stretchAmount, topSprite.transform.position.y);
                 }
                 else {
                     movingPart.transform.position = new Vector2(movingPart.transform.position.x - (inverseStrechMultiplier / 2), movingPart.transform.position.y);
 
+                    //sprite
+                    extendablePart.transform.position = new Vector2(extendablePart.transform.position.x - (inverseStrechMultiplier / 2), extendablePart.transform.position.y);
                     topSprite.transform.position = new Vector2(topSprite.transform.position.x - inverseStrechMultiplier, topSprite.transform.position.y);
                 }
 
@@ -134,12 +150,16 @@ public class StrechEffect : IStrechEffect
                 //CURRENT OBSTACLE
                 if (!inverted) {
                     movingPart.transform.position = new Vector2(movingPart.transform.position.x, movingPart.transform.position.y + (stretchAmount / 2));
-                   
+
+                    //sprite
+                    extendablePart.transform.position = new Vector2(extendablePart.transform.position.x, extendablePart.transform.position.y + (stretchAmount/2));
                     topSprite.transform.position = new Vector2(topSprite.transform.position.x, topSprite.transform.position.y + stretchAmount);
                 }
                 else {
                     movingPart.transform.position = new Vector2(movingPart.transform.position.x, movingPart.transform.position.y - (inverseStrechMultiplier / 2));
-                    
+
+                    //sprite
+                    extendablePart.transform.position = new Vector2(extendablePart.transform.position.x, extendablePart.transform.position.y - (inverseStrechMultiplier / 2));
                     topSprite.transform.position = new Vector2(topSprite.transform.position.x, topSprite.transform.position.y - inverseStrechMultiplier);
                 }
 
@@ -153,10 +173,16 @@ public class StrechEffect : IStrechEffect
 
         }
 
-        if (!inverted)
+        if (!inverted) { 
             currentObstacle.transform.localScale = new Vector2(currentObstacle.transform.localScale.x, currentObstacle.transform.localScale.y + stretchAmount);
-        else
+
+            extendableSprite.size = new Vector2(extendableSprite.size.x, extendableSprite.size.y + extendSpriteVelocity);
+        }
+        else { 
             currentObstacle.transform.localScale = new Vector2(currentObstacle.transform.localScale.x, currentObstacle.transform.localScale.y - inverseStrechMultiplier);
+
+            extendableSprite.size = new Vector2(extendableSprite.size.x, extendableSprite.size.y - (extendSpriteVelocity / 2));
+        }
     }
 
     public void RemoveEffect(GameObject target)

@@ -25,6 +25,7 @@ public class ColorManager : MonoBehaviour
     [Header("STRECH")]
     [SerializeField] private float stretchMultiplier;
     [SerializeField] private float inverseStrechMultiplier;
+    [SerializeField] private float extendableSpriteVelocity;
     [SerializeField] private float collisionSize;
     [SerializeField] private LayerMask strechLayerMask;
 
@@ -57,7 +58,7 @@ public class ColorManager : MonoBehaviour
                 if (strechAssigned)
                     return DefaultObject;
                 strechAssigned = true;
-                return new StrechEffect(strechColor, ColorType.Strech, stretchMultiplier, inverseStrechMultiplier, collisionSize,strechLayerMask);
+                return new StrechEffect(strechColor, ColorType.Strech, stretchMultiplier, inverseStrechMultiplier, extendableSpriteVelocity, collisionSize, strechLayerMask);
 
             case ColorType.Default:
                 return DefaultObject;

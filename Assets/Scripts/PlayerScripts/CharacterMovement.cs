@@ -111,6 +111,9 @@ public class CharacterMovement : MonoBehaviour
                 isGrounded = true;
                 if (collider.gameObject.GetComponent<ObstacleEffectLogic>().getCurrentColorType() != ColorType.Elastic)
                     lastJumpPosition = transform.position;
+                if (collider.gameObject.GetComponent<ObstacleEffectLogic>().getCurrentColorType() == ColorType.Strech) {
+                    transform.parent = collider.transform.parent;
+                }
             }
         }
 
@@ -129,8 +132,8 @@ public class CharacterMovement : MonoBehaviour
     private void PlayerJump() {
         if (isGrounded && !inWater)
         {
+            transform.parent = null;
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            
         } 
         else if (inWater)
         {

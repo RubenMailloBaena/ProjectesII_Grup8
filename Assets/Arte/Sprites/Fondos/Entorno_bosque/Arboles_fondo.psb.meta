@@ -28,7 +28,7 @@ ScriptedImporter:
     ignoreMasterTextureLimit: 0
     nPOTScale: 1
     sRGBTexture: 1
-    spriteMode: 1
+    spriteMode: 2
     spriteExtrude: 1
     spriteMeshType: 1
     alignment: 9
@@ -266,15 +266,15 @@ ScriptedImporter:
   rigSpriteImportData:
   - name: Arboles_fondo_1
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 0
-      y: 17
-      width: 8192
-      height: 1007
+      y: 7
+      width: 7116
+      height: 986
     spriteID: 39a210772a582374e8642065fb850901
     spriteBone: []
     spriteOutline: []
@@ -284,7 +284,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 0, y: 17}
+    uvTransform: {x: 0, y: 7}
     spritePosition: {x: 0, y: 0}
   characterData:
     bones: []

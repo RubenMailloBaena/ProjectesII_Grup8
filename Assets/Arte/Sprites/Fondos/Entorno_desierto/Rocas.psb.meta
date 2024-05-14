@@ -28,7 +28,7 @@ ScriptedImporter:
     ignoreMasterTextureLimit: 0
     nPOTScale: 1
     sRGBTexture: 1
-    spriteMode: 1
+    spriteMode: 2
     spriteExtrude: 1
     spriteMeshType: 1
     alignment: 0
@@ -93,18 +93,18 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: Rocas
+  - name: Rocas_0
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 4
-      width: 9928
-      height: 1975
-    spriteID: efee6de1a33817b4383085bad2c87d4a
+      x: 0
+      y: 61
+      width: 1476
+      height: 1535
+    spriteID: f5d625cacf7de5b4bad63683d054a772
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -113,8 +113,162 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 4, y: 4}
-    spritePosition: {x: 55, y: 903}
+    uvTransform: {x: 0, y: 61}
+    spritePosition: {x: 0, y: 0}
+  - name: Rocas_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1708
+      y: 44
+      width: 2096
+      height: 1848
+    spriteID: 7d69c1ef7aaa4184a925f5856358a942
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1708, y: 44}
+    spritePosition: {x: 0, y: 0}
+  - name: Rocas_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3948
+      y: 53
+      width: 2032
+      height: 1935
+    spriteID: 861290481e0e1f94cbd94ba0f87c937e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 3948, y: 53}
+    spritePosition: {x: 0, y: 0}
+  - name: Rocas_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 6172
+      y: 60
+      width: 1616
+      height: 1416
+    spriteID: b972cc8dd0082fc48bd99365fc703155
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 6172, y: 60}
+    spritePosition: {x: 0, y: 0}
+  - name: Rocas_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 8076
+      y: 52
+      width: 1864
+      height: 1880
+    spriteID: 87edcd5c1874ffc47803c025b6be1ca3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 8076, y: 52}
+    spritePosition: {x: 0, y: 0}
+  - name: Rocas_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16380
+      y: 76
+      width: 4
+      height: 32
+    spriteID: 0ea99878c7e63204b8054628111eac7a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 16380, y: 76}
+    spritePosition: {x: 0, y: 0}
+  - name: Rocas_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 529
+      y: 49
+      width: 6
+      height: 6
+    spriteID: 99f791a10d24c3049af9785eaac9fc07
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 529, y: 49}
+    spritePosition: {x: 0, y: 0}
+  - name: Rocas_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 9357
+      y: 45
+      width: 22
+      height: 14
+    spriteID: 948498d788e73ad499f787f8591897c4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 9357, y: 45}
+    spritePosition: {x: 0, y: 0}
   characterData:
     bones: []
     parts: []

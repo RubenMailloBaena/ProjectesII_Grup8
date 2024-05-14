@@ -102,8 +102,8 @@ ScriptedImporter:
       serializedVersion: 2
       x: 5141
       y: 0
-      width: 1820
-      height: 780
+      width: 1821
+      height: 809
     spriteID: 264f404427b609b40a033cb053f111e0
     spriteBone: []
     spriteOutline: []
@@ -117,12 +117,12 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   - name: Arboles_frente_0
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 5
+      x: 0
       y: 0
       width: 1540
       height: 1024
@@ -135,11 +135,11 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 5, y: 0}
+    uvTransform: {x: 0, y: 0}
     spritePosition: {x: 0, y: 0}
   - name: Arboles_frente_2
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -147,7 +147,7 @@ ScriptedImporter:
       x: 1942
       y: 0
       width: 1068
-      height: 790
+      height: 1024
     spriteID: 97e9254d0d2c6b443943f1588b0f6335
     spriteBone: []
     spriteOutline: []
@@ -161,15 +161,15 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   - name: Arboles_frente_3
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 3442
       y: 0
-      width: 1306
-      height: 780
+      width: 1307
+      height: 1024
     spriteID: f762cf3757617a7459384615d7ebb951
     spriteBone: []
     spriteOutline: []

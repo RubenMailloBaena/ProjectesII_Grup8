@@ -7,35 +7,69 @@ using UnityEngine;
 public class PaintBody : MonoBehaviour
 {
     [Header("BODY PARTS TO PAINT")] //temporal hasta usar el shader
-    [SerializeField] private GameObject HeadSprite;
-    [SerializeField] private GameObject bodySpritesParent;
+    [SerializeField] private GameObject currentHeadSprite;
+    [SerializeField] private GameObject currentBodySprite;
+
+    [Header("STRECH SPRITES")]
+    [SerializeField] private GameObject strechtHead;
+    [SerializeField] private GameObject strechBody;
+
+    //[Header("DEFAULT SPRITES")]
+    private GameObject defaultHead;
+    private GameObject defaultBody;
+
     private int bodyChildCount;
 
-    private Color lastColor = Color.black;
+    private ColorType lastColor = ColorType.Default;
 
-    private void PaintPlayer(Color color) {
+    private void Awake()
+    {
+        defaultHead = currentHeadSprite;
+        defaultBody = currentBodySprite;
+    }
+
+    private void PaintPlayer(ColorType color) {
         
-        if(color != lastColor){
-            ChangeColors(HeadSprite, color);
-            ChangeColors(bodySpritesParent, color);
+        if (color != lastColor)
+        {
+            switch (color)
+            {
+                case ColorType.Water:
+                    break;
+
+                case ColorType.Elastic:
+                    break;
+
+                case ColorType.Strech:
+                    ChangeColors(currentHeadSprite, strechtHead);
+                    ChangeColors(currentBodySprite, strechBody);
+                    currentHeadSprite = strechtHead;
+                    currentBodySprite = strechBody;
+                    break;
+
+                default:
+                    ChangeColors(currentHeadSprite, defaultHead);
+                    ChangeColors(currentBodySprite, defaultBody);
+                    currentHeadSprite = defaultHead;
+                    currentBodySprite = defaultBody;
+                    break;
+            }
+
             lastColor = color;
         }
-        
     }
     
-    private void ChangeColors(GameObject target, Color color) {
+    private void ChangeColors(GameObject target, GameObject changeSprite) {
         bodyChildCount = target.transform.childCount;
         for (int i = 0; i < bodyChildCount; i++)
         {
-            Transform child = target.transform.GetChild(i);
-            SpriteRenderer childRender = child.GetComponent<SpriteRenderer>();
+            SpriteRenderer currentChild = target.transform.GetChild(i).gameObject.GetComponent<SpriteRenderer>();
+            SpriteRenderer changeChild = changeSprite.transform.GetChild(i).gameObject.GetComponent<SpriteRenderer>();
 
-            if (childRender != null)
-                childRender.material.color = color;
+            if (currentChild != null && changeChild != null)
+                currentChild.sprite = changeChild.sprite;
         }
     }
-
-
 
     private void OnEnable()
     {

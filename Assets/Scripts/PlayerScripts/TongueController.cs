@@ -45,7 +45,7 @@ public class TongueController : MonoBehaviour
 
     public event Action onShootingTongue;
     public event Action onNotMovingTongue;
-    public event Action<Color> onPaintPlayer;
+    public event Action<ColorType> onPaintPlayer;
 
     private LineRenderer lineRenderer;
     private ColorManager colorManager;
@@ -182,19 +182,18 @@ public class TongueController : MonoBehaviour
 
 
     private void ChangePlayerColor(ColorType colorType) {
-        Color color = colorManager.GetColor(colorType);
+
         int counter = 0;
-        
-        while (colorManager.GetAssigneds(colorTypes[colorIndex])) {
+        while (colorManager.GetAssigneds(colorType)) {
             SwapColor();
             counter++;
 
-            if(counter >= colorTypes.Length){
-                color = colorManager.GetColor(ColorType.Default);
+            if(counter >= colorTypes.Length) {
+                colorType = ColorType.Default;
                 break;
             }
         }
-        onPaintPlayer?.Invoke(color);
+        onPaintPlayer?.Invoke(colorType);
     }
 
     private void SwapColor() {

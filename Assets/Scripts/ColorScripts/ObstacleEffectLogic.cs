@@ -148,6 +148,7 @@ public class ObstacleEffectLogic : MonoBehaviour
         return currentColorType;
     }
 
+
     private void RemoveAllEffects(ColorType colorType)
     {
         ApplyEffect(FindAnyObjectByType<ColorManager>().GetColorEffect(colorType));

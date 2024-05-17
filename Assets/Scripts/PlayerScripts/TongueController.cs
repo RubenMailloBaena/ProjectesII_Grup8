@@ -186,9 +186,9 @@ public class TongueController : MonoBehaviour
 
     private void ChangePlayerColor(ColorType colorType) {
 
-        if (lastColor != colorType) {
+        //if (lastColor != colorType) {
             int counter = 0;
-            while (colorManager.GetAssigneds(colorType))
+            while (colorManager.GetAssigneds(colorTypes[colorIndex]))
             {
                 SwapColor();
                 counter++;
@@ -202,7 +202,7 @@ public class TongueController : MonoBehaviour
             Debug.Log("Tongue contreoller" + colorType);
             onPaintPlayer?.Invoke(colorType);
             lastColor = colorType;
-        }
+        //}
     }
 
     private void SwapColor() {

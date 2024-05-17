@@ -64,10 +64,6 @@ public class PaintBody : MonoBehaviour
     private GameObject defaultBody;
     [SerializeField] private BodyPartsSprites m_DefaultBodyPartsSprites;
 
-    private int bodyChildCount;
-
-    private ColorType lastColor = ColorType.Default;
-
     private void Awake()
     {
         defaultHead = currentHeadSprite;
@@ -76,48 +72,35 @@ public class PaintBody : MonoBehaviour
 
     private void PaintPlayer(ColorType color) {
         
-        if (color != lastColor)
+        switch (color)
         {
-            switch (color)
-            {
-                case ColorType.Water:
-                    Debug.Log("Water");
-                    ChangeColors(m_WaterBodyPartsSprites);
-                    currentHeadSprite = waterHead;
-                    currentBodySprite = waterBody;
-                    /*ChangeColors(currentHeadSprite, waterHead);
-                    ChangeColors(currentBodySprite, waterBody);*/
-                    break;
+            case ColorType.Water:
+                Debug.Log("Water");
+                ChangeColors(m_WaterBodyPartsSprites);
+                currentHeadSprite = waterHead;
+                currentBodySprite = waterBody;
+                break;
 
-                case ColorType.Elastic:
-                    Debug.Log("Elastic");
-                    ChangeColors(m_BounceBodyPartsSprites);
-                    currentHeadSprite = bounceHead;
-                    currentBodySprite = bounceBody;
-                    /*ChangeColors(currentHeadSprite, bounceHead);
-                    ChangeColors(currentBodySprite, bounceBody);*/
-                    break;
+            case ColorType.Elastic:
+                Debug.Log("Elastic");
+                ChangeColors(m_BounceBodyPartsSprites);
+                currentHeadSprite = bounceHead;
+                currentBodySprite = bounceBody;
+                break;
 
-                case ColorType.Strech:
-                    Debug.Log("Strech");
-                    ChangeColors(m_StrechBodyPartsSprites);
-                    currentHeadSprite = strechtHead;
-                    currentBodySprite = strechBody;
-                    /*ChangeColors(currentHeadSprite, strechtHead);
-                    ChangeColors(currentBodySprite, strechBody);*/
-                    break;
+            case ColorType.Strech:
+                Debug.Log("Strech");
+                ChangeColors(m_StrechBodyPartsSprites);
+                currentHeadSprite = strechtHead;
+                currentBodySprite = strechBody;
+                break;
 
-                default:
-                    Debug.Log("Default");
-                    ChangeColors(m_DefaultBodyPartsSprites);
-                    currentHeadSprite = defaultHead;
-                    currentBodySprite = defaultBody;
-                    /*ChangeColors(currentHeadSprite, defaultHead);
-                    ChangeColors(currentBodySprite, defaultBody);*/
-                    break;
-            }
-
-            lastColor = color;
+            default:
+                Debug.Log("Default");
+                ChangeColors(m_DefaultBodyPartsSprites);
+                currentHeadSprite = defaultHead;
+                currentBodySprite = defaultBody;
+                break;
         }
     }
 
@@ -138,20 +121,6 @@ public class PaintBody : MonoBehaviour
         m_BodyPartsSpriteRenderer.m_Capa6.sprite = _BodyPartsSprites.m_Capa6;
         m_BodyPartsSpriteRenderer.m_Capa8.sprite = _BodyPartsSprites.m_Capa8;
 
-    }
-
-    private void ChangeColors(GameObject target, GameObject changeSprite) {
-        bodyChildCount = target.transform.childCount;
-        for (int i = 0; i < bodyChildCount; i++)
-        {
-            Debug.Log(i);
-
-            SpriteRenderer currentChild = target.transform.GetChild(i).gameObject.GetComponent<SpriteRenderer>();
-            SpriteRenderer changeChild = changeSprite.transform.GetChild(i).gameObject.GetComponent<SpriteRenderer>();
-
-            if (currentChild != null && changeChild != null)
-                currentChild.sprite = changeChild.sprite;
-        }
     }
 
     private void OnEnable()

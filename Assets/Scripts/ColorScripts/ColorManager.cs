@@ -69,26 +69,26 @@ public class ColorManager : MonoBehaviour
         }
     }
 
-    public Color GetColor(ColorType colorType) {
-        switch (colorType)
-        {
+    //public Color GetColor(ColorType colorType) {
+    //    switch (colorType)
+    //    {
 
-            case ColorType.Elastic:
-                return elasticColor;
+    //        case ColorType.Elastic:
+    //            return elasticColor;
 
-            case ColorType.Water:
-                return waterColor;
+    //        case ColorType.Water:
+    //            return waterColor;
 
-            case ColorType.Strech:
-                return strechColor;
+    //        case ColorType.Strech:
+    //            return strechColor;
 
-            case ColorType.Default:
-                return Color.white;
+    //        case ColorType.Default:
+    //            return Color.white;
 
-            default:
-                throw new ArgumentException("Color no soportado", nameof(colorType));
-        }
-    }
+    //        default:
+    //            throw new ArgumentException("Color no soportado", nameof(colorType));
+    //    }
+    //}
 
     public bool GetAssigneds(ColorType colorType)
     {

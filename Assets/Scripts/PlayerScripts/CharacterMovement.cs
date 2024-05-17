@@ -112,14 +112,14 @@ public class CharacterMovement : MonoBehaviour
                 isGrounded = true;
                 if (collider.gameObject.GetComponent<ObstacleEffectLogic>().getCurrentColorType() != ColorType.Elastic)
                     lastJumpPosition = transform.position;
-                //if (collider.gameObject.GetComponent<ObstacleEffectLogic>().GetLastColorType() == ColorType.Strech)
-                //{
-                //    transform.parent = collider.transform.parent;
-                //}
-                //else
-                //{
-                //    transform.parent = null;
-                //}
+                if (collider.gameObject.GetComponent<ObstacleEffectLogic>().LastColorTypeWasStrech())
+                {
+                    transform.parent = collider.transform.parent;
+                }
+                else
+                {
+                    transform.parent = null;
+                }
             }
         }
 

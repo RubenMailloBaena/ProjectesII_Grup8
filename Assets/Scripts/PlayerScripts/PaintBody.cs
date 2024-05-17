@@ -64,6 +64,8 @@ public class PaintBody : MonoBehaviour
     private GameObject defaultBody;
     [SerializeField] private BodyPartsSprites m_DefaultBodyPartsSprites;
 
+    private ColorType lastColor = ColorType.Default;
+
     private void Awake()
     {
         defaultHead = currentHeadSprite;
@@ -71,36 +73,39 @@ public class PaintBody : MonoBehaviour
     }
 
     private void PaintPlayer(ColorType color) {
-        
-        switch (color)
-        {
-            case ColorType.Water:
-                Debug.Log("Water");
-                ChangeColors(m_WaterBodyPartsSprites);
-                currentHeadSprite = waterHead;
-                currentBodySprite = waterBody;
-                break;
 
-            case ColorType.Elastic:
-                Debug.Log("Elastic");
-                ChangeColors(m_BounceBodyPartsSprites);
-                currentHeadSprite = bounceHead;
-                currentBodySprite = bounceBody;
-                break;
+        if (lastColor != color) {
+            switch (color)
+            {
+                case ColorType.Water:
+                    Debug.Log("Water");
+                    ChangeColors(m_WaterBodyPartsSprites);
+                    currentHeadSprite = waterHead;
+                    currentBodySprite = waterBody;
+                    break;
 
-            case ColorType.Strech:
-                Debug.Log("Strech");
-                ChangeColors(m_StrechBodyPartsSprites);
-                currentHeadSprite = strechtHead;
-                currentBodySprite = strechBody;
-                break;
+                case ColorType.Elastic:
+                    Debug.Log("Elastic");
+                    ChangeColors(m_BounceBodyPartsSprites);
+                    currentHeadSprite = bounceHead;
+                    currentBodySprite = bounceBody;
+                    break;
 
-            default:
-                Debug.Log("Default");
-                ChangeColors(m_DefaultBodyPartsSprites);
-                currentHeadSprite = defaultHead;
-                currentBodySprite = defaultBody;
-                break;
+                case ColorType.Strech:
+                    Debug.Log("Strech");
+                    ChangeColors(m_StrechBodyPartsSprites);
+                    currentHeadSprite = strechtHead;
+                    currentBodySprite = strechBody;
+                    break;
+
+                default:
+                    Debug.Log("Default");
+                    ChangeColors(m_DefaultBodyPartsSprites);
+                    currentHeadSprite = defaultHead;
+                    currentBodySprite = defaultBody;
+                    break;
+            }
+            lastColor = color;
         }
     }
 

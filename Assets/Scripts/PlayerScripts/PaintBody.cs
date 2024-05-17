@@ -14,6 +14,10 @@ public class PaintBody : MonoBehaviour
     [SerializeField] private GameObject strechtHead;
     [SerializeField] private GameObject strechBody;
 
+    [Header("BOUNCE SPRITES")]
+    [SerializeField] private GameObject bounceHead;
+    [SerializeField] private GameObject bounceBody;
+
     //[Header("DEFAULT SPRITES")]
     private GameObject defaultHead;
     private GameObject defaultBody;
@@ -38,9 +42,15 @@ public class PaintBody : MonoBehaviour
                     break;
 
                 case ColorType.Elastic:
+                    Debug.Log("Elastic");
+                    ChangeColors(currentHeadSprite, bounceHead);
+                    ChangeColors(currentBodySprite, bounceBody);
+                    currentHeadSprite = bounceHead;
+                    currentBodySprite = bounceBody;
                     break;
 
                 case ColorType.Strech:
+                    Debug.Log("Strech");
                     ChangeColors(currentHeadSprite, strechtHead);
                     ChangeColors(currentBodySprite, strechBody);
                     currentHeadSprite = strechtHead;
@@ -48,6 +58,7 @@ public class PaintBody : MonoBehaviour
                     break;
 
                 default:
+                    Debug.Log("Default");
                     ChangeColors(currentHeadSprite, defaultHead);
                     ChangeColors(currentBodySprite, defaultBody);
                     currentHeadSprite = defaultHead;
@@ -63,6 +74,8 @@ public class PaintBody : MonoBehaviour
         bodyChildCount = target.transform.childCount;
         for (int i = 0; i < bodyChildCount; i++)
         {
+            Debug.Log(i);
+
             SpriteRenderer currentChild = target.transform.GetChild(i).gameObject.GetComponent<SpriteRenderer>();
             SpriteRenderer changeChild = changeSprite.transform.GetChild(i).gameObject.GetComponent<SpriteRenderer>();
 

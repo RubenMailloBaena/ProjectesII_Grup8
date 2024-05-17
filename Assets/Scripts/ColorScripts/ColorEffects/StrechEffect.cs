@@ -27,12 +27,12 @@ public class StrechEffect : IStrechEffect
     private bool doneRevertingEffect = false;
     private bool revertedColor = false;
 
-    private float colXsize = 0.7f;
-    private float colYsize = 2;
+    private float colXsize;
+    private float colYsize;
     private Collider2D[] colliders = new Collider2D[1];
     private RaycastHit2D[] hits = new RaycastHit2D[1];
 
-    public StrechEffect(Color color, ColorType colorType, float multiplier, float inverseStrechMultiplier, float extendSpriteVelocity, float colXsize, LayerMask layerMask)
+    public StrechEffect(Color color, ColorType colorType, float multiplier, float inverseStrechMultiplier, float extendSpriteVelocity, float colXsize, float colYSize, LayerMask layerMask)
     {
         effectColor = color;
         this.colorType = colorType;
@@ -40,6 +40,7 @@ public class StrechEffect : IStrechEffect
         this.layerMask = layerMask;
         this.inverseStrechMultiplier = inverseStrechMultiplier;
         this.colXsize = colXsize;
+        this.colYsize = colYsize;
         this.extendSpriteVelocity = extendSpriteVelocity;
     }
 

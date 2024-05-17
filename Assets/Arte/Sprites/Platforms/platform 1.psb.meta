@@ -295,13 +295,13 @@ ScriptedImporter:
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 59, y: 55, z: 56, w: 57}
     rect:
       serializedVersion: 2
-      x: 352
-      y: 685
-      width: 160
-      height: 155
+      x: 355
+      y: 688
+      width: 154
+      height: 148
     spriteID: ddb448a5eae44dc4c897cd8a53276baa
     spriteBone: []
     spriteOutline: []
@@ -311,7 +311,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 352, y: 685}
+    uvTransform: {x: 355, y: 688}
     spritePosition: {x: 0, y: 0}
   - name: platform 1_10
     originalName: 

@@ -327,6 +327,8 @@ MonoBehaviour:
   strechBody: {fileID: -8653719598885068355, guid: 6afe861f53875274ea541ced6b655285, type: 3}
   bounceHead: {fileID: -8653719598885068355, guid: 3b1c576a3c71b2142bab4822be788808, type: 3}
   bounceBody: {fileID: -8653719598885068355, guid: bcca54819607ac64cb18541e711aa2c5, type: 3}
+  waterHead: {fileID: -8653719598885068355, guid: 81214bc4ad9f71846bfa51bfcdd109e2, type: 3}
+  waterBody: {fileID: -8653719598885068355, guid: 3ae304fb4ac631540a3045f7dc2bbfd4, type: 3}
 --- !u!114 &1594624562852565711
 MonoBehaviour:
   m_ObjectHideFlags: 0

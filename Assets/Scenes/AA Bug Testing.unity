@@ -21257,10 +21257,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3336242206432462138, guid: 35c88b3923127f549b98fe3fda96b355, type: 3}
-      propertyPath: canUseWater
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35c88b3923127f549b98fe3fda96b355, type: 3}
 --- !u!4 &418521635 stripped

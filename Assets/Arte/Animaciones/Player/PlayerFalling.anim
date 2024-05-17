@@ -309,7 +309,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0, y: 0, z: 99.769}
+        value: {x: 0, y: 0, z: 94.079}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -319,8 +319,8 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.4
         value: {x: 0, y: 0, z: 89.23042}
-        inSlope: {x: 0, y: 0, z: -32.026}
-        outSlope: {x: 0, y: 0, z: -32.026}
+        inSlope: {x: 0, y: 0, z: -20.646011}
+        outSlope: {x: 0, y: 0, z: -20.646011}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
@@ -343,7 +343,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0, y: 0, z: -3.756}
+        value: {x: 0, y: 0, z: 3.398}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -684,7 +684,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.55791795, y: 0.7228277, z: 0.010000011}
+        value: {x: -0.59742635, y: 1.5327355, z: 0.010000016}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -1837,7 +1837,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.55791795
+        value: -0.59742635
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -1874,7 +1874,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.7228277
+        value: 1.5327355
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -1911,7 +1911,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.010000011
+        value: 0.010000016
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -4104,7 +4104,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 99.769
+        value: 94.079
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -4114,8 +4114,8 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.4
         value: 89.23042
-        inSlope: -32.026
-        outSlope: -32.026
+        inSlope: -20.646011
+        outSlope: -20.646011
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
@@ -4353,7 +4353,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -3.756
+        value: 3.398
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -7081,7 +7081,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Pelv
+    path: Pelv/cos
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -7091,7 +7091,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Pelv
+    path: Pelv/cos
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -7101,7 +7101,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Pelv
+    path: Pelv/cos
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -7170,8 +7170,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Pelv/cos
+    attribute: m_LocalEulerAngles.z
+    path: "Pelv/cos/torax/bra\xE7D/ambD/MaD"
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -7181,7 +7181,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Pelv/cos
+    path: "Pelv/cos/torax/bra\xE7D/ambD/MaD"
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -7190,8 +7190,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: Pelv/cos
+    attribute: m_LocalEulerAngles.x
+    path: "Pelv/cos/torax/bra\xE7D/ambD/MaD"
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -7231,7 +7231,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: "Pelv/cos/torax/bra\xE7D/ambD/MaD"
+    path: Pelv
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -7241,7 +7241,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: "Pelv/cos/torax/bra\xE7D/ambD/MaD"
+    path: Pelv
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -7251,7 +7251,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: "Pelv/cos/torax/bra\xE7D/ambD/MaD"
+    path: Pelv
     classID: 4
     script: {fileID: 0}
   m_HasGenericRootTransform: 0

@@ -116,7 +116,8 @@ public class CharacterMovement : MonoBehaviour
                 //{
                 //    transform.parent = collider.transform.parent;
                 //}
-                //else {
+                //else
+                //{
                 //    transform.parent = null;
                 //}
             }

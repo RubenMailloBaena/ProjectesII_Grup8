@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class ElasticEffect : IElasticEffect
 {
@@ -10,16 +11,18 @@ public class ElasticEffect : IElasticEffect
 
     private float minImpulse;
     private float hightMultiplier;
+    private float distanceMultiplier;
 
     private Color previousColor;
     private GameObject obstacle;
 
-    public ElasticEffect(Color color, ColorType colorType, float minImpulse, float hightMultiplier)
+    public ElasticEffect(Color color, ColorType colorType, float minImpulse, float hightMultiplier, float distanceMultiplier)
     {
         effectColor = color;
         this.colorType = colorType;
         this.minImpulse = minImpulse;
         this.hightMultiplier = hightMultiplier;
+        this.distanceMultiplier = this.distanceMultiplier;
     }
 
 
@@ -45,8 +48,10 @@ public class ElasticEffect : IElasticEffect
         {
             totalForce = 70;
         }
-        
-        rb.velocity = player.transform.up * totalForce;
+
+        rb.velocity = new Vector2(distanceMultiplier*100, totalForce);
+
+       // rb.velocity = player.transform.up * totalForce;
 
 
     }

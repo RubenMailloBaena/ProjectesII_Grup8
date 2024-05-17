@@ -20,6 +20,7 @@ public class ColorManager : MonoBehaviour
     [Header("ELASTIC")]
     [SerializeField] private float elasticMinImpulse;
     [SerializeField] private float elasticHeightMultiplier;
+    [SerializeField] private float elasticDistanceMultiplier;
 
     //Stretch
     [Header("STRECH")]
@@ -46,7 +47,7 @@ public class ColorManager : MonoBehaviour
                 if (elasticAssigned)
                     return DefaultObject;
                 elasticAssigned = true;
-                return new ElasticEffect(elasticColor, ColorType.Elastic, elasticMinImpulse, elasticHeightMultiplier);
+                return new ElasticEffect(elasticColor, ColorType.Elastic, elasticMinImpulse, elasticHeightMultiplier,elasticDistanceMultiplier);
 
             case ColorType.Water:
                 if (waterAssigned)
@@ -62,27 +63,6 @@ public class ColorManager : MonoBehaviour
 
             case ColorType.Default:
                 return DefaultObject;
-
-            default:
-                throw new ArgumentException("Color no soportado", nameof(colorType));
-        }
-    }
-
-    public Color GetColor(ColorType colorType) {
-        switch (colorType)
-        {
-
-            case ColorType.Elastic:
-                return elasticColor;
-
-            case ColorType.Water:
-                return waterColor;
-
-            case ColorType.Strech:
-                return strechColor;
-
-            case ColorType.Default:
-                return Color.white;
 
             default:
                 throw new ArgumentException("Color no soportado", nameof(colorType));

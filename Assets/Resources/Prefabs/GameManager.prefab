@@ -71,6 +71,7 @@ MonoBehaviour:
   strechColor: {r: 0.82641506, g: 0.8215438, b: 0.19802772, a: 1}
   elasticMinImpulse: 2.5
   elasticHeightMultiplier: 8
+  elasticDistanceMultiplier: 2
   stretchMultiplier: 0.2
   inverseStrechMultiplier: 0.1
   extendableSpriteVelocity: 0.5

@@ -78,9 +78,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 0
       y: 0
-      width: 1366
-      height: 514
-    spriteID: 375c78e8bffd5e04a8f0f717f49dc710
+      width: 1024
+      height: 386
+    spriteID: 983a3ea27fb55d7419b587fc537a5fa4
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -102,9 +102,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 1366
-      height: 514
-    spriteID: d4c8b603e1519304c8e506aff4356986
+      width: 10039
+      height: 3780
+    spriteID: b12afcdbfeaf1a64ebe28a9a452a0ae1
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -131,10 +131,10 @@ ScriptedImporter:
   platformSettings:
   - name: DefaultTexturePlatform
     overridden: 0
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     forceMaximumCompressionQuality_BC6H_BC7: 0
     crunchedCompression: 0
@@ -173,8 +173,8 @@ ScriptedImporter:
     spriteName: Cielo
     isGroup: 0
     parentIndex: -1
-    spriteID: d4c8b603e1519304c8e506aff4356986
-    layerID: 2
+    spriteID: b12afcdbfeaf1a64ebe28a9a452a0ae1
+    layerID: 3
     mosaicPosition: {x: 4, y: 4}
     flatten: 0
     isImported: 1

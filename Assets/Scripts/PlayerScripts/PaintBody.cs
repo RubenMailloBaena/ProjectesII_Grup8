@@ -18,6 +18,10 @@ public class PaintBody : MonoBehaviour
     [SerializeField] private GameObject bounceHead;
     [SerializeField] private GameObject bounceBody;
 
+    [Header("WATER SPRITES")]
+    [SerializeField] private GameObject waterHead;
+    [SerializeField] private GameObject waterBody;
+
     //[Header("DEFAULT SPRITES")]
     private GameObject defaultHead;
     private GameObject defaultBody;
@@ -39,6 +43,11 @@ public class PaintBody : MonoBehaviour
             switch (color)
             {
                 case ColorType.Water:
+                    Debug.Log("Water");
+                    ChangeColors(currentHeadSprite, waterHead);
+                    ChangeColors(currentBodySprite, waterBody);
+                    currentHeadSprite = waterHead;
+                    currentBodySprite = waterBody;
                     break;
 
                 case ColorType.Elastic:

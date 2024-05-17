@@ -20,6 +20,7 @@ public class ColorManager : MonoBehaviour
     [Header("ELASTIC")]
     [SerializeField] private float elasticMinImpulse;
     [SerializeField] private float elasticHeightMultiplier;
+    [SerializeField] private float elasticDistanceMultiplier;
 
     //Stretch
     [Header("STRECH")]
@@ -46,7 +47,7 @@ public class ColorManager : MonoBehaviour
                 if (elasticAssigned)
                     return DefaultObject;
                 elasticAssigned = true;
-                return new ElasticEffect(elasticColor, ColorType.Elastic, elasticMinImpulse, elasticHeightMultiplier);
+                return new ElasticEffect(elasticColor, ColorType.Elastic, elasticMinImpulse, elasticHeightMultiplier,elasticDistanceMultiplier);
 
             case ColorType.Water:
                 if (waterAssigned)

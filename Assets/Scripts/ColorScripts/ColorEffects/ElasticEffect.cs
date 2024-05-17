@@ -48,8 +48,10 @@ public class ElasticEffect : IElasticEffect
         {
             totalForce = 70;
         }
-        
-        rb.velocity = player.transform.up * totalForce;
+
+        rb.velocity = new Vector2(distanceMultiplier*100, totalForce);
+
+       // rb.velocity = player.transform.up * totalForce;
 
 
     }

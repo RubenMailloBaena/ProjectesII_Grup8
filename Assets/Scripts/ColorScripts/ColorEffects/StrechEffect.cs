@@ -31,8 +31,8 @@ public class StrechEffect : IStrechEffect
     private float colYsize = 2;
     private Collider2D[] colliders = new Collider2D[1];
     private RaycastHit2D[] hits = new RaycastHit2D[1];
-        
-    public StrechEffect(Color color, ColorType colorType, float multiplier, float inverseStrechMultiplier, float extendSpriteVelocity, float colXsize,LayerMask layerMask)
+
+    public StrechEffect(Color color, ColorType colorType, float multiplier, float inverseStrechMultiplier, float extendSpriteVelocity, float colXsize, LayerMask layerMask)
     {
         effectColor = color;
         this.colorType = colorType;
@@ -51,7 +51,8 @@ public class StrechEffect : IStrechEffect
         initialScale = target.GetComponent<ObstacleEffectLogic>().getInitialScale();
     }
 
-    private void getAllObstacleObjects(GameObject currentObstacle) {
+    private void getAllObstacleObjects(GameObject currentObstacle)
+    {
         this.currentObstacle = currentObstacle;
         parentObject = currentObstacle.transform.parent.transform.parent.gameObject;
         topSprite = parentObject.transform.Find("Sprite Holder/TopSprite").gameObject;
@@ -66,23 +67,27 @@ public class StrechEffect : IStrechEffect
             StrechObject(false);
     }
 
-    private void StrechObject(bool inverted) {
+    private void StrechObject(bool inverted)
+    {
         int obstacleRotation = (int)parentObject.transform.eulerAngles.z;
         Vector2 collisionPosition = Vector2.zero;
         Vector2 collisionSize = Vector2.zero;
 
-        switch (obstacleRotation) {
+        switch (obstacleRotation)
+        {
 
             case 90: //izquierda
                 //CURRENT OBSTACLE
-                if (!inverted){
+                if (!inverted)
+                {
                     movingPart.transform.position = new Vector2(movingPart.transform.position.x - (stretchAmount / 2), movingPart.transform.position.y);
 
                     //sprite
                     extendablePart.transform.position = new Vector2(extendablePart.transform.position.x - (stretchAmount / 2), extendablePart.transform.position.y);
                     topSprite.transform.position = new Vector2(topSprite.transform.position.x - stretchAmount, topSprite.transform.position.y);
                 }
-                else {
+                else
+                {
                     movingPart.transform.position = new Vector2(movingPart.transform.position.x + (inverseStrechMultiplier / 2), movingPart.transform.position.y);
 
                     //sprite
@@ -99,14 +104,16 @@ public class StrechEffect : IStrechEffect
 
             case 180: //abajo
                 //CURRENT OBSTACLE
-                if (!inverted){
+                if (!inverted)
+                {
                     movingPart.transform.position = new Vector2(movingPart.transform.position.x, movingPart.transform.position.y - (stretchAmount / 2));
 
                     //sprite
                     extendablePart.transform.position = new Vector2(extendablePart.transform.position.x, extendablePart.transform.position.y - (stretchAmount / 2));
                     topSprite.transform.position = new Vector2(topSprite.transform.position.x, topSprite.transform.position.y - stretchAmount);
                 }
-                else {
+                else
+                {
                     movingPart.transform.position = new Vector2(movingPart.transform.position.x, movingPart.transform.position.y + (inverseStrechMultiplier / 2));
 
                     //sprite
@@ -116,7 +123,7 @@ public class StrechEffect : IStrechEffect
 
                 //COLLIDER TO STOP
                 collisionPosition = new Vector2(currentObstacle.transform.position.x, currentObstacle.transform.position.y - (colYsize / 2) - (stretchAmount / 2));
-                collisionSize = new Vector2(currentObstacle.transform.localScale.x * colXsize, currentObstacle.transform.localScale.y - colYsize );
+                collisionSize = new Vector2(currentObstacle.transform.localScale.x * colXsize, currentObstacle.transform.localScale.y - colYsize);
                 colliders = Physics2D.OverlapBoxAll(collisionPosition, collisionSize, 0, layerMask);
                 hits = new RaycastHit2D[0];
 
@@ -125,14 +132,16 @@ public class StrechEffect : IStrechEffect
 
             case 270: //derecha
                 //CURRENT OBSTACLE
-                if (!inverted) {
+                if (!inverted)
+                {
                     movingPart.transform.position = new Vector2(movingPart.transform.position.x + (stretchAmount / 2), movingPart.transform.position.y);
 
                     //sprite
                     extendablePart.transform.position = new Vector2(extendablePart.transform.position.x + (stretchAmount / 2), extendablePart.transform.position.y);
                     topSprite.transform.position = new Vector2(topSprite.transform.position.x + stretchAmount, topSprite.transform.position.y);
                 }
-                else {
+                else
+                {
                     movingPart.transform.position = new Vector2(movingPart.transform.position.x - (inverseStrechMultiplier / 2), movingPart.transform.position.y);
 
                     //sprite
@@ -148,14 +157,16 @@ public class StrechEffect : IStrechEffect
 
             default: //arriba
                 //CURRENT OBSTACLE
-                if (!inverted) {
+                if (!inverted)
+                {
                     movingPart.transform.position = new Vector2(movingPart.transform.position.x, movingPart.transform.position.y + (stretchAmount / 2));
 
                     //sprite
-                    extendablePart.transform.position = new Vector2(extendablePart.transform.position.x, extendablePart.transform.position.y + (stretchAmount/2));
+                    extendablePart.transform.position = new Vector2(extendablePart.transform.position.x, extendablePart.transform.position.y + (stretchAmount / 2));
                     topSprite.transform.position = new Vector2(topSprite.transform.position.x, topSprite.transform.position.y + stretchAmount);
                 }
-                else {
+                else
+                {
                     movingPart.transform.position = new Vector2(movingPart.transform.position.x, movingPart.transform.position.y - (inverseStrechMultiplier / 2));
 
                     //sprite
@@ -165,7 +176,7 @@ public class StrechEffect : IStrechEffect
 
                 //COLLIDER TO STOP
                 collisionPosition = new Vector2(currentObstacle.transform.position.x, currentObstacle.transform.position.y + (colYsize / 2) + (stretchAmount / 2));
-                collisionSize = new Vector2(currentObstacle.transform.localScale.x * colXsize, currentObstacle.transform.localScale.y - colYsize );
+                collisionSize = new Vector2(currentObstacle.transform.localScale.x * colXsize, currentObstacle.transform.localScale.y - colYsize);
                 colliders = Physics2D.OverlapBoxAll(collisionPosition, collisionSize, 0, layerMask);
                 hits = new RaycastHit2D[0];
 
@@ -173,12 +184,14 @@ public class StrechEffect : IStrechEffect
 
         }
 
-        if (!inverted) { 
+        if (!inverted)
+        {
             currentObstacle.transform.localScale = new Vector2(currentObstacle.transform.localScale.x, currentObstacle.transform.localScale.y + stretchAmount);
 
             extendableSprite.size = new Vector2(extendableSprite.size.x, extendableSprite.size.y + extendSpriteVelocity);
         }
-        else { 
+        else
+        {
             currentObstacle.transform.localScale = new Vector2(currentObstacle.transform.localScale.x, currentObstacle.transform.localScale.y - inverseStrechMultiplier);
 
             extendableSprite.size = new Vector2(extendableSprite.size.x, extendableSprite.size.y - (extendSpriteVelocity / 2));
@@ -198,14 +211,16 @@ public class StrechEffect : IStrechEffect
         {
             StrechObject(true);
         }
-        else {
+        else
+        {
             doneRevertingEffect = true;
         }
     }
 
 
-    public bool getRevertingEffect() {
-        return doneRevertingEffect;    
+    public bool getRevertingEffect()
+    {
+        return doneRevertingEffect;
     }
 
     public ColorType getColorType()

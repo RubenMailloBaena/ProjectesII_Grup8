@@ -148,6 +148,12 @@ public class ObstacleEffectLogic : MonoBehaviour
         return currentColorType;
     }
 
+    public bool LastColorTypeWasStrech() {
+        if (lastStrechEffect != null)
+            return true;
+        return false;
+    }
+
 
     private void RemoveAllEffects(ColorType colorType)
     {

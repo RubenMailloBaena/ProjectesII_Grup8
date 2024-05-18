@@ -11,7 +11,7 @@ public class ElasticEffect : IElasticEffect
 
     private float minImpulse;
     private float hightMultiplier;
-    private float distanceMultiplier = 20f;
+    private float distanceMultiplier;
 
     private Color previousColor;
     private GameObject obstacle;
@@ -22,7 +22,7 @@ public class ElasticEffect : IElasticEffect
         this.colorType = colorType;
         this.minImpulse = minImpulse;
         this.hightMultiplier = hightMultiplier;
-        this.distanceMultiplier = this.distanceMultiplier;
+        this.distanceMultiplier = distanceMultiplier;
     }
 
 
@@ -41,19 +41,18 @@ public class ElasticEffect : IElasticEffect
         float jumpHeight = Mathf.Abs(player.GetComponent<CharacterMovement>().getLastJumpPosition().y 
             - (obstacle.transform.position.y + obstacle.transform.localScale.y / 2));
 
+       
+        float verticalForce = minImpulse + (jumpHeight * hightMultiplier);
         
-        float totalForce = minImpulse + (jumpHeight * hightMultiplier);
-        
-        if (totalForce >= 150)
+        if (verticalForce >= 150)
         {
-            totalForce = 70;
+            verticalForce = 70;
         }
-        Debug.Log("Jump Height: " + jumpHeight);
-        Debug.Log("Total Force: " + totalForce);
-        Debug.Log("Horizontal Force: " + distanceMultiplier);
-        rb.velocity = new Vector2(distanceMultiplier*100, totalForce);
 
-       // rb.velocity = player.transform.up * totalForce;
+
+        float horizontalForce = distanceMultiplier*100000;
+
+        rb.velocity = new Vector2(horizontalForce, verticalForce);
 
 
     }

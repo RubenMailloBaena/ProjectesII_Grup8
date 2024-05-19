@@ -26699,11 +26699,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &982829448 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8177790636767961018, guid: 5b455cd4e282cf44b83adac97975589b, type: 3}
-  m_PrefabInstance: {fileID: 1855722597}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &992363349 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2290810332546613400, guid: 218ea856edaaaec41929b41fc16042ae, type: 3}
@@ -28725,7 +28720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1629737116110616652, guid: f6df4e37f62592a40826f95ba4f6fdd2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.677629
+      value: 74.2
       objectReference: {fileID: 0}
     - target: {fileID: 1629737116110616652, guid: f6df4e37f62592a40826f95ba4f6fdd2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -29558,21 +29553,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 426513708971474920, guid: 5b455cd4e282cf44b83adac97975589b, type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 426513708971474921, guid: 5b455cd4e282cf44b83adac97975589b, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 426513708971474921, guid: 5b455cd4e282cf44b83adac97975589b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 84.456604
+      value: 83.64
       objectReference: {fileID: 0}
     - target: {fileID: 426513708971474921, guid: 5b455cd4e282cf44b83adac97975589b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.3954926
+      value: -2.54
       objectReference: {fileID: 0}
     - target: {fileID: 426513708971474921, guid: 5b455cd4e282cf44b83adac97975589b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -29610,18 +29601,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NextLevelDoor
       objectReference: {fileID: 0}
-    - target: {fileID: 426513708971474927, guid: 5b455cd4e282cf44b83adac97975589b, type: 3}
-      propertyPath: firstLevel
-      value: TutorialBounce
-      objectReference: {fileID: 0}
-    - target: {fileID: 426513708971474927, guid: 5b455cd4e282cf44b83adac97975589b, type: 3}
-      propertyPath: nextLevelName
-      value: TutorialStretch
-      objectReference: {fileID: 0}
-    - target: {fileID: 426513708971474927, guid: 5b455cd4e282cf44b83adac97975589b, type: 3}
-      propertyPath: doorGameObject
-      value: 
-      objectReference: {fileID: 982829448}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b455cd4e282cf44b83adac97975589b, type: 3}
 --- !u!1 &1890854267
@@ -30163,7 +30142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3336242206432462134, guid: 35c88b3923127f549b98fe3fda96b355, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -94.3
+      value: 64.8
       objectReference: {fileID: 0}
     - target: {fileID: 3336242206432462134, guid: 35c88b3923127f549b98fe3fda96b355, type: 3}
       propertyPath: m_LocalPosition.y

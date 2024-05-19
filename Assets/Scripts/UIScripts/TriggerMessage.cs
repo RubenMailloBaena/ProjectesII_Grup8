@@ -20,6 +20,14 @@ public class TriggerMessage : MonoBehaviour
         }
     }
 
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            HideMessage();
+        }
+    }
+
 
     void ShowMessage()
     {
@@ -27,16 +35,14 @@ public class TriggerMessage : MonoBehaviour
         {
             messageText.text = message;
             messageText.enabled = true;
-            Invoke("HideMessage", 3f); 
+            Invoke("HideMessage", 4f); 
         }
     }
 
     void HideMessage()
     {
-        if (messageText != null)
-        {
             messageText.enabled = false;
-        }
+        
     }
 }
 

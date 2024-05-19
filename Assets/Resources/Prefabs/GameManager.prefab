@@ -72,7 +72,7 @@ MonoBehaviour:
   elasticDistanceMultiplier: 0
   stretchMultiplier: 0.2
   inverseStrechMultiplier: 0.1
-  extendableSpriteVelocity: 0.5
+  extendableSpriteVelocity: 0.4
   collisionSize: 0.7
   colYSize: 2
   strechLayerMask:

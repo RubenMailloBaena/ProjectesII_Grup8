@@ -4030,30 +4030,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 388703947}
     m_Modifications:
-    - target: {fileID: 1419596924599824962, guid: 385a23239ebccfc4ebc56c3ed85ba793, type: 3}
-      propertyPath: elasticMinImpulse
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1419596924599824962, guid: 385a23239ebccfc4ebc56c3ed85ba793, type: 3}
-      propertyPath: elasticHeightMultiplier
-      value: 5.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1419596924599824962, guid: 385a23239ebccfc4ebc56c3ed85ba793, type: 3}
-      propertyPath: elasticDistanceMultiplier
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1560776995438566935, guid: 385a23239ebccfc4ebc56c3ed85ba793, type: 3}
-      propertyPath: checkPoints.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1560776995438566935, guid: 385a23239ebccfc4ebc56c3ed85ba793, type: 3}
       propertyPath: checkPoints.Array.data[0]
       value: 
       objectReference: {fileID: 424342010}
-    - target: {fileID: 1560776995438566935, guid: 385a23239ebccfc4ebc56c3ed85ba793, type: 3}
-      propertyPath: checkPoints.Array.data[1]
-      value: 
-      objectReference: {fileID: 2042064696}
     - target: {fileID: 6348649749849883701, guid: 385a23239ebccfc4ebc56c3ed85ba793, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -49150,11 +49130,6 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5746148818331186750, guid: 4dce90b6db295c84283246ef9be56a09, type: 3}
   m_PrefabInstance: {fileID: 874345585}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2042064696 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2290810332546613400, guid: 218ea856edaaaec41929b41fc16042ae, type: 3}
-  m_PrefabInstance: {fileID: 558727892}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2042078470
 PrefabInstance:

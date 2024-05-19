@@ -35,7 +35,6 @@ public class ObstacleEffectLogic : MonoBehaviour
             currentColorEffect = colorEffect;
             currentColorEffect.InitializeEffect(gameObject);
             currentColorType = currentColorEffect.getColorType();
-
         }
         else
         {
@@ -70,10 +69,7 @@ public class ObstacleEffectLogic : MonoBehaviour
     {
         StrechEffect();
         RevertStrechEffect();
-
         CheckPlayerDistance();
-
-        WaterEffect();
     }
 
     private void CheckPlayerDistance()
@@ -128,15 +124,36 @@ public class ObstacleEffectLogic : MonoBehaviour
     }
 
     //WATER LOGIC
-    private void WaterEffect() {
+    private void OnTriggerEnter2D(Collider2D other)
+    {
         if (currentColorEffect != null) {
-            if (currentColorType == ColorType.Water) {
+            if (currentColorType == ColorType.Water && other.gameObject.CompareTag("Player")) {
                 IWaterEffect effect = currentColorEffect as IWaterEffect;
-                effect.ApplyEffect();
+                effect.ApplyEffect(true);
             }
         }
     }
-   
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (currentColorEffect != null) {
+            if (currentColorType == ColorType.Water && other.gameObject.CompareTag("Player")) {
+                IWaterEffect effect = currentColorEffect as IWaterEffect;
+                effect.ApplyEffect(true);
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (currentColorEffect != null) {
+            if (currentColorType == ColorType.Water && other.gameObject.CompareTag("Player")) {
+                IWaterEffect effect = currentColorEffect as IWaterEffect;
+                effect.ApplyEffect(false);
+            }
+        }
+    }
+
 
     public Vector3 getInitialScale()
     {
@@ -167,6 +184,12 @@ public class ObstacleEffectLogic : MonoBehaviour
             Gizmos.color = Color.black;
             Vector3 direction = (player.transform.position - transform.position).normalized;
             Gizmos.DrawLine(transform.position, transform.position + direction * maxPlayerDistance);
+        }
+
+        if (currentColorType == ColorType.Water)
+        {
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawCube(transform.position, transform.localScale);
         }
     }
 

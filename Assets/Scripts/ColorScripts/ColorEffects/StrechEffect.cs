@@ -84,9 +84,15 @@ public class StrechEffect : IStrechEffect
                     movingPart.transform.position = new Vector2(movingPart.transform.position.x + (inverseStrechMultiplier / 2), movingPart.transform.position.y);
                 }
 
+                // //COLLIDER TO STOP
+                // hits = Physics2D.RaycastAll(currentObstacle.transform.position, currentObstacle.transform.up, currentObstacle.transform.localScale.y / 2, layerMask);
+                // colliders = new Collider2D[0];
+                
                 //COLLIDER TO STOP
-                hits = Physics2D.RaycastAll(currentObstacle.transform.position, currentObstacle.transform.up, currentObstacle.transform.localScale.y / 2, layerMask);
-                colliders = new Collider2D[0];
+                collisionPosition = new Vector2(currentObstacle.transform.position.x, currentObstacle.transform.position.y - (colYsize / 2) - (stretchAmount / 2));
+                collisionSize = new Vector2(currentObstacle.transform.localScale.x * colXsize, currentObstacle.transform.localScale.y - colYsize);
+                colliders = Physics2D.OverlapBoxAll(collisionPosition, collisionSize, 0, layerMask);
+                hits = new RaycastHit2D[0];
 
                 break;
 

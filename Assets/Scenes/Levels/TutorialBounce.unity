@@ -50269,18 +50269,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1855532399}
     m_Modifications:
-    - target: {fileID: 930164689430570486, guid: 0c78d4ebfb13af9478399800bd12f5d2, type: 3}
-      propertyPath: m_text
-      value: Color Pink allows you to jump more
-      objectReference: {fileID: 0}
-    - target: {fileID: 930164689430570486, guid: 0c78d4ebfb13af9478399800bd12f5d2, type: 3}
-      propertyPath: m_margin.z
-      value: -1057.1757
-      objectReference: {fileID: 0}
-    - target: {fileID: 930164689430570487, guid: 0c78d4ebfb13af9478399800bd12f5d2, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -502
-      objectReference: {fileID: 0}
     - target: {fileID: 930164690025587377, guid: 0c78d4ebfb13af9478399800bd12f5d2, type: 3}
       propertyPath: m_Name
       value: Canvas

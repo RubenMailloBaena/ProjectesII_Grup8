@@ -93,7 +93,6 @@ public class GameManager : MonoBehaviour
     private void PauseGame() {
         gamePaused = !gamePaused;
     }
-    
 
     private void OnEnable()
     {
@@ -104,6 +103,7 @@ public class GameManager : MonoBehaviour
     private void OnDisable()
     {
         CheckPoint.onCheckPoint -= nextCheckPoint;
-        PlayerInputs.Instance.onPauseGame -= PauseGame;
+        if(PlayerInputs.Instance != null) 
+            PlayerInputs.Instance.onPauseGame -= PauseGame;
     }
 }

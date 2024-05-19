@@ -124,32 +124,24 @@ public class ObstacleEffectLogic : MonoBehaviour
     }
 
     //WATER LOGIC
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (currentColorEffect != null) {
-            if (currentColorType == ColorType.Water && other.gameObject.CompareTag("Player")) {
-                IWaterEffect effect = currentColorEffect as IWaterEffect;
-                effect.ApplyEffect(true);
-            }
-        }
+    private void OnTriggerEnter2D(Collider2D other) {
+            ApplyWaterEffect(other, true);
     }
 
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if (currentColorEffect != null) {
-            if (currentColorType == ColorType.Water && other.gameObject.CompareTag("Player")) {
-                IWaterEffect effect = currentColorEffect as IWaterEffect;
-                effect.ApplyEffect(true);
-            }
-        }
+    private void OnTriggerStay2D(Collider2D other) {
+            ApplyWaterEffect(other, true);
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D other) {
+        ApplyWaterEffect(other, false);
+    }
+
+    private void ApplyWaterEffect(Collider2D other, bool entering)
     {
         if (currentColorEffect != null) {
             if (currentColorType == ColorType.Water && other.gameObject.CompareTag("Player")) {
                 IWaterEffect effect = currentColorEffect as IWaterEffect;
-                effect.ApplyEffect(false);
+                effect.ApplyEffect(entering);
             }
         }
     }

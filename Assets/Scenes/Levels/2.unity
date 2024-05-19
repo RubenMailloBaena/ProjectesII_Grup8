@@ -1996,12 +1996,24 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1560776995438566935, guid: 385a23239ebccfc4ebc56c3ed85ba793, type: 3}
+      propertyPath: delay
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1560776995438566935, guid: 385a23239ebccfc4ebc56c3ed85ba793, type: 3}
       propertyPath: animator
       value: 
       objectReference: {fileID: 593251292}
     - target: {fileID: 1560776995438566935, guid: 385a23239ebccfc4ebc56c3ed85ba793, type: 3}
       propertyPath: deathTime
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1560776995438566935, guid: 385a23239ebccfc4ebc56c3ed85ba793, type: 3}
+      propertyPath: changeTime
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1560776995438566935, guid: 385a23239ebccfc4ebc56c3ed85ba793, type: 3}
+      propertyPath: restoreSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1560776995438566935, guid: 385a23239ebccfc4ebc56c3ed85ba793, type: 3}
       propertyPath: checkPoints.Array.data[0]

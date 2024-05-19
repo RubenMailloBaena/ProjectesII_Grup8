@@ -36,7 +36,7 @@ public class ElasticEffect : IElasticEffect
 
     public void ApplyEffect(GameObject player)
     {
-        Debug.LogWarning("IN GREEN");
+        
         Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
 
         float jumpHeight = Mathf.Abs(player.GetComponent<CharacterMovement>().getLastJumpPosition().y 
@@ -51,7 +51,7 @@ public class ElasticEffect : IElasticEffect
         }
 
 
-        float horizontalForce = distanceMultiplier*100000;
+        float horizontalForce = distanceMultiplier;
 
         rb.velocity = new Vector2(horizontalForce, verticalForce);
 

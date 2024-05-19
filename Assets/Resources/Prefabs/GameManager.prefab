@@ -65,10 +65,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waterColor: {r: 0.064044006, g: 0.67265624, b: 0.96981126, a: 1}
-  elasticColor: {r: 0.26663578, g: 0.82641506, b: 0.2839933, a: 1}
+  elasticColor: {r: 0.93962264, g: 0.040775973, b: 0.5364992, a: 1}
   strechColor: {r: 0.82641506, g: 0.8215438, b: 0.19802772, a: 1}
   elasticMinImpulse: 8
-  elasticHeightMultiplier: 5.8
+  elasticHeightMultiplier: 6.6
   elasticDistanceMultiplier: 0
   stretchMultiplier: 0.2
   inverseStrechMultiplier: 0.1

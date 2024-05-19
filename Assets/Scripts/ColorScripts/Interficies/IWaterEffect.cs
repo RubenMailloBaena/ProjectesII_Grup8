@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IWaterEffect : IColorEffect
 {
-    void ApplyEffect();
+    void ApplyEffect(bool enteringTigger);
 }

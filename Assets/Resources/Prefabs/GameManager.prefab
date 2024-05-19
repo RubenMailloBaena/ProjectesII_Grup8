@@ -73,7 +73,7 @@ MonoBehaviour:
   stretchMultiplier: 0.2
   inverseStrechMultiplier: 0.1
   extendableSpriteVelocity: 0.4
-  collisionSize: 0.7
+  collisionSize: 0.65
   colYSize: 2
   strechLayerMask:
     serializedVersion: 2

@@ -94,7 +94,6 @@ public class CharacterMovement : MonoBehaviour
     }
 
     private void CheckJumpingLogic() {
-        
         Collider2D collider = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGorunded);
 
         if (collider == null)

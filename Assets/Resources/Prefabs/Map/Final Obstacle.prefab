@@ -156,6 +156,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1379066875185183943}
     m_Modifications:
+    - target: {fileID: 6420849012949836114, guid: 6b696a4cd7eea5b4cbcda7824ac83d44, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420849012949836114, guid: 6b696a4cd7eea5b4cbcda7824ac83d44, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420849012949836114, guid: 6b696a4cd7eea5b4cbcda7824ac83d44, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420849012949836114, guid: 6b696a4cd7eea5b4cbcda7824ac83d44, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420849012949836114, guid: 6b696a4cd7eea5b4cbcda7824ac83d44, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420849012949836114, guid: 6b696a4cd7eea5b4cbcda7824ac83d44, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6420849012949836124, guid: 6b696a4cd7eea5b4cbcda7824ac83d44, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -204,6 +228,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle1x1
       objectReference: {fileID: 0}
+    - target: {fileID: 6420849012949836127, guid: 6b696a4cd7eea5b4cbcda7824ac83d44, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b696a4cd7eea5b4cbcda7824ac83d44, type: 3}
 --- !u!4 &292514039221954731 stripped

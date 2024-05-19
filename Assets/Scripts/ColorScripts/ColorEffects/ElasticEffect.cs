@@ -36,6 +36,7 @@ public class ElasticEffect : IElasticEffect
 
     public void ApplyEffect(GameObject player)
     {
+        Debug.LogWarning("IN GREEN");
         Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
 
         float jumpHeight = Mathf.Abs(player.GetComponent<CharacterMovement>().getLastJumpPosition().y 

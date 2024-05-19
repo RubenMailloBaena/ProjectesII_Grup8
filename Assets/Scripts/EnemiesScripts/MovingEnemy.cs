@@ -11,6 +11,7 @@ public class MovingEnemy : MonoBehaviour
     private Vector3 finalPositionA, finalPositionB;
 
     [SerializeField] private Animator animator;
+    //[SerializeField] private Animator hawk;
 
     
 
@@ -26,6 +27,7 @@ public class MovingEnemy : MonoBehaviour
         {
             pointA.position = new Vector2(transform.position.x, pointA.position.y);
             pointB.position = new Vector2(transform.position.x, pointB.position.y);
+            //hawk.Play();
         }
         GetComponent<SpriteRenderer>().sprite = enemySprite;
 

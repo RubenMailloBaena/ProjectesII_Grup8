@@ -114,8 +114,8 @@ public class CharacterMovement : MonoBehaviour
                     lastJumpPosition = transform.position;
                 if (collider.gameObject.GetComponent<ObstacleEffectLogic>().LastColorTypeWasStrech())
                 {
+                    //transform.parent = collider.transform.parent;
                 }
-                //transform.parent = collider.transform.parent;
                 //else
                     //transform.parent = null;
             }

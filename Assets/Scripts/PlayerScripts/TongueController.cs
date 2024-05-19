@@ -187,14 +187,12 @@ public class TongueController : MonoBehaviour
         {
             SwapColor();
             counter++;
-            Debug.Log(counter);
             if (counter >= colorTypes.Length)
             {
                 colorType = ColorType.Default;
                 break;
             }
         }
-        Debug.Log("Tongue contreoller" + colorType);
         onPaintPlayer?.Invoke(colorType);
     }
 

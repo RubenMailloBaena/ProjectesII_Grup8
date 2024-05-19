@@ -78,28 +78,24 @@ public class PaintBody : MonoBehaviour
             switch (color)
             {
                 case ColorType.Water:
-                    Debug.Log("Water");
                     ChangeColors(m_WaterBodyPartsSprites);
                     currentHeadSprite = waterHead;
                     currentBodySprite = waterBody;
                     break;
 
                 case ColorType.Elastic:
-                    Debug.Log("Elastic");
                     ChangeColors(m_BounceBodyPartsSprites);
                     currentHeadSprite = bounceHead;
                     currentBodySprite = bounceBody;
                     break;
 
                 case ColorType.Strech:
-                    Debug.Log("Strech");
                     ChangeColors(m_StrechBodyPartsSprites);
                     currentHeadSprite = strechtHead;
                     currentBodySprite = strechBody;
                     break;
 
                 default:
-                    Debug.Log("Default");
                     ChangeColors(m_DefaultBodyPartsSprites);
                     currentHeadSprite = defaultHead;
                     currentBodySprite = defaultBody;

@@ -17,6 +17,7 @@ public class StrechEffect : IStrechEffect
 
     //Objectes del obstacle
     private GameObject currentObstacle; //obstacle actual
+    private GameObject parentObject;
     private GameObject movingPart;
     private GameObject extendablePart; //part extensible de la plataforma
     private SpriteRenderer extendableSprite;
@@ -54,6 +55,7 @@ public class StrechEffect : IStrechEffect
     {
         this.currentObstacle = currentObstacle;
         movingPart = currentObstacle.transform.parent.gameObject;
+        parentObject = movingPart.transform.parent.gameObject;
         extendablePart = movingPart.transform.Find("PlatformSprite").gameObject;
         extendableSprite = extendablePart.GetComponent<SpriteRenderer>();
     }
@@ -66,7 +68,7 @@ public class StrechEffect : IStrechEffect
 
     private void StrechObject(bool inverted)
     {
-        int obstacleRotation = (int)movingPart.transform.parent.transform.eulerAngles.z;
+        int obstacleRotation = (int)parentObject.transform.eulerAngles.z;
         Vector2 collisionPosition = Vector2.zero;
         Vector2 collisionSize = Vector2.zero;
 
@@ -84,7 +86,7 @@ public class StrechEffect : IStrechEffect
                     movingPart.transform.position = new Vector2(movingPart.transform.position.x + (inverseStrechMultiplier / 2), movingPart.transform.position.y);
                 }
 
-                //COLLIDER TO STOP
+                // //COLLIDER TO STOP
                 hits = Physics2D.RaycastAll(currentObstacle.transform.position, currentObstacle.transform.up, currentObstacle.transform.localScale.y / 2, layerMask);
                 colliders = new Collider2D[0];
 
@@ -107,7 +109,7 @@ public class StrechEffect : IStrechEffect
                 collisionSize = new Vector2(currentObstacle.transform.localScale.x * colXsize, currentObstacle.transform.localScale.y - colYsize);
                 colliders = Physics2D.OverlapBoxAll(collisionPosition, collisionSize, 0, layerMask);
                 hits = new RaycastHit2D[0];
-
+                
                 break;
 
 

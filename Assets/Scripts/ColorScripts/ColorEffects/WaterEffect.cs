@@ -29,29 +29,25 @@ public class WaterEffect : IWaterEffect
         actualTarget.GetComponent<BoxCollider2D>().isTrigger = true;
     }
 
-    public void ApplyEffect()
+    public void ApplyEffect(bool enterOnTrigger)
     {
-        //Debug.Log(actualTarget.transform.position + " " + actualTarget.transform.localScale);
-
-        collisions = Physics2D.OverlapBoxAll(actualTarget.transform.position, actualTarget.transform.localScale, 0f, waterLayermask);
-
-        if (collisions.Length != 0 && !effectApplied)
-        {
+        if(enterOnTrigger && !effectApplied){
             onWater?.Invoke();
             effectApplied = true;
-            Debug.Log("Effect Applied");
         }
-        else if (collisions.Length == 0 && effectApplied)
-        {
-            onWater.Invoke();
+        else if (!enterOnTrigger && effectApplied) {
+            onWater?.Invoke();
             effectApplied = false;
         }
     }
 
     public void RemoveEffect(GameObject target)
     {
-        if(collisions.Length != 0 && effectApplied)
-            onWater.Invoke();
+        if (effectApplied)
+        {   
+            onWater?.Invoke();
+            effectApplied = false;
+        }
 
         target.GetComponent<SpriteRenderer>().color = previousColor;
         target.GetComponent<BoxCollider2D>().isTrigger = false;

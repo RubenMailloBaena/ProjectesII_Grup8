@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 426513708971474925}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.91, y: -1.5112, z: 0}
-  m_LocalScale: {x: 6.2173514, y: 8.077931, z: 1}
+  m_LocalPosition: {x: 28.91, y: -1.05, z: 0}
+  m_LocalScale: {x: 17.94, y: 4.3, z: 0.97469157}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7603274606402093600}
@@ -75,9 +75,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.7283019, g: 0.5440901, b: 0.28444993, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -102,8 +102,8 @@ MonoBehaviour:
   doorHits: 1
   doorGameObject: {fileID: 8177790636767961018}
   openDoorSprite: {fileID: 6341312198046161078, guid: 683350d8a11b9844e940e845c252ebf5, type: 3}
-  nextLevelName: Tutorial
-  firstLevel: 
+  nextLevelName: TutorialStretch
+  firstLevel: TutorialBounce
 --- !u!61 &426513708971474926
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -114,10 +114,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.023583978, y: 0}
+  m_Offset: {x: 0.04999224, y: -0.1744028}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -128,7 +128,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.58721656, y: 1}
+  m_Size: {x: 0.19753559, y: 1.5777087}
   m_EdgeRadius: 0
 --- !u!1 &8177790636767961018
 GameObject:
@@ -156,7 +156,7 @@ Transform:
   m_GameObject: {fileID: 8177790636767961018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.03, y: 0.098, z: 0}
-  m_LocalScale: {x: 0.44790366, y: 0.44790366, z: 0.44790366}
+  m_LocalScale: {x: -0.18, y: 0.8, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 426513708971474921}

@@ -10,6 +10,9 @@ public class MovingEnemy : MonoBehaviour
     private bool gotToPointA = false; 
     private Vector3 finalPositionA, finalPositionB;
 
+    [SerializeField] private Animator animator;
+    //[SerializeField] private Animator hawk;
+
     
 
     private void Start()
@@ -18,11 +21,13 @@ public class MovingEnemy : MonoBehaviour
         {
             pointA.position = new Vector2(pointA.position.x, transform.position.y);
             pointB.position = new Vector2(pointB.position.x, transform.position.y);
+            animator.Play("Snake_Crowling");
         }
         else 
         {
             pointA.position = new Vector2(transform.position.x, pointA.position.y);
             pointB.position = new Vector2(transform.position.x, pointB.position.y);
+            //hawk.Play();
         }
         GetComponent<SpriteRenderer>().sprite = enemySprite;
 

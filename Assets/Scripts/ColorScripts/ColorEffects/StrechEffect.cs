@@ -17,9 +17,7 @@ public class StrechEffect : IStrechEffect
 
     //Objectes del obstacle
     private GameObject currentObstacle; //obstacle actual
-    private GameObject parentObject;
     private GameObject movingPart;
-    private GameObject topSprite; //la part de d'alt de la plataforma
     private GameObject extendablePart; //part extensible de la plataforma
     private SpriteRenderer extendableSprite;
 
@@ -55,10 +53,8 @@ public class StrechEffect : IStrechEffect
     private void getAllObstacleObjects(GameObject currentObstacle)
     {
         this.currentObstacle = currentObstacle;
-        parentObject = currentObstacle.transform.parent.transform.parent.gameObject;
-        topSprite = parentObject.transform.Find("Sprite Holder/TopSprite").gameObject;
-        movingPart = parentObject.transform.Find("MovingObstacle").gameObject;
-        extendablePart = parentObject.transform.Find("Sprite Holder/ExtendablePart").gameObject;
+        movingPart = currentObstacle.transform.parent.gameObject;
+        extendablePart = movingPart.transform.Find("PlatformSprite").gameObject;
         extendableSprite = extendablePart.GetComponent<SpriteRenderer>();
     }
 
@@ -70,7 +66,7 @@ public class StrechEffect : IStrechEffect
 
     private void StrechObject(bool inverted)
     {
-        int obstacleRotation = (int)parentObject.transform.eulerAngles.z;
+        int obstacleRotation = (int)movingPart.transform.parent.transform.eulerAngles.z;
         Vector2 collisionPosition = Vector2.zero;
         Vector2 collisionSize = Vector2.zero;
 
@@ -82,18 +78,10 @@ public class StrechEffect : IStrechEffect
                 if (!inverted)
                 {
                     movingPart.transform.position = new Vector2(movingPart.transform.position.x - (stretchAmount / 2), movingPart.transform.position.y);
-
-                    //sprite
-                    extendablePart.transform.position = new Vector2(extendablePart.transform.position.x - (stretchAmount / 2), extendablePart.transform.position.y);
-                    topSprite.transform.position = new Vector2(topSprite.transform.position.x - stretchAmount, topSprite.transform.position.y);
                 }
                 else
                 {
                     movingPart.transform.position = new Vector2(movingPart.transform.position.x + (inverseStrechMultiplier / 2), movingPart.transform.position.y);
-
-                    //sprite
-                    extendablePart.transform.position = new Vector2(extendablePart.transform.position.x + (inverseStrechMultiplier / 2), extendablePart.transform.position.y);
-                    topSprite.transform.position = new Vector2(topSprite.transform.position.x + inverseStrechMultiplier, topSprite.transform.position.y);
                 }
 
                 //COLLIDER TO STOP
@@ -108,18 +96,10 @@ public class StrechEffect : IStrechEffect
                 if (!inverted)
                 {
                     movingPart.transform.position = new Vector2(movingPart.transform.position.x, movingPart.transform.position.y - (stretchAmount / 2));
-
-                    //sprite
-                    extendablePart.transform.position = new Vector2(extendablePart.transform.position.x, extendablePart.transform.position.y - (stretchAmount / 2));
-                    topSprite.transform.position = new Vector2(topSprite.transform.position.x, topSprite.transform.position.y - stretchAmount);
                 }
                 else
                 {
                     movingPart.transform.position = new Vector2(movingPart.transform.position.x, movingPart.transform.position.y + (inverseStrechMultiplier / 2));
-
-                    //sprite
-                    extendablePart.transform.position = new Vector2(extendablePart.transform.position.x, extendablePart.transform.position.y + (inverseStrechMultiplier / 2));
-                    topSprite.transform.position = new Vector2(topSprite.transform.position.x, topSprite.transform.position.y + inverseStrechMultiplier);
                 }
 
                 //COLLIDER TO STOP
@@ -136,18 +116,10 @@ public class StrechEffect : IStrechEffect
                 if (!inverted)
                 {
                     movingPart.transform.position = new Vector2(movingPart.transform.position.x + (stretchAmount / 2), movingPart.transform.position.y);
-
-                    //sprite
-                    extendablePart.transform.position = new Vector2(extendablePart.transform.position.x + (stretchAmount / 2), extendablePart.transform.position.y);
-                    topSprite.transform.position = new Vector2(topSprite.transform.position.x + stretchAmount, topSprite.transform.position.y);
                 }
                 else
                 {
                     movingPart.transform.position = new Vector2(movingPart.transform.position.x - (inverseStrechMultiplier / 2), movingPart.transform.position.y);
-
-                    //sprite
-                    extendablePart.transform.position = new Vector2(extendablePart.transform.position.x - (inverseStrechMultiplier / 2), extendablePart.transform.position.y);
-                    topSprite.transform.position = new Vector2(topSprite.transform.position.x - inverseStrechMultiplier, topSprite.transform.position.y);
                 }
 
                 //COLLIDER TO STOP
@@ -161,18 +133,10 @@ public class StrechEffect : IStrechEffect
                 if (!inverted)
                 {
                     movingPart.transform.position = new Vector2(movingPart.transform.position.x, movingPart.transform.position.y + (stretchAmount / 2));
-
-                    //sprite
-                    extendablePart.transform.position = new Vector2(extendablePart.transform.position.x, extendablePart.transform.position.y + (stretchAmount / 2));
-                    topSprite.transform.position = new Vector2(topSprite.transform.position.x, topSprite.transform.position.y + stretchAmount);
                 }
                 else
                 {
                     movingPart.transform.position = new Vector2(movingPart.transform.position.x, movingPart.transform.position.y - (inverseStrechMultiplier / 2));
-
-                    //sprite
-                    extendablePart.transform.position = new Vector2(extendablePart.transform.position.x, extendablePart.transform.position.y - (inverseStrechMultiplier / 2));
-                    topSprite.transform.position = new Vector2(topSprite.transform.position.x, topSprite.transform.position.y - inverseStrechMultiplier);
                 }
 
                 //COLLIDER TO STOP

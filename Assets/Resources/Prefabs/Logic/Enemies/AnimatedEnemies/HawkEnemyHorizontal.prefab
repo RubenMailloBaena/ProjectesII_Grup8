@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3841238381927919905}
   - component: {fileID: 3841238381927919906}
   m_Layer: 0
-  m_Name: MovingEnemy
+  m_Name: HawkEnemyHorizontal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1661785133474645221, guid: 1314111029ca75241a2d6cf60b26dcfa, type: 3}
+  m_Sprite: {fileID: 8769411506769135980, guid: ca97f72df842c5e4d9d50dd261022cc3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4810bbee24161a344aee85f0d7f13220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyType: 0
+  enemyType: 1
   enemySprite: {fileID: 1661785133474645221, guid: 1314111029ca75241a2d6cf60b26dcfa, type: 3}
   enemySpeed: 10
   pointA: {fileID: 3841238382380638338}
@@ -122,7 +122,7 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.22037172, y: -6.620577}
   m_SpriteTilingProperty:
-    border: {x: 5.320879, y: 4.78, z: 6.8311286, w: 8.400001}
+    border: {x: 12.432054, y: 8.190001, z: 9.101503, w: 6.5}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 48.017933, y: 35.99}
     newSize: {x: 1, y: 1}

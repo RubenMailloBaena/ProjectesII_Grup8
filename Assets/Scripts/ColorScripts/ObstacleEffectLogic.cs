@@ -149,7 +149,7 @@ public class ObstacleEffectLogic : MonoBehaviour
     }
 
     public bool LastColorTypeWasStrech() {
-        if (lastStrechEffect != null)
+        if (lastStrechEffect != null && gameObject.transform.parent.transform.parent.eulerAngles.z == 0)
             return true;
         return false;
     }

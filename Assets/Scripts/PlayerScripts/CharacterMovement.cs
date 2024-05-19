@@ -113,32 +113,28 @@ public class CharacterMovement : MonoBehaviour
                 if (collider.gameObject.GetComponent<ObstacleEffectLogic>().getCurrentColorType() != ColorType.Elastic)
                     lastJumpPosition = transform.position;
                 if (collider.gameObject.GetComponent<ObstacleEffectLogic>().LastColorTypeWasStrech())
-                {
                     transform.parent = collider.transform.parent;
-                }
                 else
-                {
                     transform.parent = null;
-                }
             }
         }
 
         if (inWater) {
-            rb.AddForce(-vecGravity * fallMultiplier * Time.deltaTime);
+            rb.AddForce(-vecGravity * (fallMultiplier * Time.deltaTime));
         }
         else
         {
             if (rb.velocity.y < 0)
             {
-                rb.velocity -= vecGravity * fallMultiplier * Time.deltaTime;
+                rb.velocity -= vecGravity * (fallMultiplier * Time.deltaTime);
             }
         }
     }
 
     private void PlayerJump() {
+        transform.parent = null;
         if (isGrounded && !inWater)
         {
-            transform.parent = null;
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         } 
         else if (inWater)

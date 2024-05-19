@@ -4032,11 +4032,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1419596924599824962, guid: 385a23239ebccfc4ebc56c3ed85ba793, type: 3}
       propertyPath: elasticMinImpulse
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1419596924599824962, guid: 385a23239ebccfc4ebc56c3ed85ba793, type: 3}
       propertyPath: elasticHeightMultiplier
-      value: 5.6
+      value: 5.8
       objectReference: {fileID: 0}
     - target: {fileID: 1419596924599824962, guid: 385a23239ebccfc4ebc56c3ed85ba793, type: 3}
       propertyPath: elasticDistanceMultiplier
@@ -41184,7 +41184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8980807089245339088, guid: fc14ae4e6df655a4783510053fbcb077, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -20.16
+      value: -20.42
       objectReference: {fileID: 0}
     - target: {fileID: 8980807089245339088, guid: fc14ae4e6df655a4783510053fbcb077, type: 3}
       propertyPath: m_LocalPosition.z

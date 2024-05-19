@@ -43,8 +43,7 @@ public class WaterEffect : IWaterEffect
 
     public void RemoveEffect(GameObject target)
     {
-        collisions = Physics2D.OverlapBoxAll(actualTarget.transform.position, actualTarget.transform.localScale, 0f, waterLayermask);
-        if (collisions.Length != 0 && effectApplied)
+        if (effectApplied)
         {   
             onWater?.Invoke();
             effectApplied = false;

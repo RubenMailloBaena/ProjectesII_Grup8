@@ -1496,7 +1496,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 07240a6193c4e284492b641f1b71ecf0, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -1573,11 +1573,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7773754064049533694, guid: 5c67893425e26b84daaced09f43f0c1d, type: 3}
       propertyPath: m_Name
-      value: Particle System
+      value: DeathParticles
       objectReference: {fileID: 0}
     - target: {fileID: 7773754064049533694, guid: 5c67893425e26b84daaced09f43f0c1d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c67893425e26b84daaced09f43f0c1d, type: 3}
@@ -2033,7 +2033,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 48e7734579fe76a44b69fc48bd7fffc1, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0

@@ -8,6 +8,7 @@ TagManager:
   - PaintableObstacle
   - Door
   - Enemy
+  - Tongue
   layers:
   - Default
   - TransparentFX

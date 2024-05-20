@@ -154,7 +154,7 @@ public class TongueController : MonoBehaviour
 ;               if (hitColliders[i].gameObject.tag.Equals("Door")) {
                     hitColliders[i].gameObject.GetComponent<NextLevelDoor>().DoorCollided();
                 }
-                else if (hitColliders[i].gameObject.tag.Equals("PaintableObstacle")) {
+                else if (hitColliders[i].gameObject.tag.Equals("PaintableObstacle") && !inWater) {
                     ChangeObjectEffect(hitColliders[i].gameObject);
                 }
                 shootTongue = false;

@@ -293,7 +293,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1424812957}
-  m_RootOrder: 56
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -4.564}
 --- !u!4 &20951366 stripped
 Transform:
@@ -35245,7 +35245,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1424812957}
-  m_RootOrder: 58
+  m_RootOrder: 57
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &924244525
 GameObject:
@@ -41869,6 +41869,7 @@ Transform:
   - {fileID: 112263719}
   - {fileID: 234197301}
   - {fileID: 1774392624}
+  - {fileID: 2021382985}
   - {fileID: 506816781}
   - {fileID: 1349652763}
   - {fileID: 1693484787}
@@ -41876,7 +41877,7 @@ Transform:
   - {fileID: 1362390702}
   - {fileID: 664569280}
   - {fileID: 2031689100}
-  - {fileID: 2021382985}
+  - {fileID: 17236290}
   - {fileID: 683785353}
   - {fileID: 302602592}
   - {fileID: 1871241881}
@@ -41900,9 +41901,8 @@ Transform:
   - {fileID: 150560322}
   - {fileID: 1236228469}
   - {fileID: 287507504}
-  - {fileID: 17236290}
-  - {fileID: 505147793}
   - {fileID: 919888428}
+  - {fileID: 505147793}
   - {fileID: 1448766630}
   - {fileID: 1269640522}
   - {fileID: 1104194945}
@@ -47719,62 +47719,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3336242206432462137, guid: 35c88b3923127f549b98fe3fda96b355, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3336242206432462137, guid: 35c88b3923127f549b98fe3fda96b355, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3336242206432462137, guid: 35c88b3923127f549b98fe3fda96b355, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].time
-      value: 0.2317498
-      objectReference: {fileID: 0}
-    - target: {fileID: 3336242206432462137, guid: 35c88b3923127f549b98fe3fda96b355, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[2].time
-      value: 0.41039872
-      objectReference: {fileID: 0}
-    - target: {fileID: 3336242206432462137, guid: 35c88b3923127f549b98fe3fda96b355, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[3].time
-      value: 0.62273955
-      objectReference: {fileID: 0}
-    - target: {fileID: 3336242206432462137, guid: 35c88b3923127f549b98fe3fda96b355, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[4].time
-      value: 0.97579336
-      objectReference: {fileID: 0}
-    - target: {fileID: 3336242206432462137, guid: 35c88b3923127f549b98fe3fda96b355, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
-      value: 0.847173
-      objectReference: {fileID: 0}
-    - target: {fileID: 3336242206432462137, guid: 35c88b3923127f549b98fe3fda96b355, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
-      value: 0.8697682
-      objectReference: {fileID: 0}
-    - target: {fileID: 3336242206432462137, guid: 35c88b3923127f549b98fe3fda96b355, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[2].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3336242206432462137, guid: 35c88b3923127f549b98fe3fda96b355, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[3].value
-      value: 0.77054405
-      objectReference: {fileID: 0}
-    - target: {fileID: 3336242206432462137, guid: 35c88b3923127f549b98fe3fda96b355, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[4].value
-      value: 0.73333275
-      objectReference: {fileID: 0}
-    - target: {fileID: 3336242206432462138, guid: 35c88b3923127f549b98fe3fda96b355, type: 3}
-      propertyPath: canUseWater
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3336242206432462138, guid: 35c88b3923127f549b98fe3fda96b355, type: 3}
-      propertyPath: canUseStrech
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7884690054672578055, guid: 35c88b3923127f549b98fe3fda96b355, type: 3}
-      propertyPath: jumpForceY
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35c88b3923127f549b98fe3fda96b355, type: 3}
 --- !u!1 &1930921179
@@ -49099,7 +49043,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1424812957}
-  m_RootOrder: 32
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2026272395 stripped
 Transform:

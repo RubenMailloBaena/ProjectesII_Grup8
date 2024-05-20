@@ -67436,6 +67436,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3336242206432462138, guid: 35c88b3923127f549b98fe3fda96b355, type: 3}
+      propertyPath: canUseStrech
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336242206432462138, guid: 35c88b3923127f549b98fe3fda96b355, type: 3}
       propertyPath: canUseElastic
       value: 0
       objectReference: {fileID: 0}

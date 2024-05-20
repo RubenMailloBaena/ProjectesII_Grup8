@@ -25,26 +25,19 @@ public class NextLevelDoor : MonoBehaviour
     }
 
     private void CheckPlayerOnTop() {
-        Collider2D[] collider = Physics2D.OverlapBoxAll(transform.position, transform.localScale, 0f);
+        //LAYER DEL PLAYER
+        Collider2D[] collider = Physics2D.OverlapBoxAll(transform.position, transform.localScale, 0f, 9);
         for (int i = 0; i < collider.Length; i++)
             if (collider[i].gameObject.CompareTag("Player"))
                 SceneManager.LoadScene(nextLevelName);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (canGoNextLevel) {
+        Debug.Log(collision.gameObject.name + " " + collision.gameObject.tag);
+        if (collision.gameObject.CompareTag("Player") && canGoNextLevel)
+        {
             SceneManager.LoadScene(nextLevelName);
         }
-
-        //Logica para mostrar el nivel 1
-        //if (SceneManager.GetActiveScene().name == firstLevel)
-        //{
-        //    Debug.Log("Es el primer nivel");
-        //}
-        //else
-        //{
-        //    Debug.Log("No es el primer nivel");
-        //}
     }
 }

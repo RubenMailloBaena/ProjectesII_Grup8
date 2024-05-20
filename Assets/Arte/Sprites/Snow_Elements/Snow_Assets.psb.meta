@@ -95,16 +95,16 @@ ScriptedImporter:
   rigSpriteImportData:
   - name: Snow_Assets_0
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 776
-      width: 5
-      height: 4
-    spriteID: 932dbde7cf57c7e4c8ac89fd22149bcc
+      y: 420
+      width: 211
+      height: 348
+    spriteID: 7ad5841f97757154299ec6c57e8ab39b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -113,20 +113,20 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 4, y: 776}
+    uvTransform: {x: 4, y: 420}
     spritePosition: {x: 0, y: 0}
   - name: Snow_Assets_1
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 6
-      y: 711
-      width: 311
-      height: 207
-    spriteID: 07d3b498b984c8243be569bdcb2623d8
+      x: 225
+      y: 425
+      width: 304
+      height: 198
+    spriteID: a2eceecca5a20244ba7171efd4d853d4
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -135,42 +135,20 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 6, y: 711}
+    uvTransform: {x: 225, y: 425}
     spritePosition: {x: 0, y: 0}
-  - name: Snow_Assets_2
+  - name: Snow_Assets_10
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 5
-      y: 509
-      width: 460
-      height: 193
-    spriteID: e94d5061add4e864eb204b0c157592ca
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 5, y: 509}
-    spritePosition: {x: 0, y: 0}
-  - name: Snow_Assets_3
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 5
-      y: 281
-      width: 754
-      height: 219
-    spriteID: 21924994323f8a544991eaa2b72662d0
+      y: 251
+      width: 733
+      height: 161
+    spriteID: 3dbd70282d6c20c4e8c6b22e69d51f81
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -179,20 +157,20 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 5, y: 281}
+    uvTransform: {x: 5, y: 251}
     spritePosition: {x: 0, y: 0}
-  - name: Snow_Assets_4
+  - name: Snow_Assets_11
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 4
-      width: 812
-      height: 267
-    spriteID: aadd64818949e0540be55ed77648d32b
+      y: 5
+      width: 737
+      height: 188
+    spriteID: 22a8a88be06c1f44da691547988e75cb
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -201,7 +179,29 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 4, y: 4}
+    uvTransform: {x: 4, y: 5}
+    spritePosition: {x: 0, y: 0}
+  - name: Snow_Assets_12
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 750
+      y: 4
+      width: 166
+      height: 167
+    spriteID: 6afd88a0729ab2b4e9a4e4994cf8e0e9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 750, y: 4}
     spritePosition: {x: 0, y: 0}
   characterData:
     bones: []
@@ -241,17 +241,37 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: aabeb922777ab3640b7bd3f106c3f07e
     layerID: 14
-    mosaicPosition: {x: 4, y: 280}
+    mosaicPosition: {x: 4, y: 272}
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: Capa 7
-    spriteName: Capa 7
+  - name: Capa 12
+    spriteName: Capa 12
     isGroup: 0
     parentIndex: -1
-    spriteID: 517a29177a256e54c8c25028a51eed83
-    layerID: 13
-    mosaicPosition: {x: 4, y: 508}
+    spriteID: e63a4056b03465a4692c2713cd1a5988
+    layerID: 23
+    mosaicPosition: {x: 179, y: 848}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Capa 15
+    spriteName: Capa 15
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 0f9e86d4f9bac964ba25406893252d7a
+    layerID: 31
+    mosaicPosition: {x: 4, y: 848}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Capa 14
+    spriteName: Capa 14
+    isGroup: 0
+    parentIndex: -1
+    spriteID: ad75f0228632fee479cb64af8912655d
+    layerID: 26
+    mosaicPosition: {x: 4, y: 492}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -271,7 +291,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 71bc3b96b69c41e40aa5cb46107b7f93
     layerID: 16
-    mosaicPosition: {x: 4, y: 711}
+    mosaicPosition: {x: 223, y: 492}
     flatten: 0
     isImported: 1
     isVisible: 1

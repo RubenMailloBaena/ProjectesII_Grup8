@@ -36,14 +36,8 @@ public class GameManager : MonoBehaviour
     //[SerializeField] private float deathTime;
     [Header("DEATH ANIMATION PARAMETERS")] 
     [SerializeField] private float deathTime;
-    
-    [SerializeField] private float changeTime;
-    [SerializeField] private int restoreSpeed;
-    [SerializeField] private float delay;
-    
-    private float speed; 
-    private bool restoreTime = false;
-   
+
+    private ParticleSystem deathParticles;   
     
     private void Start()
     {
@@ -51,12 +45,13 @@ public class GameManager : MonoBehaviour
 
         GameObject prefabInstance = Instantiate(sceneTransitionPrefab);
         animator = prefabInstance.GetComponent<Animator>();
+
+        deathPartciles = GameObject.Find("DeathParticles").GetComponent<ParticleSystem>();
     }
 
     private void Update()
     {
         ManagePauseGame();
-        ManageDeathAnimation();
     }
     
     private void ManagePauseGame() {
@@ -75,25 +70,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void ManageDeathAnimation()
-    {
-        // Debug.Log(Time.timeScale);
-        // if (restoreTime)
-        // {
-        //     if (Time.timeScale < 1f)
-        //     {
-        //         Time.timeScale += Time.deltaTime * speed;
-        //     }
-        //     else
-        //     {
-        //         Time.timeScale = 1f;
-        //         restoreTime = false;
-        //         playerDeath = false;
-        //     }
-        // }
-    }
-
-
     public void MoveToCheckPoint()
     {
         if (!playerDeath)
@@ -101,42 +77,20 @@ public class GameManager : MonoBehaviour
             playerDeath = true;
             StartCoroutine(WaitForRevive());
         }
-        // playerDeath = true;
-        // speed = restoreSpeed;
-        //
-        // if (delay > 0)
-        // {
-        //     StopCoroutine(WaitForRevive(delay));
-        //     StartCoroutine(WaitForRevive(delay));
-        // }
-        // else
-        // {
-        //     restoreTime = true;
-        // }
-        //
-        // PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Die);
-        // Time.timeScale = changeTime;
-        // // animator.SetTrigger("End");
-        // // CharacterMovement.Instance.SetPlayerPosition(checkPoints[currentIndex].transform.position);
-        // // onPlayerDeath.Invoke(ColorType.Default);
     }
 
     private IEnumerator WaitForRevive()
     {
-        // restoreTime = true;
-        // yield return new WaitForSecondsRealtime(amt);
-
-        //deathPartciles.Play();
-        //yield return new WaitForSeconds(deathPartciles.main.duration);
-        //Debug.Log("Tendrian que salir las particulas");
-        //deathPartciles.Stop();
-
-         PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Die);
          Time.timeScale = 0f;
+         deathPartciles.Play();
+         PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Die);
+         yield return new WaitForSecondsRealtime(0.267f);
          yield return new WaitForSecondsRealtime(deathTime);
          Time.timeScale = 1f;
          animator.SetTrigger("End");
          CharacterMovement.Instance.SetPlayerPosition(checkPoints[currentIndex].transform.position);
+         PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Idle);
+         deathPartciles.Stop();
          onPlayerDeath.Invoke(ColorType.Default);
          playerDeath = false;
          animator.SetTrigger("Start");

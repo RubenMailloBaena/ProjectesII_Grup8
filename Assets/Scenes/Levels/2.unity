@@ -66646,7 +66646,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 159220364861899940, guid: 0b8a884df908c4c4f8ae11f838b5b2bd, type: 3}
       propertyPath: ShapeModule.radiusThickness
-      value: 1.0000
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1111911868130759115, guid: 0b8a884df908c4c4f8ae11f838b5b2bd, type: 3}
       propertyPath: m_RootOrder
@@ -71379,26 +71379,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 159220364861899940, guid: 0b8a884df908c4c4f8ae11f838b5b2bd, type: 3}
-      propertyPath: ShapeModule.type
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 159220364861899940, guid: 0b8a884df908c4c4f8ae11f838b5b2bd, type: 3}
-      propertyPath: ShapeModule.arc.mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 159220364861899940, guid: 0b8a884df908c4c4f8ae11f838b5b2bd, type: 3}
-      propertyPath: ShapeModule.m_Scale.x
-      value: 4.0599747
-      objectReference: {fileID: 0}
-    - target: {fileID: 159220364861899940, guid: 0b8a884df908c4c4f8ae11f838b5b2bd, type: 3}
-      propertyPath: ShapeModule.m_Rotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 159220364861899940, guid: 0b8a884df908c4c4f8ae11f838b5b2bd, type: 3}
-      propertyPath: ShapeModule.radiusThickness
-      value: 1.0000
-      objectReference: {fileID: 0}
     - target: {fileID: 1111911868130759115, guid: 0b8a884df908c4c4f8ae11f838b5b2bd, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -71409,7 +71389,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1111911868130759115, guid: 0b8a884df908c4c4f8ae11f838b5b2bd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19
+      value: 22.41
       objectReference: {fileID: 0}
     - target: {fileID: 1111911868130759115, guid: 0b8a884df908c4c4f8ae11f838b5b2bd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -71447,9 +71427,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Snow_Emision
       objectReference: {fileID: 0}
-    - target: {fileID: 2361623899605304950, guid: 0b8a884df908c4c4f8ae11f838b5b2bd, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.5
+    - target: {fileID: 1850676631864899170, guid: 0b8a884df908c4c4f8ae11f838b5b2bd, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850676631864899170, guid: 0b8a884df908c4c4f8ae11f838b5b2bd, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850676631864899170, guid: 0b8a884df908c4c4f8ae11f838b5b2bd, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1066863903
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b8a884df908c4c4f8ae11f838b5b2bd, type: 3}

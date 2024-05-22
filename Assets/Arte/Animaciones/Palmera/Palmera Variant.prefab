@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8653719598885068355, guid: 48bb982764c70774982d4189b0101848, type: 3}
       propertyPath: m_Name
-      value: Palmera
+      value: Palmera Variant
       objectReference: {fileID: 0}
     - target: {fileID: -7561113526181806574, guid: 48bb982764c70774982d4189b0101848, type: 3}
       propertyPath: m_LocalRotation.w
@@ -354,6 +354,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -8653719598885068355, guid: 48bb982764c70774982d4189b0101848, type: 3}
   m_PrefabInstance: {fileID: 5594176763543886486}
   m_PrefabAsset: {fileID: 0}
+--- !u!111 &2750571965780719531
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5351769491344309035}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: b4009ecba95f0694bb67be01d9fb09f0, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!95 &1216051618
 Animator:
   serializedVersion: 5

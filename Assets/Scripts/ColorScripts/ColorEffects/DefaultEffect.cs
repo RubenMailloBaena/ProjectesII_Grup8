@@ -19,7 +19,7 @@ public class DefaultEffect : IColorEffect
 
     public void InitializeEffect(GameObject target)
     {
-        target.GetComponent<SpriteRenderer>().color = effectColor;
+        
     }
 
     public void RemoveEffect(GameObject target)

@@ -19,8 +19,8 @@ public class StrechEffect : IStrechEffect
     private GameObject currentObstacle; //obstacle actual
     private GameObject parentObject;
     private GameObject movingPart;
-    private GameObject extendablePart; //part extensible de la plataforma
     private SpriteRenderer extendableSprite;
+    private SpriteRenderer colorChangePart; //parte de la plataforma que se pinta
 
     //control logic
     private bool doneRevertingEffect = false;
@@ -46,9 +46,14 @@ public class StrechEffect : IStrechEffect
     public void InitializeEffect(GameObject target)
     {
         getAllObstacleObjects(target);
-        previousColor = target.GetComponent<SpriteRenderer>().color;
-        target.GetComponent<SpriteRenderer>().color = effectColor;
+        paintObstacle();
         initialScale = target.GetComponent<ObstacleEffectLogic>().getInitialScale();
+    }
+
+    private void paintObstacle()
+    {
+        previousColor = colorChangePart.color;
+        colorChangePart.color = effectColor;
     }
 
     private void getAllObstacleObjects(GameObject currentObstacle)
@@ -56,8 +61,8 @@ public class StrechEffect : IStrechEffect
         this.currentObstacle = currentObstacle;
         movingPart = currentObstacle.transform.parent.gameObject;
         parentObject = movingPart.transform.parent.gameObject;
-        extendablePart = movingPart.transform.Find("PlatformSprite").gameObject;
-        extendableSprite = extendablePart.GetComponent<SpriteRenderer>();
+        extendableSprite = movingPart.transform.Find("PlatformSprite").GetComponent<SpriteRenderer>();
+        colorChangePart = movingPart.transform.Find("ColorChange").GetComponent<SpriteRenderer>();
     }
 
     public void ApplyEffect()
@@ -156,12 +161,14 @@ public class StrechEffect : IStrechEffect
             currentObstacle.transform.localScale = new Vector2(currentObstacle.transform.localScale.x, currentObstacle.transform.localScale.y + stretchAmount);
 
             extendableSprite.size = new Vector2(extendableSprite.size.x, extendableSprite.size.y + extendSpriteVelocity);
+            colorChangePart.size = new Vector2(colorChangePart.size.x, colorChangePart.size.y + extendSpriteVelocity);
         }
         else
         {
             currentObstacle.transform.localScale = new Vector2(currentObstacle.transform.localScale.x, currentObstacle.transform.localScale.y - inverseStrechMultiplier);
 
             extendableSprite.size = new Vector2(extendableSprite.size.x, extendableSprite.size.y - (extendSpriteVelocity / 2));
+            colorChangePart.size = new Vector2(colorChangePart.size.x, colorChangePart.size.y - (extendSpriteVelocity / 2));
         }
     }
 
@@ -169,7 +176,7 @@ public class StrechEffect : IStrechEffect
     {
         if (!revertedColor)
         {
-            target.GetComponent<SpriteRenderer>().color = previousColor;
+            colorChangePart.color = previousColor;
             revertedColor = true;
         }
 

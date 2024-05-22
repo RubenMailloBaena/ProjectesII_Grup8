@@ -15,6 +15,7 @@ public class ElasticEffect : IElasticEffect
 
     private Color previousColor;
     private GameObject obstacle;
+    private SpriteRenderer colorChangePart;
 
     public ElasticEffect(Color color, ColorType colorType, float minImpulse, float hightMultiplier, float distanceMultiplier)
     {
@@ -28,10 +29,15 @@ public class ElasticEffect : IElasticEffect
 
     public void InitializeEffect(GameObject target)
     {
-        Debug.Log("inside " + target.gameObject.name);
+        GetAllObstacleReferences(target);
+        previousColor = colorChangePart.color;
+        colorChangePart.color = effectColor;
+    }
+
+    private void GetAllObstacleReferences(GameObject target)
+    {
         obstacle = target;
-        previousColor = target.GetComponent<SpriteRenderer>().color;
-        target.GetComponent<SpriteRenderer>().color = effectColor;
+        colorChangePart = obstacle.transform.parent.transform.Find("ColorChange").GetComponent<SpriteRenderer>();
     }
 
     public void ApplyEffect(GameObject player)
@@ -60,7 +66,7 @@ public class ElasticEffect : IElasticEffect
 
     public void RemoveEffect(GameObject target)
     {
-        target.GetComponent<SpriteRenderer>().color = previousColor;
+        colorChangePart.color = previousColor;
     }
 
     public ColorType getColorType()

@@ -12,6 +12,7 @@ public class WaterEffect : IWaterEffect
     private GameObject actualTarget;
     private bool effectApplied = false;
     private Collider2D[] collisions;
+    private SpriteRenderer colorPartSprite;
 
     public static event Action onWater;
 
@@ -23,10 +24,16 @@ public class WaterEffect : IWaterEffect
 
     public void InitializeEffect(GameObject target)
     {
-        actualTarget = target;
-        previousColor = actualTarget.GetComponent<SpriteRenderer>().color;
-        actualTarget.GetComponent<SpriteRenderer>().color = effectColor;
+        GetAllObstaclesParts(target);
+        previousColor = colorPartSprite.color;
+        colorPartSprite.color = effectColor;
         actualTarget.GetComponent<BoxCollider2D>().isTrigger = true;
+    }
+
+    private void GetAllObstaclesParts(GameObject target)
+    {
+        actualTarget = target;
+        colorPartSprite = actualTarget.transform.parent.transform.Find("ColorChange").GetComponent<SpriteRenderer>();
     }
 
     public void ApplyEffect(bool enterOnTrigger)
@@ -49,7 +56,7 @@ public class WaterEffect : IWaterEffect
             effectApplied = false;
         }
 
-        target.GetComponent<SpriteRenderer>().color = previousColor;
+        colorPartSprite.color = previousColor;
         target.GetComponent<BoxCollider2D>().isTrigger = false;
     }
 

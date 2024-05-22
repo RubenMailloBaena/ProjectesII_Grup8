@@ -60,6 +60,7 @@ public class ObstacleEffectLogic : MonoBehaviour
     void Awake()
     {
         currentColorType = ColorType.Default;
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
         initialScale = transform.localScale;
 
         player = GameObject.Find("TongueOrigin"); 

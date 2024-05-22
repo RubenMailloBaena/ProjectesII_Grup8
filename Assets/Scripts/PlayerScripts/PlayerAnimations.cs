@@ -29,6 +29,8 @@ public class PlayerAnimations : MonoBehaviour
     private string openName = "Open";
     private string closeName = "Close";
     private string idleHeadName = "Idle";
+    private string dieHeadName = "PlayerCapDie";
+
     private string currentState;
     private string headstate;
 
@@ -80,7 +82,10 @@ public class PlayerAnimations : MonoBehaviour
             case HeadAnim.IdleHead:
                 ChangeHeadAnimationState(idleHeadName);
                 break;
-            
+            case HeadAnim.DieHead:
+                ChangeHeadAnimationState(dieHeadName);
+                break;
+
 
             default: throw new System.Exception("error");
         }
@@ -119,5 +124,6 @@ public enum HeadAnim
 {
     Open, 
     Close,
-    IdleHead
+    IdleHead,
+    DieHead
 }

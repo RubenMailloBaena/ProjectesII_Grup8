@@ -147,7 +147,7 @@ public class CharacterMovement : MonoBehaviour
         {
             // rb.AddForce(Vector2.up * jumpForceInWater);
             // Debug.Log("SWIMMING " + jumpForceInWater);
-            rb.velocity = new Vector2(rb.velocity.x, jumpForceInWater);
+            rb.velocity = new Vector2(rb.velocity.x, jumpForceInWater*Time.deltaTime);
             Debug.Log("SWIMMING " + jumpForceInWater);
         }
     }

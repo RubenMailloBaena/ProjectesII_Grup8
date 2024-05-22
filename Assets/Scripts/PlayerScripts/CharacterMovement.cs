@@ -138,10 +138,14 @@ public class CharacterMovement : MonoBehaviour
         if (isGrounded && !inWater)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            Debug.Log("jumping NORMAL " + jumpForce );
         } 
         else if (inWater)
         {
-            rb.AddForce(Vector2.up * jumpForceInWater);
+            // rb.AddForce(Vector2.up * jumpForceInWater);
+            // Debug.Log("SWIMMING " + jumpForceInWater);
+            rb.velocity = new Vector2(rb.velocity.x, jumpForceInWater * Time.deltaTime);
+            Debug.Log("SWIMMING " + jumpForceInWater * Time.deltaTime);
         }
     }
 

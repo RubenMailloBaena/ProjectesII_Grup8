@@ -84,7 +84,8 @@ public class GameManager : MonoBehaviour
          Time.timeScale = 0f;
          deathPartciles.Play();
          PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Die);
-         yield return new WaitForSecondsRealtime(0.267f);
+         PlayerAnimations.Instance.ChangeHeadAnimation(HeadAnim.DieHead);
+         yield return new WaitForSecondsRealtime(0.8f);
          yield return new WaitForSecondsRealtime(deathTime);
          Time.timeScale = 1f;
          animator.SetTrigger("End");

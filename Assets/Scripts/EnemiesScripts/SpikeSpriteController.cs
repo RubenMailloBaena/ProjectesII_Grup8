@@ -13,5 +13,8 @@ public class SpikeSpriteController : MonoBehaviour
             GetComponent<SpriteRenderer>().sprite = possibleSprites[Random.Range(0,6)];
         else
             GetComponent<SpriteRenderer>().sprite = possibleSprites[spriteSelected];
+
+
+        GetComponent<SpriteMask>().sprite = GetComponent<SpriteRenderer>().sprite;
     }
 }

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6420849012949836124}
   - component: {fileID: 6420849012949836127}
   - component: {fileID: 6420849012949836125}
-  - component: {fileID: 6420849012949836115}
   - component: {fileID: 3067854139641898244}
   m_Layer: 7
   m_Name: Obstacle1x1
@@ -100,27 +99,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxPlayerDistance: 40
---- !u!50 &6420849012949836115
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6420849012949836126}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 2
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &3067854139641898244
 BoxCollider2D:
   m_ObjectHideFlags: 0

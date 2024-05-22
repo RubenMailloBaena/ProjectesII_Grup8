@@ -114,10 +114,13 @@ public class CharacterMovement : MonoBehaviour
                     lastJumpPosition = transform.position;
                 if (collider.gameObject.GetComponent<ObstacleEffectLogic>().LastColorTypeWasStrech())
                 {
-                    //transform.parent = collider.transform.parent;
+                    if (transform.parent != collider.transform.parent)
+                    {
+                        transform.parent = collider.transform.parent;
+                    }
                 }
-                //else
-                    //transform.parent = null;
+                else
+                    transform.parent = null;
             }
         }
 
@@ -144,8 +147,8 @@ public class CharacterMovement : MonoBehaviour
         {
             // rb.AddForce(Vector2.up * jumpForceInWater);
             // Debug.Log("SWIMMING " + jumpForceInWater);
-            rb.velocity = new Vector2(rb.velocity.x, jumpForceInWater * Time.deltaTime);
-            Debug.Log("SWIMMING " + jumpForceInWater * Time.deltaTime);
+            rb.velocity = new Vector2(rb.velocity.x, jumpForceInWater);
+            Debug.Log("SWIMMING " + jumpForceInWater);
         }
     }
 

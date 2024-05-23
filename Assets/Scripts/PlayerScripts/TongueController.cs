@@ -89,6 +89,7 @@ public class TongueController : MonoBehaviour
             GetShootingDirection();
             CheckIfShootingBack();
             if (!cancelShoot) { 
+                GameSoundEffects.Instance.PlayerSoundEffect(playerSounds.ShootTongue);
                 tongueEnd.position += shootDirection * tongueSpeed * Time.fixedDeltaTime;
             }
         }
@@ -142,6 +143,7 @@ public class TongueController : MonoBehaviour
             {
                 shootTongue = false;
                 cancelShoot = true;
+                GameSoundEffects.Instance.PlayerSoundEffect(playerSounds.TongueWrongDirection);
             }
         }
     }

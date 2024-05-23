@@ -97,18 +97,39 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
-        width: 500
+        y: 23
+        width: 191
         height: 805
       alignment: 0
       pivot: {x: 0, y: 0}
-      border: {x: 198, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 61a3041db293420439190de342f073f5
       internalID: 181793310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: desertPlantsBlurred_1
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 21
+        width: 296
+        height: 817
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81636b9df17c4de449fd3467ae2b2af9
+      internalID: 1003931465
       vertices: []
       indices: 
       edges: []
@@ -125,6 +146,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       desertPlantsBlurred_0: 181793310
+      desertPlantsBlurred_1: -690542647
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

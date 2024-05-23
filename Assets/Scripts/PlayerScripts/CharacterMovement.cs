@@ -40,6 +40,7 @@ public class CharacterMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool facingRight = true;
+    private bool playedSound;
 
     private void Awake()
     {
@@ -140,10 +141,16 @@ public class CharacterMovement : MonoBehaviour
         transform.parent = null;
         if (isGrounded && !inWater)
         {
+            GameSoundEffects.Instance.PlayerSoundEffect(playerSounds.PlayerJump);
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         } 
         else if (inWater)
         {
+            if (!playedSound)
+            {
+                GameSoundEffects.Instance.PlayerSoundEffect(playerSounds.PlayerSwim);
+                playedSound = true;
+            }
             rb.velocity = new Vector2(rb.velocity.x, jumpForceInWater*Time.deltaTime);
         }
     }
@@ -176,6 +183,10 @@ public class CharacterMovement : MonoBehaviour
 
     private void InWater() {
         inWater = !inWater;
+        if (inWater)
+            GameSoundEffects.Instance.PlayerSoundEffect(playerSounds.EnterWater);
+        else
+            GameSoundEffects.Instance.StopSoundEffect(playerSounds.PlayerSwim);
     }
 
     public bool GetFacingRight() {

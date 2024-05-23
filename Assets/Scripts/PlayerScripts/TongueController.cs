@@ -39,6 +39,7 @@ public class TongueController : MonoBehaviour
     private bool getDirectionAgain = true;
     private bool canCheckCollisions = true;
     private bool inWater = false;
+    private bool soundPlayed;
 
     private Vector3 firstDirection;
     private Vector3 shootDirection;
@@ -88,7 +89,12 @@ public class TongueController : MonoBehaviour
         if (shootTongue) {
             GetShootingDirection();
             CheckIfShootingBack();
-            if (!cancelShoot) { 
+            if (!cancelShoot) {
+                if (!soundPlayed)
+                {
+                    GameSoundEffects.Instance.PlayerSoundEffect(playerSounds.ShootTongue);
+                    soundPlayed = true;
+                }
                 tongueEnd.position += shootDirection * tongueSpeed * Time.fixedDeltaTime;
             }
         }
@@ -105,6 +111,7 @@ public class TongueController : MonoBehaviour
                 cancelShoot = false;
                 getDirectionAgain = true;
                 canCheckCollisions = false;
+                soundPlayed = false;
                 onNotMovingTongue?.Invoke();
             }
         }
@@ -142,6 +149,7 @@ public class TongueController : MonoBehaviour
             {
                 shootTongue = false;
                 cancelShoot = true;
+                GameSoundEffects.Instance.PlayerSoundEffect(playerSounds.TongueWrongDirection);
             }
         }
     }
@@ -177,8 +185,6 @@ public class TongueController : MonoBehaviour
             shootTongue = false;
         }
     }
-
-
 
     private void ChangePlayerColor(ColorType colorType) {
 

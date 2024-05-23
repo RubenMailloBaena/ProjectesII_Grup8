@@ -47,13 +47,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f42d667c67b7bb41873c00ad09202c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerAudioSource: {fileID: 1690784328219108726, guid: 35c88b3923127f549b98fe3fda96b355, type: 3}
-  GameAudioSource: {fileID: 3067425023493332593, guid: f6df4e37f62592a40826f95ba4f6fdd2, type: 3}
   tongueWrongDirection: {fileID: 8300000, guid: 9c032e7e8aef301428356eb3a82233d9, type: 3}
   shootTongue: {fileID: 8300000, guid: 7e16dc6e562388649b38e28661e0b1cf, type: 3}
   playerJump: {fileID: 8300000, guid: efd7dc43dddd8274c960f0d950d86926, type: 3}
   playerEnterWater: {fileID: 8300000, guid: 4ccf578d5b4ce6248bcc84cdd21e291b, type: 3}
-  playerSwim: {fileID: 8300000, guid: 0eee363d8ebb8f24f8842f9c16947628, type: 3}
+  playerSwim: {fileID: 8300000, guid: a80b597b475b2b743b28fbc42841a515, type: 3}
 --- !u!114 &1560776995438566935
 MonoBehaviour:
   m_ObjectHideFlags: 0

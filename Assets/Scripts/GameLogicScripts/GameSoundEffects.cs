@@ -14,7 +14,7 @@ public class GameSoundEffects : MonoBehaviour
         }
     }
     
-    private AudioSource PlayerAudioSource;
+    private AudioSource[] PlayerAudioSource;
     private AudioSource GameAudioSource;
 
     [Header("PLAYER SOUND CLIPS")]
@@ -26,34 +26,69 @@ public class GameSoundEffects : MonoBehaviour
     
     void Awake()
     {
-        PlayerAudioSource = GameObject.Find("Player ").GetComponent<AudioSource>();
+        PlayerAudioSource = GameObject.Find("Player ").GetComponents<AudioSource>();
         GameAudioSource = GameObject.Find("Main Camera 1").GetComponent<AudioSource>();
     }
 
-    public void PlayerSoundEffect(playerSounds anim)
+    public void PlayerSoundEffect(playerSounds sound)
     {
-        switch (anim)
+        AudioClip clip = null;
+        int audioSourceIdx = 0;
+        switch (sound)
         {
-            case playerSounds.TongueWrongDirection: PlayerAudioSource.clip = tongueWrongDirection;
+            case playerSounds.TongueWrongDirection: 
+                clip = tongueWrongDirection;
+                audioSourceIdx = 0;
                 break;
             
-            case playerSounds.ShootTongue: PlayerAudioSource.clip = shootTongue;
+            case playerSounds.ShootTongue: 
+                clip = shootTongue;
+                audioSourceIdx = 0;
                 break;
             
-            case playerSounds.PlayerJump: PlayerAudioSource.clip = playerJump;
+            case playerSounds.PlayerJump: 
+                clip = playerJump;
+                audioSourceIdx = 1;
                 break;
             
-            case playerSounds.PlayerSwim: PlayerAudioSource.clip = playerSwim;
+            case playerSounds.PlayerSwim: 
+                clip = playerSwim;
+                audioSourceIdx = 3;
                 break;
             
-            case playerSounds.EnterWater: PlayerAudioSource.clip = playerEnterWater;
+            case playerSounds.EnterWater: 
+                clip = playerEnterWater;
+                audioSourceIdx = 2;
                 break;
         }
         
-        PlayerAudioSource.Play();
+        PlayClip(clip, audioSourceIdx);
+    }
+    
+    private void PlayClip(AudioClip clip, int audioSourceIdx)
+    {
+        PlayerAudioSource[audioSourceIdx].clip = clip;
+        PlayerAudioSource[audioSourceIdx].Play();
+    }
+
+    public void StopSoundEffect(playerSounds sound)
+    {
+        int audioSourceIdx = 0;
+        switch (sound)
+        {
+            case playerSounds.PlayerSwim: 
+                audioSourceIdx = 3;
+                break;    
+        }
+        
+        StopClip(audioSourceIdx);
+    }
+
+    private void StopClip(int audioSourceIdx)
+    {
+        PlayerAudioSource[audioSourceIdx].Stop();
     }
 }
-
 
     public enum playerSounds
     {   

@@ -21,13 +21,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/TutorialWater.unity
     guid: 858815be5e56b0f4fad36a980ea777ae
   - enabled: 1
+    path: Assets/Scenes/Levels/4.unity
+    guid: 897ad3613df5df74b9c01e933ba51474
+  - enabled: 1
     path: Assets/Scenes/Levels/1.unity
     guid: 8b9983bd166c1014ab66314d9091b956
   - enabled: 1
     path: Assets/Scenes/Levels/2.unity
     guid: 77af36fdb620a434bba7816a807b93d6
-  - enabled: 1
-    path: Assets/Scenes/3.unity
-    guid: d5f5267dbd65ab343a1b24bd200fca2f
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 84a631710b67ef7499f0558c4bd5a2a3, type: 2}

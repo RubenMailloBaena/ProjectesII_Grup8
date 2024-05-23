@@ -140,10 +140,12 @@ public class CharacterMovement : MonoBehaviour
         transform.parent = null;
         if (isGrounded && !inWater)
         {
+            GameSoundEffects.Instance.PlayerSoundEffect(playerSounds.PlayerJump);
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         } 
         else if (inWater)
         {
+            GameSoundEffects.Instance.PlayerSoundEffect(playerSounds.PlayerSwim);
             rb.velocity = new Vector2(rb.velocity.x, jumpForceInWater*Time.deltaTime);
         }
     }
@@ -176,6 +178,8 @@ public class CharacterMovement : MonoBehaviour
 
     private void InWater() {
         inWater = !inWater;
+        if (inWater)
+            GameSoundEffects.Instance.PlayerSoundEffect(playerSounds.EnterWater);
     }
 
     public bool GetFacingRight() {

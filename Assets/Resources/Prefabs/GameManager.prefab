@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6348649749849883701}
+  - component: {fileID: -3643237821572328093}
   - component: {fileID: 1560776995438566935}
   - component: {fileID: 1419596924599824962}
   - component: {fileID: -6885249382805150738}
@@ -34,6 +35,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-3643237821572328093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9002447815711592131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f42d667c67b7bb41873c00ad09202c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerAudioSource: {fileID: 1690784328219108726, guid: 35c88b3923127f549b98fe3fda96b355, type: 3}
+  GameAudioSource: {fileID: 3067425023493332593, guid: f6df4e37f62592a40826f95ba4f6fdd2, type: 3}
+  tongueWrongDirection: {fileID: 8300000, guid: 9c032e7e8aef301428356eb3a82233d9, type: 3}
+  shootTongue: {fileID: 8300000, guid: 7e16dc6e562388649b38e28661e0b1cf, type: 3}
+  playerJump: {fileID: 8300000, guid: efd7dc43dddd8274c960f0d950d86926, type: 3}
+  playerEnterWater: {fileID: 8300000, guid: 4ccf578d5b4ce6248bcc84cdd21e291b, type: 3}
+  playerSwim: {fileID: 8300000, guid: 0eee363d8ebb8f24f8842f9c16947628, type: 3}
 --- !u!114 &1560776995438566935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51,9 +71,7 @@ MonoBehaviour:
   pauseUIPrefab: {fileID: 8824907898654072053, guid: cc4789fd4ed10b142a666382cff0df64, type: 3}
   sceneTransitionPrefab: {fileID: 1778716886080463245, guid: f8ef003bf964fc844a21e3ab6d1969cd, type: 3}
   deathPartciles: {fileID: 7773754064049533691, guid: 5c67893425e26b84daaced09f43f0c1d, type: 3}
-  changeTime: 0.05
-  restoreSpeed: 10
-  delay: 0.1
+  deathTime: 0
 --- !u!114 &1419596924599824962
 MonoBehaviour:
   m_ObjectHideFlags: 0

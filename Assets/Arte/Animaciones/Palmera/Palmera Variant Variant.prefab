@@ -7,9 +7,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2750571965780719531, guid: 920b4b6e6c484ba44872404e473703f2, type: 3}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 7400000, guid: 66c0de4811143fd408adf76bc66a1734, type: 2}
     - target: {fileID: 5351769491344309035, guid: 920b4b6e6c484ba44872404e473703f2, type: 3}
       propertyPath: m_Name
-      value: Palmera Variant
+      value: Palmera Variant Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6524963981203006280, guid: 920b4b6e6c484ba44872404e473703f2, type: 3}
       propertyPath: m_RootOrder

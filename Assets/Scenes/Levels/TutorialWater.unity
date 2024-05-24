@@ -10475,7 +10475,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 577093948192954077, guid: 218ea856edaaaec41929b41fc16042ae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -100.08
+      value: -94.85
       objectReference: {fileID: 0}
     - target: {fileID: 577093948192954077, guid: 218ea856edaaaec41929b41fc16042ae, type: 3}
       propertyPath: m_LocalPosition.y
@@ -70402,7 +70402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3336242206432462134, guid: 35c88b3923127f549b98fe3fda96b355, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -23.5
+      value: -24.82
       objectReference: {fileID: 0}
     - target: {fileID: 3336242206432462134, guid: 35c88b3923127f549b98fe3fda96b355, type: 3}
       propertyPath: m_LocalPosition.z
@@ -71598,6 +71598,10 @@ PrefabInstance:
     - target: {fileID: 1560776995438566935, guid: 385a23239ebccfc4ebc56c3ed85ba793, type: 3}
       propertyPath: deathTime
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1560776995438566935, guid: 385a23239ebccfc4ebc56c3ed85ba793, type: 3}
+      propertyPath: checkPoints.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1560776995438566935, guid: 385a23239ebccfc4ebc56c3ed85ba793, type: 3}
       propertyPath: checkPoints.Array.data[0]

@@ -45,11 +45,6 @@ public class PlayerInputs : MonoBehaviour
             if(Input.GetKeyDown(jumpKey))
                 onJump?.Invoke();
         }
-        else
-        {
-            if (Input.GetKey(jumpKey) || Input.GetKeyDown(jumpKey))
-                onJump?.Invoke();
-        }
 
         //COLORS
         if(Input.GetKeyDown(swapColor))
@@ -58,7 +53,14 @@ public class PlayerInputs : MonoBehaviour
         if(Input.GetKeyDown(pauseGame))
             onPauseGame?.Invoke();
     }
-    
+
+    private void FixedUpdate()
+    {
+        if(inWater)
+            if (Input.GetKey(jumpKey) || Input.GetKeyDown(jumpKey))
+                onJump?.Invoke();
+    }
+
     private void InWater() {
         inWater = !inWater;
     }

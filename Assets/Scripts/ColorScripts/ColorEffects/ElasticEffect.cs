@@ -45,6 +45,8 @@ public class ElasticEffect : IElasticEffect
         
         Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
 
+        GameSoundEffects.Instance.PlayerSoundEffect(playerSounds.PlayerJump);
+        
         float jumpHeight = Mathf.Abs(player.GetComponent<CharacterMovement>().getLastJumpPosition().y 
             - (obstacle.transform.position.y + obstacle.transform.localScale.y / 2));
 

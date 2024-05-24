@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour
         if (!playerDeath)
         {
             playerDeath = true;
+            GameSoundEffects.Instance.PlayerSoundEffect(playerSounds.PlayerDie);
             StartCoroutine(WaitForRevive());
         }
     }

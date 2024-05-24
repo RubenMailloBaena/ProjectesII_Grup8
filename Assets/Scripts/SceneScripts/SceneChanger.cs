@@ -28,12 +28,14 @@ public class SceneChanger : MonoBehaviour
     public void EndGame()
     {
        Debug.Log("Ha salido correctamente"); 
+       GameSoundEffects.Instance.PlayUISound(UISounds.ButonEffect);
        Application.Quit();
     }
 
     
     public void SelectLevel()
     {
+        GameSoundEffects.Instance.PlayUISound(UISounds.ButonEffect);
         SceneManager.LoadScene(levelName);
     }
     

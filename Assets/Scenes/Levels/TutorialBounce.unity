@@ -52063,6 +52063,26 @@ PrefabInstance:
       propertyPath: m_text
       value: Shoot to convert the platfom color and jump more with color Pink
       objectReference: {fileID: 0}
+    - target: {fileID: 930164689430570486, guid: 0c78d4ebfb13af9478399800bd12f5d2, type: 3}
+      propertyPath: m_fontSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 930164689430570486, guid: 0c78d4ebfb13af9478399800bd12f5d2, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 84e097f3ebe060746915c07b3bc0f849, type: 2}
+    - target: {fileID: 930164689430570486, guid: 0c78d4ebfb13af9478399800bd12f5d2, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 930164689430570486, guid: 0c78d4ebfb13af9478399800bd12f5d2, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -7802494460232452043, guid: 84e097f3ebe060746915c07b3bc0f849, type: 2}
+    - target: {fileID: 930164689430570486, guid: 0c78d4ebfb13af9478399800bd12f5d2, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 930164690025587377, guid: 0c78d4ebfb13af9478399800bd12f5d2, type: 3}
       propertyPath: m_Name
       value: Canvas

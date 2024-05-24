@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     
     //CHECK POINTS
     [SerializeField] private List<GameObject> checkPoints;
-    private int currentIndex = 0;
+    private int currentIndex = -1;
 
     //PAUSE GAME
     [SerializeField] private GameObject pauseUIPrefab;
@@ -97,8 +97,16 @@ public class GameManager : MonoBehaviour
          animator.SetTrigger("Start");
     }
 
-    private void nextCheckPoint(GameObject checkPoint) {
-        if (checkPoint != checkPoints[currentIndex]) {
+    private void nextCheckPoint(GameObject checkPoint)
+    {
+        GameObject currentCheckPoint;
+        
+        if (currentIndex < 0)
+            currentCheckPoint = checkPoints[0];
+        else
+            currentCheckPoint = checkPoints[currentIndex];
+        
+        if (checkPoint != currentCheckPoint) {
             currentIndex++;
         }
     }

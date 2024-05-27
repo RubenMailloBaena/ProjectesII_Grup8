@@ -9,7 +9,7 @@ public class TongueController : MonoBehaviour
     private static TongueController instance;
     public static TongueController Instance {  
         get {
-            if (instance == null)
+            if (instance is null)
                 instance = FindAnyObjectByType<TongueController>();
             return instance;
         } }
@@ -48,16 +48,13 @@ public class TongueController : MonoBehaviour
     public event Action onShootingTongue;
     public event Action onNotMovingTongue;
     public event Action<ColorType> onPaintPlayer;
-
+    
     private LineRenderer lineRenderer;
-    private ColorManager colorManager;
 
     private void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.positionCount = 2;
-
-        colorManager = FindAnyObjectByType<ColorManager>(); 
 
         SetColorsCanShoot();
     }
@@ -73,6 +70,8 @@ public class TongueController : MonoBehaviour
             colorTypesList.Add(ColorType.Strech);
 
         colorTypes = colorTypesList.ToArray();
+        RouletteUI.Instance.InitializeRouletteColors(colorTypes);
+        
     }
 
     private void FixedUpdate()
@@ -173,7 +172,7 @@ public class TongueController : MonoBehaviour
     }
     
     private void ChangeObjectEffect(GameObject target) {
-        IColorEffect currentEffect = colorManager.GetColorEffect(colorTypes[colorIndex]);
+        IColorEffect currentEffect = ColorManager.Instace.GetColorEffect(colorTypes[colorIndex]);
         target.GetComponent<ObstacleEffectLogic>().ApplyEffect(currentEffect);
     }
 
@@ -187,10 +186,12 @@ public class TongueController : MonoBehaviour
         }
     }
 
+    //PLAYER COLOR
     private void ChangePlayerColor(ColorType colorType) {
         for (int attempts = 0; attempts < colorTypes.Length; attempts++) {
-            if (!colorManager.GetAssigneds(colorTypes[colorIndex])) {
+            if (!ColorManager.Instace.GetAssigneds(colorTypes[colorIndex])) {
                 onPaintPlayer?.Invoke(colorTypes[colorIndex]);
+                RouletteUI.Instance.RepaintRoulette(colorIndex);
                 return;
             }
             if(lastColorChangeRight)
@@ -199,6 +200,7 @@ public class TongueController : MonoBehaviour
                 SwapLeftColor();
         }
         onPaintPlayer?.Invoke(ColorType.Default);
+        RouletteUI.Instance.RepaintRoulette(colorIndex);
     }
 
     private void SwapRightColor() {
@@ -212,6 +214,8 @@ public class TongueController : MonoBehaviour
         lastColorChangeRight = false;
     }
 
+    
+    //SETTERS & GETTERS
     private void setShootTongue() {
         if (canShootAgain && !inWater) {
             PlayerAnimations.Instance.ChangeHeadAnimation(HeadAnim.Open);

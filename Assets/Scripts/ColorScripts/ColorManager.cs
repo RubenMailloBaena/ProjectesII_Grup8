@@ -6,13 +6,24 @@ using UnityEngine;
 
 public class ColorManager : MonoBehaviour
 {
+    private static ColorManager instance;
+
+    public static ColorManager Instace {
+        get {
+            if (instance is null)
+                instance = FindObjectOfType<ColorManager>();
+            return instance;
+        }
+    }
+
     [Header("GENERAL")]
     [SerializeField] private Color waterColor;
     [SerializeField] private Color elasticColor;
     [SerializeField] private Color strechColor;
-    private bool elasticAssigned = false;
-    private bool waterAssigned = false;
-    private bool strechAssigned = false;
+    [SerializeField] private Color defaultColor;
+     private bool elasticAssigned;
+    private bool waterAssigned;
+    private bool strechAssigned;
 
     private IColorEffect DefaultObject;
 
@@ -85,6 +96,26 @@ public class ColorManager : MonoBehaviour
         }
     }
 
+    public Color GetColor(ColorType colorType)
+    {
+        switch (colorType)
+        {
+            case ColorType.Elastic:
+                if (elasticAssigned)
+                    break;
+                return elasticColor;
+            case ColorType.Water:
+                if (waterAssigned)
+                    break;
+                return waterColor;
+            case ColorType.Strech:
+                if (strechAssigned)
+                    break;
+                return strechColor;
+        }
+        return defaultColor;
+    }
+
     private void ChangeAssigneds(ColorType colorType)
     {
         switch (colorType) { 
@@ -97,9 +128,6 @@ public class ColorManager : MonoBehaviour
             case ColorType.Strech:
                 strechAssigned = false;
                 break;
-            default:
-                break;
-
         }
     }
 

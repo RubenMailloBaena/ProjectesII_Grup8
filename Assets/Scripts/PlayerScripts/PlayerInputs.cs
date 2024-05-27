@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using Unity.VisualScripting;
+using UnityEngine.Serialization;
 
 public class PlayerInputs : MonoBehaviour
 {
@@ -20,7 +21,8 @@ public class PlayerInputs : MonoBehaviour
     [SerializeField] private KeyCode pauseGame;
     [SerializeField] private KeyCode shootKey;
     [SerializeField] private KeyCode jumpKey;
-    [SerializeField] private KeyCode swapColor;
+    [SerializeField] private KeyCode swapRightColor;
+    [SerializeField] private KeyCode swapLeftColor;
 
     //Tecla para disparar
     public event Action onShoot;
@@ -29,7 +31,8 @@ public class PlayerInputs : MonoBehaviour
 
     private bool inWater;
     //Cambiar Colores
-    public event Action onSwapColor;
+    public event Action onSwapRightColor;
+    public event Action onSwapLeftColor;
     //Pausar Juego
     public event Action onPauseGame;
 
@@ -47,8 +50,11 @@ public class PlayerInputs : MonoBehaviour
         }
 
         //COLORS
-        if(Input.GetKeyDown(swapColor))
-            onSwapColor?.Invoke();
+        if(Input.GetKeyDown(swapRightColor))
+            onSwapRightColor?.Invoke();
+        
+        if(Input.GetKeyDown(swapLeftColor))
+            onSwapLeftColor?.Invoke();
 
         if(Input.GetKeyDown(pauseGame))
             onPauseGame?.Invoke();

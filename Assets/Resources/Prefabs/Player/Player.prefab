@@ -671,7 +671,8 @@ MonoBehaviour:
   pauseGame: 27
   shootKey: 13
   jumpKey: 32
-  swapColor: 101
+  swapRightColor: 101
+  swapLeftColor: 113
 --- !u!114 &3336242206432462138
 MonoBehaviour:
   m_ObjectHideFlags: 0

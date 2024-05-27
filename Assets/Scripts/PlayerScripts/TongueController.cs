@@ -33,12 +33,13 @@ public class TongueController : MonoBehaviour
     [SerializeField] private float extraAngleToShoot;
     [SerializeField] private LayerMask tongueCanCollide;
 
-    private bool shootTongue = false;
-    private bool cancelShoot = false;
+    private bool shootTongue;
+    private bool cancelShoot;
     private bool canShootAgain = true;
+    private bool lastColorChangeRight = true;
     private bool getDirectionAgain = true;
     private bool canCheckCollisions = true;
-    private bool inWater = false;
+    private bool inWater;
     private bool soundPlayed;
 
     private Vector3 firstDirection;
@@ -187,25 +188,28 @@ public class TongueController : MonoBehaviour
     }
 
     private void ChangePlayerColor(ColorType colorType) {
-
-        int counter = 0;
-        while (colorManager.GetAssigneds(colorTypes[colorIndex]))
-        {
-            SwapColor();
-            counter++;
-            if (counter >= colorTypes.Length)
-            {
-                colorType = ColorType.Default;
-                break;
+        for (int attempts = 0; attempts < colorTypes.Length; attempts++) {
+            if (!colorManager.GetAssigneds(colorTypes[colorIndex])) {
+                onPaintPlayer?.Invoke(colorTypes[colorIndex]);
+                return;
             }
+            if(lastColorChangeRight)
+                SwapRightColor();
+            else
+                SwapLeftColor();
         }
-        onPaintPlayer?.Invoke(colorType);
+        onPaintPlayer?.Invoke(ColorType.Default);
     }
 
-    private void SwapColor() {
-        colorIndex++;
-        if (colorIndex > colorTypes.Length - 1)
-            colorIndex = 0;
+    private void SwapRightColor() {
+        colorIndex = (colorIndex + 1) % colorTypes.Length;
+        lastColorChangeRight = true;
+    }
+
+    private void SwapLeftColor()
+    {
+        colorIndex = (colorIndex - 1 + colorTypes.Length) % colorTypes.Length;
+        lastColorChangeRight = false;
     }
 
     private void setShootTongue() {
@@ -238,14 +242,16 @@ public class TongueController : MonoBehaviour
     private void OnEnable()
     {
         PlayerInputs.Instance.onShoot += setShootTongue;
-        PlayerInputs.Instance.onSwapColor += SwapColor;
+        PlayerInputs.Instance.onSwapRightColor += SwapRightColor;
+        PlayerInputs.Instance.onSwapLeftColor += SwapLeftColor;
         WaterEffect.onWater += InWater;
     }
 
     private void OnDisable()
     {
         PlayerInputs.Instance.onShoot -= setShootTongue;
-        PlayerInputs.Instance.onSwapColor -= SwapColor;
+        PlayerInputs.Instance.onSwapRightColor -= SwapRightColor;
+        PlayerInputs.Instance.onSwapLeftColor -= SwapLeftColor;
         WaterEffect.onWater -= InWater;
     }
 

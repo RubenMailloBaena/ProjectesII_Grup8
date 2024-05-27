@@ -20,6 +20,7 @@ public class TongueController : MonoBehaviour
     [SerializeField] private bool canUseWater = true;
     private ColorType[] colorTypes;
     private int colorIndex = 0;
+    private ColorType lastColorType = ColorType.Default;
 
     [Header("OTHER GAMEOBJECTS")]
     [SerializeField] private Transform tongueEnd;
@@ -187,19 +188,24 @@ public class TongueController : MonoBehaviour
 
     //PLAYER COLOR
     private void ChangePlayerColor(ColorType colorType) {
-        for (int attempts = 0; attempts < colorTypes.Length; attempts++) {
-            if (!ColorManager.Instace.GetAssigneds(colorTypes[colorIndex])) {
-                onPaintPlayer?.Invoke(colorTypes[colorIndex]);
-                onChangeColor?.Invoke(colorIndex);
-                return;
+        if (lastColorType != colorType)
+        {
+            for (int attempts = 0; attempts < colorTypes.Length; attempts++) {
+                if (!ColorManager.Instace.GetAssigneds(colorTypes[colorIndex])) {
+                    onPaintPlayer?.Invoke(colorTypes[colorIndex]);
+                    onChangeColor?.Invoke(colorIndex);
+                    lastColorType = colorType;
+                    return;
+                }
+                if(lastColorChangeRight)
+                    SwapRightColor();
+                else
+                    SwapLeftColor();
             }
-            if(lastColorChangeRight)
-                SwapRightColor();
-            else
-                SwapLeftColor();
+            onPaintPlayer?.Invoke(ColorType.Default);
+            onChangeColor?.Invoke(colorIndex);
+            lastColorType = colorType;
         }
-        onPaintPlayer?.Invoke(ColorType.Default);
-        onChangeColor?.Invoke(colorIndex);
     }
 
     private void SwapRightColor() {

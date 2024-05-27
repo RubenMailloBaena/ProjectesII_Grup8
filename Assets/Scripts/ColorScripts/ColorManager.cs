@@ -16,7 +16,8 @@ public class ColorManager : MonoBehaviour
         }
     }
 
-    [Header("GENERAL")]
+    [Header("GENERAL")] 
+    [SerializeField] private GameObject roulettePrefab;
     [SerializeField] private Color waterColor;
     [SerializeField] private Color elasticColor;
     [SerializeField] private Color strechColor;
@@ -49,6 +50,7 @@ public class ColorManager : MonoBehaviour
     private void Start()
     {
         DefaultObject = new DefaultEffect(Color.white, ColorType.Default);
+        Instantiate(roulettePrefab, transform.position, Quaternion.identity);
     }
 
     public IColorEffect GetColorEffect(ColorType colorType)

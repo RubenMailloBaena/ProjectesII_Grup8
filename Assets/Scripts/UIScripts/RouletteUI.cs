@@ -3,24 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Cinemachine.Utility;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class RouletteUI : MonoBehaviour
 {
-    private static RouletteUI instance;
-    public static RouletteUI Instance {
-        get {
-            if (instance is null)
-                instance = FindAnyObjectByType<RouletteUI>();
-            return instance;
-        }
-    }
-
     private Image[] colors = new Image[3];
     private GameObject arrow;
     private int arrowAngle;
     [SerializeField] private float arrowTurnSpeed;
+    private bool foundAllReferences;
 
     private ColorType[] playerColors;
     private int colorsToPaint = 0;
@@ -28,27 +21,16 @@ public class RouletteUI : MonoBehaviour
 
     private ColorManager colorManager;
 
-    private void Awake()
-    {
-        colorManager = ColorManager.Instace;
-        GetAllReferences();
-    }
-
     private void Update()
     {
-        ArrowLogic();
-    }
-
-    private void GetAllReferences()
-    {
-        for (int i = 1; i <= 3; i++)
-            colors[i-1] = transform.Find("Color" + i).GetComponent<Image>();
-        arrow = transform.Find("ArrowPivot").gameObject;
-        defaultColor = colorManager.GetColor(ColorType.Default);
+        if (foundAllReferences) 
+            ArrowLogic();
     }
 
     public void InitializeRouletteColors(ColorType[] colorTypes)
     {
+        colorManager = ColorManager.Instace;
+        GetAllReferences();
         colorsToPaint = colorTypes.Length;
         playerColors = colorTypes;
         for (int i = 0; i < colors.Length; i++)
@@ -59,9 +41,21 @@ public class RouletteUI : MonoBehaviour
                 colors[i].color = defaultColor;
         }
     }
+    
+    private void GetAllReferences()
+    {
+        for (int i = 1; i <= 3; i++)
+            colors[i-1] = transform.Find("Color" + i).GetComponent<Image>();
+        arrow = transform.Find("ArrowPivot").gameObject;
+        defaultColor = colorManager.GetColor(ColorType.Default);
+        foundAllReferences = true;
+    }
 
     public void RepaintRoulette(int colorIndex)
     {
+        if(!foundAllReferences)
+            InitializeRouletteColors(TongueController.Instance.GetColorTypes());
+        
         for (int i = 0; i < colorsToPaint; i++)
             colors[i].color = colorManager.GetColor(playerColors[i]);
 
@@ -76,7 +70,8 @@ public class RouletteUI : MonoBehaviour
                 arrowAngle = 240;
                 break;
         }
-        CheckIfAllColorsDefault();
+        if(foundAllReferences)
+            CheckIfAllColorsDefault();
     }
 
     private void ArrowLogic()
@@ -103,5 +98,15 @@ public class RouletteUI : MonoBehaviour
         arrow.SetActive(true);
         if (allGrey)
             arrow.SetActive(false);
+    }
+    
+    private void OnEnable()
+    {
+        TongueController.Instance.onChangeColor += RepaintRoulette;
+    }
+
+    private void OnDisable()
+    {
+        TongueController.Instance.onChangeColor -= RepaintRoulette;
     }
 }

@@ -48,6 +48,7 @@ public class TongueController : MonoBehaviour
     public event Action onShootingTongue;
     public event Action onNotMovingTongue;
     public event Action<ColorType> onPaintPlayer;
+    public event Action<int> onChangeColor;
     
     private LineRenderer lineRenderer;
 
@@ -70,8 +71,6 @@ public class TongueController : MonoBehaviour
             colorTypesList.Add(ColorType.Strech);
 
         colorTypes = colorTypesList.ToArray();
-        RouletteUI.Instance.InitializeRouletteColors(colorTypes);
-        
     }
 
     private void FixedUpdate()
@@ -191,7 +190,7 @@ public class TongueController : MonoBehaviour
         for (int attempts = 0; attempts < colorTypes.Length; attempts++) {
             if (!ColorManager.Instace.GetAssigneds(colorTypes[colorIndex])) {
                 onPaintPlayer?.Invoke(colorTypes[colorIndex]);
-                RouletteUI.Instance.RepaintRoulette(colorIndex);
+                onChangeColor?.Invoke(colorIndex);
                 return;
             }
             if(lastColorChangeRight)
@@ -200,7 +199,7 @@ public class TongueController : MonoBehaviour
                 SwapLeftColor();
         }
         onPaintPlayer?.Invoke(ColorType.Default);
-        RouletteUI.Instance.RepaintRoulette(colorIndex);
+        onChangeColor?.Invoke(colorIndex);
     }
 
     private void SwapRightColor() {
@@ -225,6 +224,11 @@ public class TongueController : MonoBehaviour
             onShootingTongue?.Invoke();
             
         }
+    }
+
+    public ColorType[] GetColorTypes()
+    {
+        return colorTypes;
     }
 
     private void InWater() {

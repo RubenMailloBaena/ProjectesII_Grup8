@@ -81,11 +81,12 @@ public class RouletteUI : MonoBehaviour
 
     private void ArrowLogic()
     {
-        if (arrowAngle != (int)arrow.transform.eulerAngles.z)
-        {
-            Vector3 nuevaRotacion = Vector3.Lerp(arrow.transform.eulerAngles, new Vector3(0,0,arrowAngle), arrowTurnSpeed * Time.deltaTime);
-            arrow.transform.eulerAngles = nuevaRotacion;
-        }
+        Quaternion currentRotation = arrow.transform.rotation;
+        Quaternion targetRotation = Quaternion.Euler(0, 0, arrowAngle);
+
+        Quaternion newRotation = Quaternion.Lerp(currentRotation, targetRotation, arrowTurnSpeed * Time.deltaTime);
+
+        arrow.transform.rotation = newRotation;
     }
 
     private void CheckIfAllColorsDefault()

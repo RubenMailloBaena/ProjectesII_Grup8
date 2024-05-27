@@ -10585,7 +10585,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: edb7dbdce08f1244a8a857a3fd375f5b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -45430,7 +45430,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1608039408}
-  - component: {fileID: 1608039407}
+  - component: {fileID: 1608039409}
   m_Layer: 0
   m_Name: Nube
   m_TagString: Untagged
@@ -45438,22 +45438,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!111 &1608039407
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1608039406}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 962719bf6bee6a64c85fe3a7d25c9d61, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 962719bf6bee6a64c85fe3a7d25c9d61, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!4 &1608039408
 Transform:
   m_ObjectHideFlags: 0
@@ -45479,6 +45463,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!111 &1608039409
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608039406}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 962719bf6bee6a64c85fe3a7d25c9d61, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 962719bf6bee6a64c85fe3a7d25c9d61, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!4 &1612189260 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4714047386135416699, guid: e3627c1963ca4dc40ad6035fb23afb70, type: 3}
@@ -52062,6 +52062,26 @@ PrefabInstance:
     - target: {fileID: 930164689430570486, guid: 0c78d4ebfb13af9478399800bd12f5d2, type: 3}
       propertyPath: m_text
       value: Shoot to convert the platfom color and jump more with color Pink
+      objectReference: {fileID: 0}
+    - target: {fileID: 930164689430570486, guid: 0c78d4ebfb13af9478399800bd12f5d2, type: 3}
+      propertyPath: m_fontSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 930164689430570486, guid: 0c78d4ebfb13af9478399800bd12f5d2, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 84e097f3ebe060746915c07b3bc0f849, type: 2}
+    - target: {fileID: 930164689430570486, guid: 0c78d4ebfb13af9478399800bd12f5d2, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 930164689430570486, guid: 0c78d4ebfb13af9478399800bd12f5d2, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -7802494460232452043, guid: 84e097f3ebe060746915c07b3bc0f849, type: 2}
+    - target: {fileID: 930164689430570486, guid: 0c78d4ebfb13af9478399800bd12f5d2, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 930164690025587377, guid: 0c78d4ebfb13af9478399800bd12f5d2, type: 3}
       propertyPath: m_Name

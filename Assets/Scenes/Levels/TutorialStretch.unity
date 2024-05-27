@@ -26139,6 +26139,30 @@ PrefabInstance:
       propertyPath: m_text
       value: Color Yellow allows you to increase platform's length
       objectReference: {fileID: 0}
+    - target: {fileID: 930164689430570486, guid: 0c78d4ebfb13af9478399800bd12f5d2, type: 3}
+      propertyPath: m_fontSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 930164689430570486, guid: 0c78d4ebfb13af9478399800bd12f5d2, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 84e097f3ebe060746915c07b3bc0f849, type: 2}
+    - target: {fileID: 930164689430570486, guid: 0c78d4ebfb13af9478399800bd12f5d2, type: 3}
+      propertyPath: m_fontStyle
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 930164689430570486, guid: 0c78d4ebfb13af9478399800bd12f5d2, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 930164689430570486, guid: 0c78d4ebfb13af9478399800bd12f5d2, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -7802494460232452043, guid: 84e097f3ebe060746915c07b3bc0f849, type: 2}
+    - target: {fileID: 930164689430570486, guid: 0c78d4ebfb13af9478399800bd12f5d2, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 930164690025587377, guid: 0c78d4ebfb13af9478399800bd12f5d2, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -37311,7 +37335,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: edb7dbdce08f1244a8a857a3fd375f5b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -74775,7 +74799,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1985061456
 Transform:
   m_ObjectHideFlags: 0
@@ -77056,7 +77080,7 @@ Animation:
   m_GameObject: {fileID: 2085093043}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 0}
+  m_Animation: {fileID: 7400000, guid: acc9faddbc00dd6479769cc20522f978, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: acc9faddbc00dd6479769cc20522f978, type: 2}
   m_WrapMode: 0

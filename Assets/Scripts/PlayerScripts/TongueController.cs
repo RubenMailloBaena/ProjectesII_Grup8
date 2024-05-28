@@ -7,13 +7,7 @@ using UnityEngine.UI;
 public class TongueController : MonoBehaviour
 {
     //Singletone pattern
-    private static TongueController instance;
-    public static TongueController Instance {  
-        get {
-            if (instance is null)
-                instance = FindAnyObjectByType<TongueController>();
-            return instance;
-        } }
+    public static TongueController instance;
 
     [Header("BLOQUEAR EFECTOS ESCENAS")]
     [SerializeField] private bool canUseStrech = true;
@@ -34,6 +28,7 @@ public class TongueController : MonoBehaviour
     [SerializeField] private Transform tongueEnd;
     [SerializeField] private Transform tongueOrigin;
     [SerializeField] private GameObject roulettePrefab;
+    [SerializeField] private GameObject gameManager;
 
     [Header("TONGUE PARAMETERS")]
     [SerializeField] private float tongueSpeed;
@@ -60,9 +55,13 @@ public class TongueController : MonoBehaviour
     public event Action<ColorType> onPaintPlayer;
     
     private LineRenderer lineRenderer;
+    
 
     private void Awake()
     {
+        if (instance == null)
+            instance = this;
+        
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.positionCount = 2;
 
@@ -169,7 +168,7 @@ public class TongueController : MonoBehaviour
             Collider2D[] hitColliders = Physics2D.OverlapCircleAll(tongueEnd.position, detectionRadius, tongueCanCollide);
 
             for (int i = 0; i < hitColliders.Length; i++) {
-;               if (hitColliders[i].gameObject.tag.Equals("Door")) {
+               if (hitColliders[i].gameObject.tag.Equals("Door")) {
                     hitColliders[i].gameObject.GetComponent<NextLevelDoor>().DoorCollided();
                 }
                 else if (hitColliders[i].gameObject.tag.Equals("PaintableObstacle") && !inWater) {
@@ -182,7 +181,7 @@ public class TongueController : MonoBehaviour
     }
     
     private void ChangeObjectEffect(GameObject target) {
-        IColorEffect currentEffect = ColorManager.Instance.GetColorEffect(colorTypes[colorIndex]);
+        IColorEffect currentEffect = ColorManager.instance.GetColorEffect(colorTypes[colorIndex]);
         target.GetComponent<ObstacleEffectLogic>().ApplyEffect(currentEffect);
     }
 
@@ -199,7 +198,7 @@ public class TongueController : MonoBehaviour
     //PLAYER COLOR
     private void ChangePlayerColor(ColorType colorType) {
         for (int attempts = 0; attempts < colorTypes.Length; attempts++) {
-            if (!ColorManager.Instance.GetAssigneds(colorTypes[colorIndex])) {
+            if (!ColorManager.instance.GetAssigneds(colorTypes[colorIndex])) {
                 onPaintPlayer?.Invoke(colorTypes[colorIndex]);
                 RepaintRoulette();
                 return;
@@ -234,9 +233,9 @@ public class TongueController : MonoBehaviour
         for (int i = 0; i < rouletteColors.Length; i++)
         {
             if (i < colorTypes.Length)
-                rouletteColors[i].color = ColorManager.Instance.GetColor(colorTypes[i]);
+                rouletteColors[i].color = ColorManager.instance.GetColor(colorTypes[i]);
             else
-                rouletteColors[i].color = ColorManager.Instance.GetColor(ColorType.Default);
+                rouletteColors[i].color = ColorManager.instance.GetColor(ColorType.Default);
         }
     }
     
@@ -250,7 +249,7 @@ public class TongueController : MonoBehaviour
     public void RepaintRoulette()
     {
         for (int i = 0; i < colorsToPaint; i++)
-            rouletteColors[i].color = ColorManager.Instance.GetColor(colorTypes[i]);
+            rouletteColors[i].color = ColorManager.instance.GetColor(colorTypes[i]);
     
         if (colorIndex == 0)
             arrowAngle = 0;
@@ -267,7 +266,7 @@ public class TongueController : MonoBehaviour
         bool allGrey = true;
         for (int i = 0; i < rouletteColors.Length; i++)
         {
-            if (rouletteColors[i].color != ColorManager.Instance.GetColor(ColorType.Default))
+            if (rouletteColors[i].color != ColorManager.instance.GetColor(ColorType.Default))
             {
                 allGrey = false;
                 break;

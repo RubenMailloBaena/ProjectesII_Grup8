@@ -206,16 +206,16 @@ public class CharacterMovement : MonoBehaviour
 
     private void OnEnable()
     {
-        TongueController.Instance.onShootingTongue += CanNotFlip;
-        TongueController.Instance.onNotMovingTongue += CanFlip;
+        TongueController.instance.onShootingTongue += CanNotFlip;
+        TongueController.instance.onNotMovingTongue += CanFlip;
         PlayerInputs.Instance.onJump += PlayerJump;
         WaterEffect.onWater += InWater;
     }
 
     private void OnDisable()
     {
-        TongueController.Instance.onShootingTongue -= CanNotFlip;
-        TongueController.Instance.onNotMovingTongue -= CanFlip;
+        TongueController.instance.onShootingTongue -= CanNotFlip;
+        TongueController.instance.onNotMovingTongue -= CanFlip;
         PlayerInputs.Instance.onJump -= PlayerJump;
         WaterEffect.onWater -= InWater;
     }

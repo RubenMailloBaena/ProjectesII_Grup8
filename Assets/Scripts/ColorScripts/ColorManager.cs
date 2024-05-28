@@ -6,15 +6,7 @@ using UnityEngine;
 
 public class ColorManager : MonoBehaviour
 {
-    private static ColorManager instance;
-
-    public static ColorManager Instance {
-        get {
-            if (instance is null)
-                instance = FindAnyObjectByType<ColorManager>();
-            return instance;
-        }
-    }
+    public static ColorManager instance;
 
     [Header("GENERAL")] 
     [SerializeField] private Color waterColor;
@@ -46,8 +38,10 @@ public class ColorManager : MonoBehaviour
     [Header("WATER")]
     [SerializeField] private LayerMask waterLayerMask;
 
-    private void Start()
+    private void Awake()
     {
+        if (instance == null)
+            instance = this;
         DefaultObject = new DefaultEffect(Color.white, ColorType.Default);
     }
 

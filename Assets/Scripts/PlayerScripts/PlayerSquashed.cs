@@ -62,7 +62,7 @@ public class PlayerSquashed : MonoBehaviour
         }
 
         if (counter >= 2)
-            GameManager.Instance.MoveToCheckPoint();
+            GameManager.instance.MoveToCheckPoint();
     }
 
     private void OnDrawGizmos()

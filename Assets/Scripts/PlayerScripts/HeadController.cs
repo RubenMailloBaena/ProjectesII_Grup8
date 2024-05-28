@@ -59,12 +59,12 @@ public class HeadController : MonoBehaviour
         if (!CharacterMovement.Instance.GetFacingRight())
             playerRight = -transform.right;
 
-        if (Vector2.Angle(directionToLook, playerRight) > TongueController.Instance.GetMaxAngleToShoot()) {
-            if (Vector2.Angle(directionToLook, transform.up) < TongueController.Instance.GetExtraAngleToShoot())
+        if (Vector2.Angle(directionToLook, playerRight) > TongueController.instance.GetMaxAngleToShoot()) {
+            if (Vector2.Angle(directionToLook, transform.up) < TongueController.instance.GetExtraAngleToShoot())
             {
                 directionToLook = transform.up;
             }
-            else if (Vector2.Angle(directionToLook, -transform.up) < TongueController.Instance.GetExtraAngleToShoot())
+            else if (Vector2.Angle(directionToLook, -transform.up) < TongueController.instance.GetExtraAngleToShoot())
             {
                 directionToLook = -transform.up;
             }
@@ -93,13 +93,13 @@ public class HeadController : MonoBehaviour
 
     private void OnEnable()
     {
-        TongueController.Instance.onShootingTongue += CanNotFlip;
-        TongueController.Instance.onNotMovingTongue += CanFlip;
+        TongueController.instance.onShootingTongue += CanNotFlip;
+        TongueController.instance.onNotMovingTongue += CanFlip;
     }
 
     private void OnDisable()
     {
-        TongueController.Instance.onShootingTongue -= CanNotFlip;
-        TongueController.Instance.onNotMovingTongue -= CanFlip;   
+        TongueController.instance.onShootingTongue -= CanNotFlip;
+        TongueController.instance.onNotMovingTongue -= CanFlip;   
     }
 }

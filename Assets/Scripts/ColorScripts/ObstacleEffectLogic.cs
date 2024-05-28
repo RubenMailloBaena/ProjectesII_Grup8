@@ -4,17 +4,7 @@ using Unity.VisualScripting;
 
 public class ObstacleEffectLogic : MonoBehaviour
 {
-    private static ObstacleEffectLogic instance;
-
-    public static ObstacleEffectLogic Instace
-    {
-        get
-        {
-            if (instance == null)
-                instance = FindAnyObjectByType<ObstacleEffectLogic>();
-            return instance;
-        }
-    }
+    public static ObstacleEffectLogic instance;
 
     [SerializeField] private float maxPlayerDistance;
 
@@ -59,6 +49,9 @@ public class ObstacleEffectLogic : MonoBehaviour
 
     void Awake()
     {
+        if (instance == null)
+            instance = this;
+        
         currentColorType = ColorType.Default;
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         initialScale = transform.localScale;
@@ -189,12 +182,11 @@ public class ObstacleEffectLogic : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.Instance.onPlayerDeath += RemoveAllEffects;
+        GameManager.instance.onPlayerDeath += RemoveAllEffects;
     }
 
     private void OnDisable()
     {
-        if (GameManager.Instance != null)
-            GameManager.Instance.onPlayerDeath -= RemoveAllEffects;
+        GameManager.instance.onPlayerDeath -= RemoveAllEffects;
     }
 }

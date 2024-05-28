@@ -126,11 +126,11 @@ public class PaintBody : MonoBehaviour
 
     private void OnEnable()
     {
-        TongueController.Instance.onPaintPlayer += PaintPlayer;
+        TongueController.instance.onPaintPlayer += PaintPlayer;
     }
 
     private void OnDisable()
     {
-        TongueController.Instance.onPaintPlayer -= PaintPlayer;
+        TongueController.instance.onPaintPlayer -= PaintPlayer;
     }
 }

@@ -6,15 +6,7 @@ using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
-    private static GameManager instance;
-    public static GameManager Instance
-    {
-        get { 
-            if (instance is null)
-                instance = FindAnyObjectByType<GameManager>();
-            return instance;
-        }
-    }
+    public static GameManager instance;
     
     public event Action<ColorType> onPlayerDeath;
     
@@ -37,8 +29,14 @@ public class GameManager : MonoBehaviour
     [Header("DEATH ANIMATION PARAMETERS")] 
     [SerializeField] private float deathTime;
 
-    private ParticleSystem deathParticles;   
-    
+    private ParticleSystem deathParticles;
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+    }
+
     private void Start()
     {
         pauseUIInstance = Instantiate(pauseUIPrefab);

@@ -6,6 +6,16 @@ using UnityEngine;
 
 public class ColorManager : MonoBehaviour
 {
+    private static ColorManager instance;
+
+    public static ColorManager Instace {
+        get {
+            if (instance is null)
+                instance = FindObjectOfType<ColorManager>();
+            return instance;
+        }
+    }
+
     [Header("GENERAL")] 
     [SerializeField] private GameObject roulettePrefab;
     [SerializeField] private Color waterColor;

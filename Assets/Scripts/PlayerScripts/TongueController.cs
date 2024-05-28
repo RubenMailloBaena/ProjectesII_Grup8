@@ -20,6 +20,7 @@ public class TongueController : MonoBehaviour
     [SerializeField] private bool canUseWater = true;
     private ColorType[] colorTypes;
     private int colorIndex = 0;
+    private ColorType lastColorType = ColorType.Default;
 
     [Header("OTHER GAMEOBJECTS")]
     [SerializeField] private Transform tongueEnd;
@@ -51,15 +52,12 @@ public class TongueController : MonoBehaviour
     public event Action<int> onChangeColor;
     
     private LineRenderer lineRenderer;
-    private ColorManager colorManager;
 
     private void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.positionCount = 2;
 
-        colorManager = FindAnyObjectByType<ColorManager>();
-        
         SetColorsCanShoot();
     }
 
@@ -174,7 +172,7 @@ public class TongueController : MonoBehaviour
     }
     
     private void ChangeObjectEffect(GameObject target) {
-        IColorEffect currentEffect = colorManager.GetColorEffect(colorTypes[colorIndex]);
+        IColorEffect currentEffect = ColorManager.Instace.GetColorEffect(colorTypes[colorIndex]);
         target.GetComponent<ObstacleEffectLogic>().ApplyEffect(currentEffect);
     }
 
@@ -190,10 +188,13 @@ public class TongueController : MonoBehaviour
 
     //PLAYER COLOR
     private void ChangePlayerColor(ColorType colorType) {
+        if (lastColorType != colorType)
+        {
             for (int attempts = 0; attempts < colorTypes.Length; attempts++) {
-                if (!colorManager.GetAssigneds(colorTypes[colorIndex])) {
+                if (!ColorManager.Instace.GetAssigneds(colorTypes[colorIndex])) {
                     onPaintPlayer?.Invoke(colorTypes[colorIndex]);
                     onChangeColor?.Invoke(colorIndex);
+                    lastColorType = colorType;
                     return;
                 }
                 if(lastColorChangeRight)
@@ -203,6 +204,8 @@ public class TongueController : MonoBehaviour
             }
             onPaintPlayer?.Invoke(ColorType.Default);
             onChangeColor?.Invoke(colorIndex);
+            lastColorType = colorType;
+        }
     }
 
     private void SwapRightColor() {

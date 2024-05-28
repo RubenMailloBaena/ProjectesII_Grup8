@@ -28,7 +28,6 @@ public class TongueController : MonoBehaviour
     [SerializeField] private Transform tongueEnd;
     [SerializeField] private Transform tongueOrigin;
     [SerializeField] private GameObject roulettePrefab;
-    [SerializeField] private GameObject gameManager;
 
     [Header("TONGUE PARAMETERS")]
     [SerializeField] private float tongueSpeed;

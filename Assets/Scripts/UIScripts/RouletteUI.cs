@@ -29,7 +29,7 @@ public class RouletteUI : MonoBehaviour
 
     public void InitializeRouletteColors(ColorType[] colorTypes)
     {
-        colorManager = ColorManager.Instace;
+        colorManager = FindAnyObjectByType<ColorManager>();
         GetAllReferences();
         colorsToPaint = colorTypes.Length;
         playerColors = colorTypes;

@@ -8,7 +8,7 @@ public class ColorManager : MonoBehaviour
 {
     private static ColorManager instance;
 
-    public static ColorManager Instace {
+    public static ColorManager Instance {
         get {
             if (instance is null)
                 instance = FindAnyObjectByType<ColorManager>();

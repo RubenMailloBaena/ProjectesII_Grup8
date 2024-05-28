@@ -113,15 +113,15 @@ public class CharacterMovement : MonoBehaviour
                 isGrounded = true;
                 if (collider.gameObject.GetComponent<ObstacleEffectLogic>().getCurrentColorType() != ColorType.Elastic)
                     lastJumpPosition = transform.position;
-                if (collider.gameObject.GetComponent<ObstacleEffectLogic>().LastColorTypeWasStrech())
-                {
-                    if (transform.parent != collider.transform.parent)
-                    {
-                        transform.parent = collider.transform.parent;
-                    }
-                }
-                else
-                    transform.parent = null;
+                // if (collider.gameObject.GetComponent<ObstacleEffectLogic>().LastColorTypeWasStrech())
+                // {
+                //     if (transform.parent != collider.transform.parent)
+                //     {
+                //         transform.parent = collider.transform.parent;
+                //     }
+                // }
+                // else
+                //     transform.parent = null;
             }
         }
 
@@ -138,7 +138,7 @@ public class CharacterMovement : MonoBehaviour
     }
 
     private void PlayerJump() {
-        transform.parent = null;
+        // transform.parent = null;
         if (isGrounded && !inWater)
         {
             GameSoundEffects.Instance.PlayerSoundEffect(playerSounds.PlayerJump);

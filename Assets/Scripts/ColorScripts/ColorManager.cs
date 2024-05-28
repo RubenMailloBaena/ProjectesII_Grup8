@@ -11,18 +11,17 @@ public class ColorManager : MonoBehaviour
     public static ColorManager Instace {
         get {
             if (instance is null)
-                instance = FindObjectOfType<ColorManager>();
+                instance = FindAnyObjectByType<ColorManager>();
             return instance;
         }
     }
 
     [Header("GENERAL")] 
-    [SerializeField] private GameObject roulettePrefab;
     [SerializeField] private Color waterColor;
     [SerializeField] private Color elasticColor;
     [SerializeField] private Color strechColor;
     [SerializeField] private Color defaultColor;
-     private bool elasticAssigned;
+    private bool elasticAssigned;
     private bool waterAssigned;
     private bool strechAssigned;
 
@@ -50,7 +49,6 @@ public class ColorManager : MonoBehaviour
     private void Start()
     {
         DefaultObject = new DefaultEffect(Color.white, ColorType.Default);
-        Instantiate(roulettePrefab, transform.position, Quaternion.identity);
     }
 
     public IColorEffect GetColorEffect(ColorType colorType)

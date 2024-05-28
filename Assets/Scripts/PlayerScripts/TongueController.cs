@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 
 public class TongueController : MonoBehaviour
@@ -22,9 +23,18 @@ public class TongueController : MonoBehaviour
     private int colorIndex = 0;
     private ColorType lastColorType = ColorType.Default;
 
+    [Header("COLOR ROULETTE")] 
+    [SerializeField] private float arrowSpeed;
+    private GameObject rouletteInstance;
+    private Image[] rouletteColors = new Image[3];
+    private GameObject arrow;
+    private int arrowAngle;
+    private int colorsToPaint = 0;
+
     [Header("OTHER GAMEOBJECTS")]
     [SerializeField] private Transform tongueEnd;
     [SerializeField] private Transform tongueOrigin;
+    [SerializeField] private GameObject roulettePrefab;
 
     [Header("TONGUE PARAMETERS")]
     [SerializeField] private float tongueSpeed;
@@ -49,7 +59,6 @@ public class TongueController : MonoBehaviour
     public event Action onShootingTongue;
     public event Action onNotMovingTongue;
     public event Action<ColorType> onPaintPlayer;
-    public event Action<int> onChangeColor;
     
     private LineRenderer lineRenderer;
 
@@ -72,6 +81,7 @@ public class TongueController : MonoBehaviour
             colorTypesList.Add(ColorType.Strech);
 
         colorTypes = colorTypesList.ToArray();
+        InitializeRouletteColors();
     }
 
     private void FixedUpdate()
@@ -83,6 +93,7 @@ public class TongueController : MonoBehaviour
         CheckTongueCollisions();
         CheckMaxTongueDistance();
         ChangePlayerColor(colorTypes[colorIndex]);
+        ArrowLogic();
     }
 
     private void ShootTongue() {
@@ -188,24 +199,21 @@ public class TongueController : MonoBehaviour
 
     //PLAYER COLOR
     private void ChangePlayerColor(ColorType colorType) {
-        if (lastColorType != colorType)
-        {
-            for (int attempts = 0; attempts < colorTypes.Length; attempts++) {
-                if (!ColorManager.Instace.GetAssigneds(colorTypes[colorIndex])) {
-                    onPaintPlayer?.Invoke(colorTypes[colorIndex]);
-                    onChangeColor?.Invoke(colorIndex);
-                    lastColorType = colorType;
-                    return;
-                }
-                if(lastColorChangeRight)
-                    SwapRightColor();
-                else
-                    SwapLeftColor();
+        for (int attempts = 0; attempts < colorTypes.Length; attempts++) {
+            if (!ColorManager.Instace.GetAssigneds(colorTypes[colorIndex])) {
+                onPaintPlayer?.Invoke(colorTypes[colorIndex]);
+                RepaintRoulette();
+                lastColorType = colorType;
+                return;
             }
-            onPaintPlayer?.Invoke(ColorType.Default);
-            onChangeColor?.Invoke(colorIndex);
-            lastColorType = colorType;
+            if(lastColorChangeRight)
+                SwapRightColor();
+            else
+                SwapLeftColor();
         }
+        onPaintPlayer?.Invoke(ColorType.Default);
+        RepaintRoulette();
+        lastColorType = colorType;
     }
 
     private void SwapRightColor() {
@@ -217,6 +225,68 @@ public class TongueController : MonoBehaviour
     {
         colorIndex = (colorIndex - 1 + colorTypes.Length) % colorTypes.Length;
         lastColorChangeRight = false;
+    }
+    
+    
+    //RULETA DE COLORES
+    private void InitializeRouletteColors()
+    {
+        rouletteInstance = Instantiate(roulettePrefab, transform.position, Quaternion.identity);
+        GetAllRouletteReferences();
+        colorsToPaint = colorTypes.Length;
+        for (int i = 0; i < rouletteColors.Length; i++)
+        {
+            if (i < colorTypes.Length)
+                rouletteColors[i].color = ColorManager.Instace.GetColor(colorTypes[i]);
+            else
+                rouletteColors[i].color = ColorManager.Instace.GetColor(ColorType.Default);
+        }
+    }
+
+    private void GetAllRouletteReferences()
+    {
+        for (int i = 1; i <= 3; i++)
+            rouletteColors[i - 1] = rouletteInstance.transform.GetChild(0).transform.Find("Color" + i).GetComponent<Image>();
+        arrow = rouletteInstance.transform.GetChild(0).transform.Find("ArrowPivot").gameObject;
+    }
+    
+    public void RepaintRoulette()
+    {
+        for (int i = 0; i < colorsToPaint; i++)
+            rouletteColors[i].color = ColorManager.Instace.GetColor(colorTypes[i]);
+
+        if (colorIndex == 0)
+            arrowAngle = 0;
+        else if (colorIndex == 1)
+            arrowAngle = 120;
+        else
+            arrowAngle = 240;
+        
+        CheckIfAllColorsDefault();
+    }
+    
+    private void CheckIfAllColorsDefault()
+    {
+        bool allGrey = true;
+        for (int i = 0; i < rouletteColors.Length; i++)
+        {
+            if (rouletteColors[i].color != ColorManager.Instace.GetColor(ColorType.Default))
+            {
+                allGrey = false;
+                break;
+            }
+        }
+        arrow.SetActive(true);
+        if (allGrey)
+            arrow.SetActive(false);
+    }
+    
+    private void ArrowLogic()
+    {
+        Quaternion currentRotation = arrow.transform.rotation;
+        Quaternion targetRotation = Quaternion.Euler(0, 0, arrowAngle);
+        Quaternion newRotation = Quaternion.Lerp(currentRotation, targetRotation, arrowSpeed * Time.deltaTime);
+        arrow.transform.rotation = newRotation;
     }
 
     

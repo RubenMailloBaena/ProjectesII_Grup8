@@ -688,8 +688,10 @@ MonoBehaviour:
   canUseStrech: 0
   canUseElastic: 1
   canUseWater: 0
+  arrowSpeed: 8
   tongueEnd: {fileID: 3336242205924660175}
   tongueOrigin: {fileID: 3336242206842478858}
+  roulettePrefab: {fileID: 8090792157733556104, guid: b22f97819f211f24cb0fdd3956ddd631, type: 3}
   tongueSpeed: 40
   maxTongueDistance: 18
   detectionRadius: 0.25

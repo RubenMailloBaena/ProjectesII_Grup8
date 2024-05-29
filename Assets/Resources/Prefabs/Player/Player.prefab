@@ -826,6 +826,7 @@ MonoBehaviour:
   jumpForceInWater: 500
   linearDrag: 3
   gravityInWater: 2
+  smoke: {fileID: 5569835690176376901}
 --- !u!114 &4407038486316679020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1413,6 +1414,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a61e8c98be224a46a8f51cd8046a662, type: 3}
+--- !u!198 &5569835690176376901 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7492556436383516591, guid: 5a61e8c98be224a46a8f51cd8046a662, type: 3}
+  m_PrefabInstance: {fileID: 3077894156131350506}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5569835690176376903 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7492556436383516589, guid: 5a61e8c98be224a46a8f51cd8046a662, type: 3}

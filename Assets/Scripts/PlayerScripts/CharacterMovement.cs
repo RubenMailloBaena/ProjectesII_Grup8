@@ -42,6 +42,8 @@ public class CharacterMovement : MonoBehaviour
     private bool facingRight = true;
     private bool playedSound;
 
+    [Header("Particles")] [SerializeField] private ParticleSystem smoke;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();

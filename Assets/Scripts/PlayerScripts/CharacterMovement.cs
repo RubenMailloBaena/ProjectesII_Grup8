@@ -43,12 +43,15 @@ public class CharacterMovement : MonoBehaviour
     private bool playedSound;
 
     [Header("PARTICLES")] 
-    [SerializeField] private ParticleSystem walkParticles;
+    [SerializeField] private ParticleSystem LeftWalkParticles;
+    [SerializeField] private ParticleSystem RightWalkParticles;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         vecGravity = new Vector2(0, -Physics2D.gravity.y);
+        LeftWalkParticles.Stop();
+        RightWalkParticles.Stop();
     }
 
     private void Update()
@@ -59,6 +62,8 @@ public class CharacterMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Debug.Log("LEFT: " + LeftWalkParticles.isPlaying + " RIGHT: " + RightWalkParticles.isPlaying + "Facing Right: "  + facingRight);
+        
         if(inWater)
             ApplyMovementInWater();
         else
@@ -96,7 +101,6 @@ public class CharacterMovement : MonoBehaviour
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
-       
     }
 
     private void CheckJumpingLogic() {
@@ -166,32 +170,48 @@ public class CharacterMovement : MonoBehaviour
         if (rb.velocity.y > 3 && !isGrounded && !inWater)
         { //jump
             PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Jump);
-            walkParticles.Stop();
+            LeftWalkParticles.Stop();
+            RightWalkParticles.Stop();
         }
         else if (rb.velocity.y > 0 && inWater)
         {
             PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Swim);
-            walkParticles.Stop();
+            LeftWalkParticles.Stop();
+            RightWalkParticles.Stop();
         }
         else if (rb.velocity.y < 0 && inWater)
         {
             PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.SwimDown);
-            walkParticles.Stop();
+            LeftWalkParticles.Stop();
+            RightWalkParticles.Stop();
         }
         else if (rb.velocity.y < 3 && !isGrounded)
         {
             PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Fall);
-            walkParticles.Stop();
+            LeftWalkParticles.Stop();
+            RightWalkParticles.Stop();
         }
         else if (movementDirection.x != 0 && isGrounded)
         { //walk
             PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Walk);
-            walkParticles.Play();
+            if (facingRight)
+            {
+                RightWalkParticles.Stop();
+                if(!LeftWalkParticles.isPlaying)
+                    LeftWalkParticles.Play();
+            }
+            else
+            {
+                LeftWalkParticles.Stop();
+                if(!RightWalkParticles.isPlaying)
+                    RightWalkParticles.Play();
+            }
         }
         else
         {
             PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Idle);
-            walkParticles.Stop();
+            LeftWalkParticles.Stop();
+            RightWalkParticles.Stop();
         }
     }
 

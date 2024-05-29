@@ -42,7 +42,10 @@ public class CharacterMovement : MonoBehaviour
     private bool facingRight = true;
     private bool playedSound;
 
-    [Header("Particles")] [SerializeField] private ParticleSystem smoke;
+    [Header("Particles")] 
+    [SerializeField] private ParticleSystem smokeRight;
+    [SerializeField] private ParticleSystem smokeLeft;
+    private ParticleSystem lastSmokePlayed;
 
     private void Awake()
     {
@@ -84,17 +87,18 @@ public class CharacterMovement : MonoBehaviour
         
         if (canFlip) {
             if ((movementDirection.x > 0 && !facingRight) || (movementDirection.x < 0 && facingRight))
+            {
                 RotatePlayer();
+                StopSmokeParticles();
+            }
         }
     }
 
     private void RotatePlayer() {
         facingRight = !facingRight;
-
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
-       
        
     }
 
@@ -160,20 +164,64 @@ public class CharacterMovement : MonoBehaviour
     }
 
 
-    private void ManagePlayerAnimations() {
-        if (rb.velocity.y > 3 && !isGrounded&& !inWater)
+    private void ManagePlayerAnimations()
+    {
+        if (rb.velocity.y > 3 && !isGrounded && !inWater)
         { //jump
             PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Jump);
+            StopSmokeParticles();
         }
-        else if (rb.velocity.y > 0 &&  inWater) PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Swim);
-        else if (rb.velocity.y < 0 && inWater) PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.SwimDown);
-        else if (rb.velocity.y < 3 && !isGrounded) { 
+        else if (rb.velocity.y > 0 && inWater)
+        {
+            PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Swim);
+            StopSmokeParticles();
+        }
+        else if (rb.velocity.y < 0 && inWater)
+        {
+            PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.SwimDown);
+            StopSmokeParticles();
+        }
+        else if (rb.velocity.y < 3 && !isGrounded)
+        {
             PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Fall);
-        } //fall
-        else if (movementDirection.x != 0 && isGrounded) //walk
+            StopSmokeParticles();
+        }
+        else if (movementDirection.x != 0 && isGrounded)
+        { //walk
             PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Walk);
-        else PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Idle);
+            if (facingRight)
+            {
+                if (!smokeLeft.isPlaying)
+                {
+                    smokeLeft.Play();
+                    smokeRight.Stop();
+                }
+            }
+            else
+            {
+                if (!smokeRight.isPlaying)
+                {
+                    smokeRight.Play();
+                    smokeLeft.Stop();
+                }
+            }
+        }
+        else
+        {
+            PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Idle);
+            StopSmokeParticles();
+        }
     }
+
+    private void StopSmokeParticles()
+    {
+        if (smokeRight.isPlaying) smokeRight.Stop();
+        if (smokeLeft.isPlaying) smokeLeft.Stop();
+    }
+
+
+
+
 
 
 

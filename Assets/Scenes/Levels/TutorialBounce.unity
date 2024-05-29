@@ -4925,7 +4925,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1424812957}
-  m_RootOrder: 158
+  m_RootOrder: 72
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &459342226
 SpriteRenderer:
@@ -5129,7 +5129,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -90
+  m_SortingOrder: -76
   m_Sprite: {fileID: 2445973353661137549, guid: d1cb67497b482e34fb39a3a6bcbd5fc3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -35558,7 +35558,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -90
+  m_SortingOrder: -76
   m_Sprite: {fileID: 2445973353661137549, guid: d1cb67497b482e34fb39a3a6bcbd5fc3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -43283,6 +43283,7 @@ Transform:
   - {fileID: 1170694498}
   - {fileID: 165692899}
   - {fileID: 57238144}
+  - {fileID: 459342225}
   - {fileID: 2026272395}
   - {fileID: 622084518}
   - {fileID: 900325298}
@@ -43306,12 +43307,12 @@ Transform:
   - {fileID: 1360675284}
   - {fileID: 1726859779}
   - {fileID: 1365610025}
-  - {fileID: 648385752}
   - {fileID: 40567743}
   - {fileID: 1545586174}
   - {fileID: 1998110378}
   - {fileID: 1000151068}
   - {fileID: 461960909}
+  - {fileID: 648385752}
   - {fileID: 372711070}
   - {fileID: 2075640343}
   - {fileID: 1593510985}
@@ -43335,12 +43336,12 @@ Transform:
   - {fileID: 753471871}
   - {fileID: 609139404}
   - {fileID: 2047687571}
-  - {fileID: 1690431626}
   - {fileID: 328414981}
   - {fileID: 1373970912}
   - {fileID: 436496082}
   - {fileID: 1042015037}
   - {fileID: 848433345}
+  - {fileID: 1690431626}
   - {fileID: 345135883}
   - {fileID: 1786602529}
   - {fileID: 274427425}
@@ -43369,7 +43370,6 @@ Transform:
   - {fileID: 2067043464}
   - {fileID: 721665554}
   - {fileID: 1952115941}
-  - {fileID: 459342225}
   - {fileID: 214452660}
   - {fileID: 1168292031}
   - {fileID: 1154706101}
@@ -43429,21 +43429,21 @@ Transform:
   - {fileID: 1370926231}
   - {fileID: 1890576280}
   - {fileID: 1018609215}
+  - {fileID: 566614959}
   - {fileID: 1182508274}
-  - {fileID: 273012818}
   - {fileID: 471315946}
-  - {fileID: 151567269}
   - {fileID: 309171910}
+  - {fileID: 151567269}
   - {fileID: 710548918}
   - {fileID: 1972210611}
   - {fileID: 1039394746}
+  - {fileID: 861315606}
   - {fileID: 663065482}
-  - {fileID: 566614959}
+  - {fileID: 273012818}
   - {fileID: 1467277513}
   - {fileID: 170996506}
-  - {fileID: 797529224}
   - {fileID: 1300954333}
-  - {fileID: 861315606}
+  - {fileID: 797529224}
   - {fileID: 2053050032}
   - {fileID: 1054454502}
   m_Father: {fileID: 451773546}
@@ -45758,7 +45758,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1608039406}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.5, y: 20.2, z: -1.195286}
+  m_LocalPosition: {x: -33.2, y: 18.1, z: -1.195286}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -48206,7 +48206,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1855532399
 Transform:
   m_ObjectHideFlags: 0

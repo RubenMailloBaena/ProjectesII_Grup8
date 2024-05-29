@@ -554,6 +554,7 @@ GameObject:
   - component: {fileID: 125515684637943035}
   - component: {fileID: 8552026217833884088}
   - component: {fileID: 4169545696194001412}
+  - component: {fileID: 9079350330374041799}
   m_Layer: 5
   m_Name: GPPanel
   m_TagString: Untagged
@@ -622,6 +623,27 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &9079350330374041799
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5229610860974835259}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5ee9e2516d3e7194f80bad118510b7d8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8824907898654072053
 GameObject:
   m_ObjectHideFlags: 0

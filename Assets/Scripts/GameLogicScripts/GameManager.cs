@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     //PAUSE GAME
     [SerializeField] private GameObject pauseUIPrefab;
     private GameObject pauseUIInstance;
+    private Animator gamePauseAnimator;
     private bool gamePaused = false;
     private bool playerDeath = false;
 
@@ -40,6 +41,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         pauseUIInstance = Instantiate(pauseUIPrefab);
+        gamePauseAnimator = pauseUIInstance.transform.GetChild(0).GetComponent<Animator>();
 
         GameObject prefabInstance = Instantiate(sceneTransitionPrefab);
         animator = prefabInstance.GetComponent<Animator>();
@@ -55,13 +57,15 @@ public class GameManager : MonoBehaviour
     private void ManagePauseGame() {
         if (gamePaused)
         {
-            pauseUIInstance.SetActive(true);
+            //pauseUIInstance.SetActive(true);
+            gamePauseAnimator.Play("Appear Animation");
             Time.timeScale = 0f;
             Cursor.visible = true;
         }
         else
         {
-            pauseUIInstance.SetActive(false);
+            //pauseUIInstance.SetActive(false);
+            gamePauseAnimator.Play("Hide Animation");
             if(!playerDeath)
                 Time.timeScale = 1f;
             Cursor.visible = false;

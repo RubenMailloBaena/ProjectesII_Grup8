@@ -12,9 +12,11 @@ public class CheckPoint : MonoBehaviour
    
     private Animator animator;
     private bool Ceck = false;
+    [SerializeField] private ParticleSystem deathPartciles;
     private void Start()
     {
          animator = GetComponent<Animator>();
+        deathPartciles = GameObject.Find("DeathParticles").GetComponent<ParticleSystem>();
     }
     private void Update()
     {
@@ -23,12 +25,23 @@ public class CheckPoint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player")) {
+        if (collision.gameObject.CompareTag("Player"))
+        {
 
             Ceck = true;
             onCheckPoint?.Invoke(gameObject);
             Destroy(GetComponent<Collider2D>());
-           
-        } 
+            deathPartciles.Play();
+            Invoke("waitTime",0.5f);
+        }
     }
+
+    private void  waitTime()
+    {
+        deathPartciles.Stop();
+    }
+
+   
+    
+            
 }

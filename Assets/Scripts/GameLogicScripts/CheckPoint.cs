@@ -7,22 +7,25 @@ using Unity.VisualScripting;
 public class CheckPoint : MonoBehaviour
 {
     public static event Action<GameObject> onCheckPoint;
+
+    [Header("butttt_0 (1)")]
    
-    private SpriteRenderer spriteRenderer;
-   
-    
+    private Animator animator;
+    private bool Ceck = false;
     private void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-          spriteRenderer.color = Color.red;
-       
+         animator = GetComponent<Animator>();
+    }
+    private void Update()
+    {
+     animator.SetBool("isFlyiing", Ceck);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player")) {
-              spriteRenderer.color = Color.green;
-            
+
+            Ceck = true;
             onCheckPoint?.Invoke(gameObject);
             Destroy(GetComponent<Collider2D>());
            

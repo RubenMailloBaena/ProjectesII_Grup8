@@ -96,12 +96,12 @@ TextureImporter:
       name: butttt_0
       rect:
         serializedVersion: 2
-        x: 40
+        x: 1
         y: 147
-        width: 308
-        height: 431
+        width: 347
+        height: 444
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -117,12 +117,12 @@ TextureImporter:
       name: butttt_1
       rect:
         serializedVersion: 2
-        x: 379
-        y: 145
+        x: 389
+        y: 121
         width: 405
         height: 432
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -138,12 +138,12 @@ TextureImporter:
       name: butttt_2
       rect:
         serializedVersion: 2
-        x: 874
-        y: 143
+        x: 886
+        y: 140
         width: 410
         height: 433
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -159,12 +159,12 @@ TextureImporter:
       name: butttt_3
       rect:
         serializedVersion: 2
-        x: 1417
+        x: 1430
         y: 142
         width: 490
         height: 433
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

@@ -42,15 +42,16 @@ public class CharacterMovement : MonoBehaviour
     private bool facingRight = true;
     private bool playedSound;
 
-    [Header("Particles")] 
-    [SerializeField] private ParticleSystem smokeRight;
-    [SerializeField] private ParticleSystem smokeLeft;
-    private ParticleSystem lastSmokePlayed;
+    [Header("PARTICLES")] 
+    [SerializeField] private ParticleSystem LeftWalkParticles;
+    [SerializeField] private ParticleSystem RightWalkParticles;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         vecGravity = new Vector2(0, -Physics2D.gravity.y);
+        LeftWalkParticles.Stop();
+        RightWalkParticles.Stop();
     }
 
     private void Update()
@@ -61,6 +62,8 @@ public class CharacterMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Debug.Log("LEFT: " + LeftWalkParticles.isPlaying + " RIGHT: " + RightWalkParticles.isPlaying + "Facing Right: "  + facingRight);
+        
         if(inWater)
             ApplyMovementInWater();
         else
@@ -89,7 +92,6 @@ public class CharacterMovement : MonoBehaviour
             if ((movementDirection.x > 0 && !facingRight) || (movementDirection.x < 0 && facingRight))
             {
                 RotatePlayer();
-                StopSmokeParticles();
             }
         }
     }
@@ -99,7 +101,6 @@ public class CharacterMovement : MonoBehaviour
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
-       
     }
 
     private void CheckJumpingLogic() {
@@ -169,61 +170,50 @@ public class CharacterMovement : MonoBehaviour
         if (rb.velocity.y > 3 && !isGrounded && !inWater)
         { //jump
             PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Jump);
-            StopSmokeParticles();
+            LeftWalkParticles.Stop();
+            RightWalkParticles.Stop();
         }
         else if (rb.velocity.y > 0 && inWater)
         {
             PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Swim);
-            StopSmokeParticles();
+            LeftWalkParticles.Stop();
+            RightWalkParticles.Stop();
         }
         else if (rb.velocity.y < 0 && inWater)
         {
             PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.SwimDown);
-            StopSmokeParticles();
+            LeftWalkParticles.Stop();
+            RightWalkParticles.Stop();
         }
         else if (rb.velocity.y < 3 && !isGrounded)
         {
             PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Fall);
-            StopSmokeParticles();
+            LeftWalkParticles.Stop();
+            RightWalkParticles.Stop();
         }
         else if (movementDirection.x != 0 && isGrounded)
         { //walk
             PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Walk);
             if (facingRight)
             {
-                if (!smokeLeft.isPlaying)
-                {
-                    smokeLeft.Play();
-                    smokeRight.Stop();
-                }
+                RightWalkParticles.Stop();
+                if(!LeftWalkParticles.isPlaying)
+                    LeftWalkParticles.Play();
             }
             else
             {
-                if (!smokeRight.isPlaying)
-                {
-                    smokeRight.Play();
-                    smokeLeft.Stop();
-                }
+                LeftWalkParticles.Stop();
+                if(!RightWalkParticles.isPlaying)
+                    RightWalkParticles.Play();
             }
         }
         else
         {
             PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Idle);
-            StopSmokeParticles();
+            LeftWalkParticles.Stop();
+            RightWalkParticles.Stop();
         }
     }
-
-    private void StopSmokeParticles()
-    {
-        if (smokeRight.isPlaying) smokeRight.Stop();
-        if (smokeLeft.isPlaying) smokeLeft.Stop();
-    }
-
-
-
-
-
-
 
     private void CanNotFlip() {
         canFlip = false;

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5d1a911321c478145a776a24949fb267
+guid: bcb0c6b2504bcb14aaa413f0f153594b
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -103,8 +103,8 @@ ScriptedImporter:
       x: 4
       y: 4
       width: 211
-      height: 169
-    spriteID: edd7b9c351a647d48abb8705f1cf542b
+      height: 144
+    spriteID: 7dae2631fb8343944a7805768a93d2cc
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -114,7 +114,7 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 4, y: 4}
-    spritePosition: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 25}
   characterData:
     bones: []
     parts: []
@@ -151,7 +151,7 @@ ScriptedImporter:
     spriteName: Capa 1
     isGroup: 0
     parentIndex: -1
-    spriteID: edd7b9c351a647d48abb8705f1cf542b
+    spriteID: 7dae2631fb8343944a7805768a93d2cc
     layerID: 2
     mosaicPosition: {x: 4, y: 4}
     flatten: 0

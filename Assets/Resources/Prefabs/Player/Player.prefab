@@ -1403,6 +1403,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7492556436383516591, guid: 501dde4af7454a44abb4cecdc7f6a9cb, type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7492556436383516591, guid: 501dde4af7454a44abb4cecdc7f6a9cb, type: 3}
       propertyPath: ShapeModule.m_Position.x
       value: 0.75
       objectReference: {fileID: 0}
@@ -1412,7 +1416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7492556436383516591, guid: 501dde4af7454a44abb4cecdc7f6a9cb, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7492556436383516591, guid: 501dde4af7454a44abb4cecdc7f6a9cb, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
@@ -2185,8 +2189,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7492556436383516591, guid: e034157841ad2104a85c3833db485727, type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7492556436383516591, guid: e034157841ad2104a85c3833db485727, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7492556436383516591, guid: e034157841ad2104a85c3833db485727, type: 3}
       propertyPath: InitialModule.startLifetime.scalar

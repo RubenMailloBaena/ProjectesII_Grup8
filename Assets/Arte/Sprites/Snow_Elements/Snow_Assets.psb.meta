@@ -30,7 +30,7 @@ ScriptedImporter:
     sRGBTexture: 1
     spriteMode: 2
     spriteExtrude: 1
-    spriteMeshType: 1
+    spriteMeshType: 0
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
     spritePixelsToUnits: 100
@@ -95,7 +95,7 @@ ScriptedImporter:
   rigSpriteImportData:
   - name: Snow_Assets_0
     originalName: 
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -115,31 +115,9 @@ ScriptedImporter:
     parentGroupIndex: -1
     uvTransform: {x: 4, y: 420}
     spritePosition: {x: 0, y: 0}
-  - name: Snow_Assets_1
-    originalName: 
-    pivot: {x: 0, y: 0}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 225
-      y: 425
-      width: 304
-      height: 198
-    spriteID: a2eceecca5a20244ba7171efd4d853d4
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 225, y: 425}
-    spritePosition: {x: 0, y: 0}
   - name: Snow_Assets_10
     originalName: 
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -161,7 +139,7 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   - name: Snow_Assets_11
     originalName: 
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -181,28 +159,6 @@ ScriptedImporter:
     parentGroupIndex: -1
     uvTransform: {x: 4, y: 5}
     spritePosition: {x: 0, y: 0}
-  - name: Snow_Assets_12
-    originalName: 
-    pivot: {x: 0, y: 0}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 750
-      y: 4
-      width: 166
-      height: 167
-    spriteID: 6afd88a0729ab2b4e9a4e4994cf8e0e9
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 750, y: 4}
-    spritePosition: {x: 0, y: 0}
   characterData:
     bones: []
     parts: []
@@ -216,7 +172,29 @@ ScriptedImporter:
     dimension: {x: 0, y: 0}
     characterGroups: []
     boneReadOnly: 0
-  platformSettings: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   mosaicLayers: 1
   characterMode: 1
   documentPivot: {x: 0, y: 0}
@@ -255,16 +233,6 @@ ScriptedImporter:
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: Capa 15
-    spriteName: Capa 15
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 0f9e86d4f9bac964ba25406893252d7a
-    layerID: 31
-    mosaicPosition: {x: 4, y: 848}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
   - name: Capa 14
     spriteName: Capa 14
     isGroup: 0
@@ -282,16 +250,6 @@ ScriptedImporter:
     spriteID: 4fa41ad66c7f4054f8e7c8868aac21cb
     layerID: 17
     mosaicPosition: {x: 4, y: 4}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Capa 10
-    spriteName: Capa 10
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 71bc3b96b69c41e40aa5cb46107b7f93
-    layerID: 16
-    mosaicPosition: {x: 223, y: 492}
     flatten: 0
     isImported: 1
     isVisible: 1

@@ -20,7 +20,7 @@ public class CheckPoint : MonoBehaviour
     }
     private void Update()
     {
-     animator.SetBool("isFlyiing", Ceck);
+     animator.SetBool("New Bool", Ceck);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

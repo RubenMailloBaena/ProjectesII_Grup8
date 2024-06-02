@@ -123,6 +123,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 577093948192954077}
     m_Modifications:
+    - target: {fileID: 323745275614356354, guid: 8e69f76834d30e84483f6fe0c07baf87, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 323745275614356354, guid: 8e69f76834d30e84483f6fe0c07baf87, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 323745275614356354, guid: 8e69f76834d30e84483f6fe0c07baf87, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7821513871066061883, guid: 8e69f76834d30e84483f6fe0c07baf87, type: 3}
       propertyPath: m_Name
       value: ButtParticles
@@ -176,11 +188,6 @@ PrefabInstance:
 --- !u!4 &3120409553893889984 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8973378814694564285, guid: 8e69f76834d30e84483f6fe0c07baf87, type: 3}
-  m_PrefabInstance: {fileID: 6325925293478786685}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &6031479976811976191 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 323745275614356354, guid: 8e69f76834d30e84483f6fe0c07baf87, type: 3}
   m_PrefabInstance: {fileID: 6325925293478786685}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6679993016981921522
@@ -300,4 +307,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2492688952754294ca4a1dfdfeaade53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButterPartciles: {fileID: 6031479976811976191}

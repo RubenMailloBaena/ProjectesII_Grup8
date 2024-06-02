@@ -29,92 +29,72 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3499705311514429869}
-  - {fileID: 1750895815118557471}
   - {fileID: 3120409553893889984}
+  - {fileID: 8555540028871351501}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1108932778206554305
+--- !u!1001 &1644402841187750915
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 577093948192954077}
     m_Modifications:
-    - target: {fileID: -8653719598885068355, guid: bcb0c6b2504bcb14aaa413f0f153594b, type: 3}
-      propertyPath: m_Name
-      value: Piedra_Mariposa1
-      objectReference: {fileID: 0}
-    - target: {fileID: -7552582706839291426, guid: bcb0c6b2504bcb14aaa413f0f153594b, type: 3}
+    - target: {fileID: 6947213609451686094, guid: 2c7dff0f0412a4c4487605a47a6626f5, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: -7552582706839291426, guid: bcb0c6b2504bcb14aaa413f0f153594b, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.2475
-      objectReference: {fileID: 0}
-    - target: {fileID: -7552582706839291426, guid: bcb0c6b2504bcb14aaa413f0f153594b, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.2475
-      objectReference: {fileID: 0}
-    - target: {fileID: -7552582706839291426, guid: bcb0c6b2504bcb14aaa413f0f153594b, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.2475
-      objectReference: {fileID: 0}
-    - target: {fileID: -7552582706839291426, guid: bcb0c6b2504bcb14aaa413f0f153594b, type: 3}
+    - target: {fileID: 6947213609451686094, guid: 2c7dff0f0412a4c4487605a47a6626f5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.04314041
+      value: 0.35
       objectReference: {fileID: 0}
-    - target: {fileID: -7552582706839291426, guid: bcb0c6b2504bcb14aaa413f0f153594b, type: 3}
+    - target: {fileID: 6947213609451686094, guid: 2c7dff0f0412a4c4487605a47a6626f5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.57
+      value: -1.2
       objectReference: {fileID: 0}
-    - target: {fileID: -7552582706839291426, guid: bcb0c6b2504bcb14aaa413f0f153594b, type: 3}
+    - target: {fileID: 6947213609451686094, guid: 2c7dff0f0412a4c4487605a47a6626f5, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -7552582706839291426, guid: bcb0c6b2504bcb14aaa413f0f153594b, type: 3}
+    - target: {fileID: 6947213609451686094, guid: 2c7dff0f0412a4c4487605a47a6626f5, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -7552582706839291426, guid: bcb0c6b2504bcb14aaa413f0f153594b, type: 3}
+    - target: {fileID: 6947213609451686094, guid: 2c7dff0f0412a4c4487605a47a6626f5, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -7552582706839291426, guid: bcb0c6b2504bcb14aaa413f0f153594b, type: 3}
+    - target: {fileID: 6947213609451686094, guid: 2c7dff0f0412a4c4487605a47a6626f5, type: 3}
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -7552582706839291426, guid: bcb0c6b2504bcb14aaa413f0f153594b, type: 3}
+    - target: {fileID: 6947213609451686094, guid: 2c7dff0f0412a4c4487605a47a6626f5, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -7552582706839291426, guid: bcb0c6b2504bcb14aaa413f0f153594b, type: 3}
+    - target: {fileID: 6947213609451686094, guid: 2c7dff0f0412a4c4487605a47a6626f5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -7552582706839291426, guid: bcb0c6b2504bcb14aaa413f0f153594b, type: 3}
+    - target: {fileID: 6947213609451686094, guid: 2c7dff0f0412a4c4487605a47a6626f5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -7552582706839291426, guid: bcb0c6b2504bcb14aaa413f0f153594b, type: 3}
+    - target: {fileID: 6947213609451686094, guid: 2c7dff0f0412a4c4487605a47a6626f5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -586001075459487902, guid: bcb0c6b2504bcb14aaa413f0f153594b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.79
-      objectReference: {fileID: 0}
-    - target: {fileID: -586001075459487902, guid: bcb0c6b2504bcb14aaa413f0f153594b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.31
+    - target: {fileID: 7646862334554675159, guid: 2c7dff0f0412a4c4487605a47a6626f5, type: 3}
+      propertyPath: m_Name
+      value: Piedra_Mariposa1_1 (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 4843985084834002234, guid: bcb0c6b2504bcb14aaa413f0f153594b, type: 3}
---- !u!4 &1750895815118557471 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: 2c7dff0f0412a4c4487605a47a6626f5, type: 3}
+--- !u!4 &8555540028871351501 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -7552582706839291426, guid: bcb0c6b2504bcb14aaa413f0f153594b, type: 3}
-  m_PrefabInstance: {fileID: 1108932778206554305}
+  m_CorrespondingSourceObject: {fileID: 6947213609451686094, guid: 2c7dff0f0412a4c4487605a47a6626f5, type: 3}
+  m_PrefabInstance: {fileID: 1644402841187750915}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6325925293478786685
 PrefabInstance:
@@ -141,7 +121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8973378814694564285, guid: 8e69f76834d30e84483f6fe0c07baf87, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8973378814694564285, guid: 8e69f76834d30e84483f6fe0c07baf87, type: 3}
       propertyPath: m_LocalPosition.x

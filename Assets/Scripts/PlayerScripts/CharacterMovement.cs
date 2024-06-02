@@ -248,7 +248,7 @@ public class CharacterMovement : MonoBehaviour
     {
         TongueController.instance.onShootingTongue += CanNotFlip;
         TongueController.instance.onNotMovingTongue += CanFlip;
-        PlayerInputs.Instance.onJump += PlayerJump;
+        PlayerInputs.instance.onJump += PlayerJump;
         WaterEffect.onWater += InWater;
     }
 
@@ -256,7 +256,7 @@ public class CharacterMovement : MonoBehaviour
     {
         TongueController.instance.onShootingTongue -= CanNotFlip;
         TongueController.instance.onNotMovingTongue -= CanFlip;
-        PlayerInputs.Instance.onJump -= PlayerJump;
+        PlayerInputs.instance.onJump -= PlayerJump;
         WaterEffect.onWater -= InWater;
     }
 

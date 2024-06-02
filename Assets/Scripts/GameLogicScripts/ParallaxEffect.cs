@@ -18,8 +18,9 @@ public class ParallaxEffect : MonoBehaviour
     
     void LateUpdate()
     {
-        float deltaX = (cameraTransform.position.x - previousCameraPosition.x) * parallaxMultiplier;
-        transform.Translate(new Vector3(deltaX, 0, 0));
+        Vector3 deltaPosition = cameraTransform.position - previousCameraPosition;
+        Vector3 parallaxMovement = new Vector3(deltaPosition.x * parallaxMultiplier, deltaPosition.y * parallaxMultiplier, 0);
+        transform.Translate(parallaxMovement);
         previousCameraPosition = cameraTransform.position;
     }
 }

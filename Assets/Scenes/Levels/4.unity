@@ -901,6 +901,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1482497239}
     m_Modifications:
+    - target: {fileID: 1643951731487253885, guid: fc14ae4e6df655a4783510053fbcb077, type: 3}
+      propertyPath: m_MaskInteraction
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1682603981510910371, guid: fc14ae4e6df655a4783510053fbcb077, type: 3}
       propertyPath: m_Name
       value: Final Obstacle (5)

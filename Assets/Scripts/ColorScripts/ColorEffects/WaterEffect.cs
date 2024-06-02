@@ -37,6 +37,9 @@ public class WaterEffect : IWaterEffect
         prevMaterial = sp.material;
         sp.drawMode = SpriteDrawMode.Sliced;
         sp.material = waterMaterial;
+        Color x = sp.color;
+        x.a = 0.1f;
+        sp.color = x;
     }
 
     private void GetAllObstaclesParts(GameObject target)
@@ -68,7 +71,10 @@ public class WaterEffect : IWaterEffect
         colorPartSprite.color = previousColor;
         target.GetComponent<BoxCollider2D>().isTrigger = false;
         sp.material = prevMaterial;
-        sp.drawMode = SpriteDrawMode.Tiled;
+        sp.drawMode = SpriteDrawMode.Tiled; 
+        Color x = sp.color;
+        x.a = 1;
+        sp.color = x;
     }
 
     public ColorType getColorType()

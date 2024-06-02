@@ -7,7 +7,15 @@ using UnityEngine.Serialization;
 
 public class PlayerInputs : MonoBehaviour
 {
-    public static PlayerInputs instance;
+    private static PlayerInputs instance;
+    public static PlayerInputs Instance
+    {
+        get { 
+            if (instance == null)
+                instance = FindAnyObjectByType<PlayerInputs>();
+            return instance;
+        }
+    }
 
     [Header("CONTROLES")]
     [SerializeField] private KeyCode pauseGame;
@@ -27,11 +35,6 @@ public class PlayerInputs : MonoBehaviour
     public event Action onSwapLeftColor;
     //Pausar Juego
     public event Action onPauseGame;
-
-    private void Awake()
-    {
-        instance = this;
-    }
 
     private void Update()
     {

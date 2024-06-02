@@ -315,17 +315,17 @@ public class TongueController : MonoBehaviour
 
     private void OnEnable()
     {
-        PlayerInputs.instance.onShoot += setShootTongue;
-        PlayerInputs.instance.onSwapRightColor += SwapRightColor;
-        PlayerInputs.instance.onSwapLeftColor += SwapLeftColor;
+        PlayerInputs.Instance.onShoot += setShootTongue;
+        PlayerInputs.Instance.onSwapRightColor += SwapRightColor;
+        PlayerInputs.Instance.onSwapLeftColor += SwapLeftColor;
         WaterEffect.onWater += InWater;
     }
 
     private void OnDisable()
     {
-        PlayerInputs.instance.onShoot -= setShootTongue;
-        PlayerInputs.instance.onSwapRightColor -= SwapRightColor;
-        PlayerInputs.instance.onSwapLeftColor -= SwapLeftColor;
+        PlayerInputs.Instance.onShoot -= setShootTongue;
+        PlayerInputs.Instance.onSwapRightColor -= SwapRightColor;
+        PlayerInputs.Instance.onSwapLeftColor -= SwapLeftColor;
         WaterEffect.onWater -= InWater;
     }
 

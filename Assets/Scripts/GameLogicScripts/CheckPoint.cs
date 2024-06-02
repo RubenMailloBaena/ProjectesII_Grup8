@@ -12,11 +12,11 @@ public class CheckPoint : MonoBehaviour
    
     private Animator animator;
     private bool Ceck = false;
-    [SerializeField] private ParticleSystem deathPartciles;
+    [SerializeField] private ParticleSystem ButterPartciles;
     private void Start()
     {
          animator = GetComponent<Animator>();
-        deathPartciles = GameObject.Find("DeathParticles").GetComponent<ParticleSystem>();
+        ButterPartciles = GameObject.Find("ButterParticles").GetComponent<ParticleSystem>();
     }
     private void Update()
     {
@@ -31,14 +31,14 @@ public class CheckPoint : MonoBehaviour
             Ceck = true;
             onCheckPoint?.Invoke(gameObject);
             Destroy(GetComponent<Collider2D>());
-            deathPartciles.Play();
+            ButterPartciles.Play();
             Invoke("waitTime",0.5f);
         }
     }
 
     private void  waitTime()
     {
-        deathPartciles.Stop();
+        ButterPartciles.Stop();
     }
 
    

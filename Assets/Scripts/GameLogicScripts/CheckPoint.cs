@@ -11,16 +11,18 @@ public class CheckPoint : MonoBehaviour
     [Header("butttt_0 (1)")]
    
     private Animator animator;
-    private bool Ceck = false;
+    private bool Animation1 = false;
+    private bool Animation2 = false;
     [SerializeField] private ParticleSystem ButterPartciles;
     private void Start()
     {
-         animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         ButterPartciles = GameObject.Find("ButterParticles").GetComponent<ParticleSystem>();
     }
     private void Update()
     {
-     animator.SetBool("New Bool", Ceck);
+        animator.SetBool("New Bool", Animation1);
+        animator.SetBool("New Bool 0", Animation2);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -28,20 +30,24 @@ public class CheckPoint : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
 
-            Ceck = true;
+            Animation1 = true;
+            Invoke("waitTimeAnimation", 0.5f);
             onCheckPoint?.Invoke(gameObject);
             Destroy(GetComponent<Collider2D>());
             ButterPartciles.Play();
-            Invoke("waitTime",0.5f);
+            Invoke("waitTimeParticles", 0.5f);
         }
     }
 
-    private void  waitTime()
+    private void  waitTimeParticles()
     {
-        ButterPartciles.Stop();
+        ButterPartciles.Pause();
+    }
+    public void waitTimeAnimation()
+    {
+        Animation2 = true;
     }
 
-   
-    
-            
+
+
 }

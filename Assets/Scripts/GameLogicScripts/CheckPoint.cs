@@ -17,7 +17,7 @@ public class CheckPoint : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
-        ButterPartciles = GameObject.Find("ButterParticles").GetComponent<ParticleSystem>();
+        ButterPartciles = GameObject.Find("ButtParticles").GetComponent<ParticleSystem>();
     }
     private void Update()
     {
@@ -41,7 +41,7 @@ public class CheckPoint : MonoBehaviour
 
     private void  waitTimeParticles()
     {
-        ButterPartciles.Pause();
+        ButterPartciles.Stop();
     }
     public void waitTimeAnimation()
     {

@@ -21,6 +21,12 @@ public class GameManager : MonoBehaviour
     private bool gamePaused = false;
     private bool playerDeath = false;
 
+    public bool PlayerDeath
+    {
+        get { return playerDeath; }
+        set { playerDeath = value; }
+    }
+
     //ANIMACION MUERTE PLAYER
     [SerializeField] private GameObject sceneTransitionPrefab;
     private Animator animator;
@@ -35,7 +41,13 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         if (instance == null)
-            instance = this;
+        {             instance = this;
+        DontDestroyOnLoad(gameObject); 
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void Start()

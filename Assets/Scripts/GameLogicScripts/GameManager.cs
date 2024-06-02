@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     
     //[SerializeField] private float deathTime;
     [Header("DEATH ANIMATION PARAMETERS")] 
-    [SerializeField] private float deathTime;
+   // [SerializeField] private float deathTime;
 
     private ParticleSystem deathParticles;
 
@@ -86,18 +86,19 @@ public class GameManager : MonoBehaviour
     {
          Time.timeScale = 0f;
          deathPartciles.Play();
-         PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Die);
          PlayerAnimations.Instance.ChangeHeadAnimation(HeadAnim.DieHead);
-         yield return new WaitForSecondsRealtime(2f);
-         yield return new WaitForSecondsRealtime(deathTime);
+         PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Die);
+         yield return new WaitForSecondsRealtime(1.9f);
+         //yield return new WaitForSecondsRealtime(deathTime);
          Time.timeScale = 1f;
          animator.SetTrigger("End");
-         CharacterMovement.Instance.SetPlayerPosition(checkPoints[currentIndex].transform.position);
-         PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Idle);
          deathPartciles.Stop();
          onPlayerDeath.Invoke(ColorType.Default);
-         playerDeath = false;
+         CharacterMovement.Instance.SetPlayerPosition(checkPoints[currentIndex].transform.position);
+         PlayerAnimations.Instance.ChangeHeadAnimation(HeadAnim.IdleHead);
+         PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Idle);
          animator.SetTrigger("Start");
+         playerDeath = false;
     }
 
     private void nextCheckPoint(GameObject checkPoint)

@@ -26,10 +26,11 @@ public class PlayerInputs : MonoBehaviour
     // Pausar Juego
     public event Action onPauseGame;
 
-    private bool usingController = true;
+    private bool usingController;
 
     // Variables para el control del ratón con el mando
     private Vector3 joystickMousePosition;
+    private Vector3 lastJoystickMousePosition; // Almacenar la última posición del ratón con mando
     [SerializeField] private float joystickSensitivity = 100.0f;
 
     void Awake()
@@ -41,6 +42,7 @@ public class PlayerInputs : MonoBehaviour
     private void Start()
     {
         joystickMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+        lastJoystickMousePosition = joystickMousePosition; // Inicializar la última posición del ratón
     }
 
     private void Update()
@@ -114,6 +116,8 @@ public class PlayerInputs : MonoBehaviour
 
             if (Mathf.Abs(rightStickHorizontal) > 0.1f || Mathf.Abs(rightStickVertical) > 0.1f)
             {
+                // Actualizar la posición del ratón solo si el joystick se está moviendo
+                lastJoystickMousePosition = joystickMousePosition;
                 Vector3 joystickDirection = new Vector3(rightStickHorizontal, rightStickVertical, 0.0f);
                 joystickMousePosition += joystickDirection * joystickSensitivity * Time.deltaTime;
 

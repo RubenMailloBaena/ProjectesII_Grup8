@@ -37,6 +37,7 @@ public class ColorManager : MonoBehaviour
     //Water
     [Header("WATER")]
     [SerializeField] private LayerMask waterLayerMask;
+    [SerializeField] private Material waterMaterial;
 
     private void Awake()
     {
@@ -59,7 +60,7 @@ public class ColorManager : MonoBehaviour
                 if (waterAssigned)
                     return DefaultObject;
                 waterAssigned = true;
-                return new WaterEffect(waterColor, ColorType.Water, waterLayerMask);
+                return new WaterEffect(waterColor, ColorType.Water, waterLayerMask, waterMaterial);
 
             case ColorType.Strech:
                 if (strechAssigned)

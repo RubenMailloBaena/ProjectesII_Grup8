@@ -13,13 +13,18 @@ public class WaterEffect : IWaterEffect
     private bool effectApplied = false;
     private Collider2D[] collisions;
     private SpriteRenderer colorPartSprite;
+    private SpriteRenderer sp;
+    private Material waterMaterial;
+    private Material prevMaterial;
 
     public static event Action onWater;
 
-    public WaterEffect(Color color, ColorType colorType, LayerMask waterLayermask) { 
+    public WaterEffect(Color color, ColorType colorType, LayerMask waterLayermask, Material waterMaterial) { 
         effectColor = color;
         this.colorType = colorType;
         this.waterLayermask = waterLayermask;
+        this.waterMaterial = waterMaterial;
+        this.prevMaterial = prevMaterial;
     }
 
     public void InitializeEffect(GameObject target)
@@ -28,12 +33,16 @@ public class WaterEffect : IWaterEffect
         previousColor = colorPartSprite.color;
         colorPartSprite.color = effectColor;
         actualTarget.GetComponent<BoxCollider2D>().isTrigger = true;
+        sp = target.transform.parent.transform.Find("PlatformSprite").GetComponent<SpriteRenderer>();
+        prevMaterial = sp.material;
+        sp.drawMode = SpriteDrawMode.Sliced;
+        sp.material = waterMaterial;
     }
 
     private void GetAllObstaclesParts(GameObject target)
     {
         actualTarget = target;
-        colorPartSprite = actualTarget.transform.parent.transform.Find("ColorChange").GetComponent<SpriteRenderer>();
+        colorPartSprite = actualTarget.transform.parent.transform.Find("PlatformSprite").GetComponent<SpriteRenderer>();
     }
 
     public void ApplyEffect(bool enterOnTrigger)
@@ -58,6 +67,8 @@ public class WaterEffect : IWaterEffect
 
         colorPartSprite.color = previousColor;
         target.GetComponent<BoxCollider2D>().isTrigger = false;
+        sp.material = prevMaterial;
+        sp.drawMode = SpriteDrawMode.Tiled;
     }
 
     public ColorType getColorType()

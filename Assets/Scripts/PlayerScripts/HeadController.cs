@@ -20,7 +20,18 @@ public class HeadController : MonoBehaviour
 
     private void Update()
     {
-        RotatePlayerHead();
+        if (GameManager.instance != null)
+        {
+            if (GameManager.instance.PlayerDeath)
+            {
+                Debug.Log("Está muerto");
+            }
+            else
+            {
+                RotatePlayerHead();
+            }
+
+        }
     }
 
     private void RotatePlayerHead()

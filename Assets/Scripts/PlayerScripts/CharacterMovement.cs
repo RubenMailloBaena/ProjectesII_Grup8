@@ -165,51 +165,62 @@ public class CharacterMovement : MonoBehaviour
 
     private void ManagePlayerAnimations()
     {
-        if (rb.velocity.y > 3 && !isGrounded && !inWater)
-        { //jump
-            PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Jump);
-            LeftWalkParticles.Stop();
-            RightWalkParticles.Stop();
-        }
-        else if (rb.velocity.y > 0 && inWater)
+        if (GameManager.instance != null)
         {
-            PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Swim);
-            LeftWalkParticles.Stop();
-            RightWalkParticles.Stop();
-        }
-        else if (rb.velocity.y < 0 && inWater)
-        {
-            PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.SwimDown);
-            LeftWalkParticles.Stop();
-            RightWalkParticles.Stop();
-        }
-        else if (rb.velocity.y < 3 && !isGrounded)
-        {
-            PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Fall);
-            LeftWalkParticles.Stop();
-            RightWalkParticles.Stop();
-        }
-        else if (movementDirection.x != 0 && isGrounded)
-        { //walk
-            PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Walk);
-            if (facingRight)
+            if (GameManager.instance.PlayerDeath)
             {
-                RightWalkParticles.Stop();
-                if(!LeftWalkParticles.isPlaying)
-                    LeftWalkParticles.Play();
+                   Debug.Log("Está muerto");
             }
             else
             {
-                LeftWalkParticles.Stop();
-                if(!RightWalkParticles.isPlaying)
-                    RightWalkParticles.Play();
+
+                if (rb.velocity.y > 3 && !isGrounded && !inWater)
+                { //jump
+                    PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Jump);
+                    LeftWalkParticles.Stop();
+                    RightWalkParticles.Stop();
+                }
+                else if (rb.velocity.y > 0 && inWater)
+                {
+                    PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Swim);
+                    LeftWalkParticles.Stop();
+                    RightWalkParticles.Stop();
+                }
+                else if (rb.velocity.y < 0 && inWater)
+                {
+                    PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.SwimDown);
+                    LeftWalkParticles.Stop();
+                    RightWalkParticles.Stop();
+                }
+                else if (rb.velocity.y < 3 && !isGrounded)
+                {
+                    PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Fall);
+                    LeftWalkParticles.Stop();
+                    RightWalkParticles.Stop();
+                }
+                else if (movementDirection.x != 0 && isGrounded)
+                { //walk
+                    PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Walk);
+                    if (facingRight)
+                    {
+                        RightWalkParticles.Stop();
+                        if (!LeftWalkParticles.isPlaying)
+                            LeftWalkParticles.Play();
+                    }
+                    else
+                    {
+                        LeftWalkParticles.Stop();
+                        if (!RightWalkParticles.isPlaying)
+                            RightWalkParticles.Play();
+                    }
+                }
+                else
+                {
+                    PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Idle);
+                    LeftWalkParticles.Stop();
+                    RightWalkParticles.Stop();
+                }
             }
-        }
-        else
-        {
-            PlayerAnimations.Instance.ChangeAnimation(PlayerAnim.Idle);
-            LeftWalkParticles.Stop();
-            RightWalkParticles.Stop();
         }
     }
 

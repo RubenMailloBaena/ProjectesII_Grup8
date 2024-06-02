@@ -287,13 +287,24 @@ public class TongueController : MonoBehaviour
     
     //SETTERS & GETTERS
     private void setShootTongue() {
-        if (canShootAgain && !inWater) {
-            PlayerAnimations.Instance.ChangeHeadAnimation(HeadAnim.Open);
-            shootTongue = true;
-            canShootAgain = false;
-            canCheckCollisions = true;
-            onShootingTongue?.Invoke();
-            
+        if (GameManager.instance != null)
+        {
+            if (GameManager.instance.PlayerDeath)
+            {
+                Debug.Log("Está muerto");
+            }
+            else
+            {
+                if (canShootAgain && !inWater)
+                {
+                    PlayerAnimations.Instance.ChangeHeadAnimation(HeadAnim.Open);
+                    shootTongue = true;
+                    canShootAgain = false;
+                    canCheckCollisions = true;
+                    onShootingTongue?.Invoke();
+
+                }
+            }
         }
     }
 

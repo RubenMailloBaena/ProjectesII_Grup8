@@ -23,8 +23,9 @@ public class HeadController : MonoBehaviour
         RotatePlayerHead();
     }
 
-    private void RotatePlayerHead() {
-        mousePositionWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    private void RotatePlayerHead()
+    {
+        mousePositionWorld = PlayerInputs.instance.getFlyPosition();
         mousePositionWorld.z = 0.0f;
 
         directionToLook = (mousePositionWorld - playerHead.transform.position).normalized;
@@ -73,12 +74,6 @@ public class HeadController : MonoBehaviour
                 cancelLookAt = true;
             }
         }
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.white;
-        Gizmos.DrawLine(playerHead.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
     }
 
     private void CanNotFlip()

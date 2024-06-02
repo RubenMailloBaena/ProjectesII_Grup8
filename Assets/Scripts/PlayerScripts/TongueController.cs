@@ -128,7 +128,7 @@ public class TongueController : MonoBehaviour
     private void GetShootingDirection() {
         if (getDirectionAgain)
         {
-            Vector3 mousePositionWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 mousePositionWorld = PlayerInputs.instance.getFlyPosition();
             firstDirection = mousePositionWorld - tongueOrigin.transform.position;
             firstDirection.z = 0.0f;
             getDirectionAgain = false;
@@ -315,17 +315,17 @@ public class TongueController : MonoBehaviour
 
     private void OnEnable()
     {
-        PlayerInputs.Instance.onShoot += setShootTongue;
-        PlayerInputs.Instance.onSwapRightColor += SwapRightColor;
-        PlayerInputs.Instance.onSwapLeftColor += SwapLeftColor;
+        PlayerInputs.instance.onShoot += setShootTongue;
+        PlayerInputs.instance.onSwapRightColor += SwapRightColor;
+        PlayerInputs.instance.onSwapLeftColor += SwapLeftColor;
         WaterEffect.onWater += InWater;
     }
 
     private void OnDisable()
     {
-        PlayerInputs.Instance.onShoot -= setShootTongue;
-        PlayerInputs.Instance.onSwapRightColor -= SwapRightColor;
-        PlayerInputs.Instance.onSwapLeftColor -= SwapLeftColor;
+        PlayerInputs.instance.onShoot -= setShootTongue;
+        PlayerInputs.instance.onSwapRightColor -= SwapRightColor;
+        PlayerInputs.instance.onSwapLeftColor -= SwapLeftColor;
         WaterEffect.onWater -= InWater;
     }
 

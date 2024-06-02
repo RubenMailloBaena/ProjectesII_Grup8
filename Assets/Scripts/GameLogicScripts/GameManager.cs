@@ -121,13 +121,12 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         CheckPoint.onCheckPoint += nextCheckPoint;
-        PlayerInputs.Instance.onPauseGame += PauseGame;
+        PlayerInputs.instance.onPauseGame += PauseGame;
     }
 
     private void OnDisable()
     {
         CheckPoint.onCheckPoint -= nextCheckPoint;
-        if(PlayerInputs.Instance != null) 
-            PlayerInputs.Instance.onPauseGame -= PauseGame;
+        PlayerInputs.instance.onPauseGame -= PauseGame;
     }
 }

@@ -6,9 +6,9 @@ public class FlyController : MonoBehaviour
 {
     void Update()
     {
-        if (Time.timeScale != 0) {
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePosition.z = 0f;
+        if (Time.timeScale != 0)
+        {
+            Vector3 mousePosition = PlayerInputs.instance.getFlyPosition();
 
             transform.position = mousePosition;
         }

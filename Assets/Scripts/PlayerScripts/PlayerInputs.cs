@@ -2,20 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using Unity.VisualScripting;
-using UnityEngine.Serialization;
 
 public class PlayerInputs : MonoBehaviour
 {
-    private static PlayerInputs instance;
-    public static PlayerInputs Instance
-    {
-        get { 
-            if (instance == null)
-                instance = FindAnyObjectByType<PlayerInputs>();
-            return instance;
-        }
-    }
+    public static PlayerInputs instance;
 
     [Header("CONTROLES")]
     [SerializeField] private KeyCode pauseGame;
@@ -24,50 +14,155 @@ public class PlayerInputs : MonoBehaviour
     [SerializeField] private KeyCode swapRightColor;
     [SerializeField] private KeyCode swapLeftColor;
 
-    //Tecla para disparar
+    // Tecla para disparar
     public event Action onShoot;
-    //Movimiento
+    // Movimiento
     public event Action onJump;
 
     private bool inWater;
-    //Cambiar Colores
+    // Cambiar Colores
     public event Action onSwapRightColor;
     public event Action onSwapLeftColor;
-    //Pausar Juego
+    // Pausar Juego
     public event Action onPauseGame;
+
+    private bool usingController;
+
+    // Variables para el control del ratón con el mando
+    private Vector3 joystickMousePosition;
+    [SerializeField] private float joystickSensitivity = 100.0f;
+
+    void Awake()
+    {
+        if (instance == null)
+            instance = this;
+    }
+
+    private void Start()
+    {
+        joystickMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+    }
 
     private void Update()
     {
-        //SHOOT TONGUE
+        // SHOOT TONGUE
         if (Input.GetKeyDown(shootKey) || Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Mouse0))
-            onShoot?.Invoke();
-
-        //JUMP
-        if (!inWater)
         {
-            if(Input.GetKeyDown(jumpKey))
-                onJump?.Invoke();
+            onShoot?.Invoke();
+            usingController = false;
+        }
+        else if (Input.GetButtonDown("R2"))
+        {
+            onShoot?.Invoke();
+            usingController = true;
         }
 
-        //COLORS
-        if(Input.GetKeyDown(swapRightColor))
-            onSwapRightColor?.Invoke();
-        
-        if(Input.GetKeyDown(swapLeftColor))
-            onSwapLeftColor?.Invoke();
+        // JUMP
+        if (!inWater)
+        {
+            if (Input.GetKeyDown(jumpKey))
+            {
+                onJump?.Invoke();
+                usingController = false;
+            }
+            else if (Input.GetButtonDown("X"))
+            {
+                onJump?.Invoke();
+                usingController = true;
+            }
+        }
 
-        if(Input.GetKeyDown(pauseGame))
+        // COLORS
+        if (Input.GetKeyDown(swapRightColor))
+        {
+            onSwapRightColor?.Invoke();
+            usingController = false;
+        }
+        else if (Input.GetButtonDown("R1"))
+        {
+            onSwapRightColor?.Invoke();
+            usingController = true;
+        }
+
+        if (Input.GetKeyDown(swapLeftColor))
+        {
+            onSwapLeftColor?.Invoke();
+            usingController = false;
+        }
+        else if (Input.GetButtonDown("L1"))
+        {
+            onSwapLeftColor?.Invoke();
+            usingController = true;
+        }
+
+        if (Input.GetKeyDown(pauseGame))
+        {
             onPauseGame?.Invoke();
+            usingController = false;
+        }
+        else if (Input.GetButtonDown("Options"))
+        {
+            onPauseGame?.Invoke();
+            usingController = true;
+        }
+
+        // Lógica para mover el "ratón" con el mando
+        if (usingController)
+        {
+            float rightStickHorizontal = Input.GetAxis("RightJoystickHorizontal");
+            float rightStickVertical = Input.GetAxis("RightJoystickVertical");
+
+            if (Mathf.Abs(rightStickHorizontal) > 0.1f || Mathf.Abs(rightStickVertical) > 0.1f)
+            {
+                Vector3 joystickDirection = new Vector3(rightStickHorizontal, rightStickVertical, 0.0f);
+                joystickMousePosition += joystickDirection * joystickSensitivity * Time.deltaTime;
+
+                // Limitar la posición del "ratón" a los límites de la pantalla
+                Vector3 screenPos = Camera.main.WorldToScreenPoint(joystickMousePosition);
+                screenPos.x = Mathf.Clamp(screenPos.x, 0, Screen.width);
+                screenPos.y = Mathf.Clamp(screenPos.y, 0, Screen.height);
+                joystickMousePosition = Camera.main.ScreenToWorldPoint(screenPos);
+                joystickMousePosition.z = 0.0f;
+            }
+        }
     }
 
     private void FixedUpdate()
     {
-        if(inWater)
+        if (inWater)
+        {
             if (Input.GetKey(jumpKey) || Input.GetKeyDown(jumpKey))
+            {
                 onJump?.Invoke();
+                usingController = false;
+            }
+            else if (Input.GetButton("X") || Input.GetButtonDown("X"))
+            {
+                onJump?.Invoke();
+                usingController = true;
+            }
+        }
     }
 
-    private void InWater() {
+    public Vector3 getFlyPosition()
+    {
+        Vector3 mousePositionWorld = Vector3.zero;
+        if (!usingController)
+        {
+            mousePositionWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePositionWorld.z = 0f;
+        }
+        else
+        {
+            // Lógica para mover el ratón con mando
+            mousePositionWorld = joystickMousePosition;
+        }
+
+        return mousePositionWorld;
+    }
+
+    private void InWater()
+    {
         inWater = !inWater;
     }
 

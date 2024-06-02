@@ -62,8 +62,6 @@ public class CharacterMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log("LEFT: " + LeftWalkParticles.isPlaying + " RIGHT: " + RightWalkParticles.isPlaying + "Facing Right: "  + facingRight);
-        
         if(inWater)
             ApplyMovementInWater();
         else

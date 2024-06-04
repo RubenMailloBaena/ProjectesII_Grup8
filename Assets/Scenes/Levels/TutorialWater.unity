@@ -153,7 +153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.8
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &6691344
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -281,7 +282,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &24743737
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1952,7 +1954,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.7
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &91905882
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7431,7 +7434,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.3
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &406631893
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8835,7 +8839,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 530748327
   m_SortingLayer: 2
-  m_SortingOrder: -2
+  m_SortingOrder: -3
   m_Sprite: {fileID: 121737087, guid: 39c5a941062fafb479fb9c1f829d2165, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -36540,7 +36544,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.3
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &619373768
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -37594,7 +37599,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.3
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &728014090
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -43206,7 +43212,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &1077115689
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -43978,7 +43985,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.3
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &1119887695
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -45005,7 +45013,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &1187729955
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -48202,7 +48211,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.8
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &1385981329
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -49765,7 +49775,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.8
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &1478688746
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -49848,7 +49859,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.9
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &1484007949
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -51422,7 +51434,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.3
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &1568067345
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -53433,7 +53446,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.3
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &1722006754
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -54001,7 +54015,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.3
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &1751059142
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -54460,7 +54475,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.7
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &1785810529
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -54688,7 +54704,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.3
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &1803796168
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -55074,7 +55091,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &1812249545
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -56582,7 +56600,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &1890953559
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -58211,7 +58230,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &1959570031
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -58568,7 +58588,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.9
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &1971416085
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -60718,7 +60739,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.7
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &2077876832
 SpriteRenderer:
   m_ObjectHideFlags: 0

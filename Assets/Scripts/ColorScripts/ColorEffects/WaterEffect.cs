@@ -33,7 +33,7 @@ public class WaterEffect : IWaterEffect
         previousColor = colorPartSprite.color;
         colorPartSprite.color = effectColor;
         actualTarget.GetComponent<BoxCollider2D>().isTrigger = true;
-        sp = target.transform.parent.transform.Find("PlatformSprite").GetComponent<SpriteRenderer>();
+        sp = target.transform.parent.transform.GetChild(1).GetComponent<SpriteRenderer>();
         prevMaterial = sp.material;
         sp.drawMode = SpriteDrawMode.Sliced;
         sp.material = waterMaterial;
@@ -45,7 +45,7 @@ public class WaterEffect : IWaterEffect
     private void GetAllObstaclesParts(GameObject target)
     {
         actualTarget = target;
-        colorPartSprite = actualTarget.transform.parent.transform.Find("PlatformSprite").GetComponent<SpriteRenderer>();
+        colorPartSprite = actualTarget.transform.parent.transform.GetChild(1).GetComponent<SpriteRenderer>();
     }
 
     public void ApplyEffect(bool enterOnTrigger)

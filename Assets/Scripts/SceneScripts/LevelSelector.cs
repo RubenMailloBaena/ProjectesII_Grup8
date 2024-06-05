@@ -19,7 +19,7 @@ public class LevelSelector : MonoBehaviour
     public void LeaveLevel() {
         Debug.Log("Leaving Game");
         GameSoundEffects.Instance.PlayUISound(UISounds.ButonEffect);
-;       SceneManager.LoadScene("LevelSelector");
+;       SceneManager.LoadScene("InitialMenu");
     }
 
     public void ResetLevel() {

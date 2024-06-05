@@ -18,7 +18,7 @@ public class SceneChanger : MonoBehaviour
     {
         //button.interactable = false;
         //button.SetActive(false);
-        Cursor.visible = true;
+
     }
     public void StartGame()
     {

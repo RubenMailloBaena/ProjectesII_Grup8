@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 426513708971474920}
   - component: {fileID: 426513708971474927}
   - component: {fileID: 426513708971474926}
+  - component: {fileID: 8682251900569738556}
   m_Layer: 8
   m_Name: NextLevelDoor
   m_TagString: Door
@@ -102,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorHits: 1
   doorGameObject: {fileID: 8177790636767961018}
-  openDoorSprite: {fileID: 21300000, guid: 6329228ff35d32b46b3d0eaec8038c72, type: 3}
+  openDoorSprite: {fileID: -2081589674, guid: 546f6ff8f16cc744093e7fb11946d2cb, type: 3}
   nextLevelName: TutorialStretch
   firstLevel: TutorialBounce
 --- !u!61 &426513708971474926
@@ -131,6 +132,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.24092671, y: 1.6874249}
   m_EdgeRadius: 0
+--- !u!95 &8682251900569738556
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426513708971474925}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 703b4d9ed6cbc644e9c910763712d8c3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6347240128721220296
 GameObject:
   m_ObjectHideFlags: 0

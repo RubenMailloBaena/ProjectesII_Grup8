@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 910841969614340707, guid: a68d09052e6170d4b82a8219fb0c88e7, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 910841969614340707, guid: a68d09052e6170d4b82a8219fb0c88e7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -371,7 +371,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.2
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!4 &102910147 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5456917633808266671, guid: d95474fb6b0fb8840953c33c63fd64ef, type: 3}
@@ -527,7 +528,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.2
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!1001 &244807679
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1485,7 +1487,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.3
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &443744081
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2315,7 +2318,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1629737116110616652, guid: f6df4e37f62592a40826f95ba4f6fdd2, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1629737116110616652, guid: f6df4e37f62592a40826f95ba4f6fdd2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3555,7 +3558,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.2
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!1001 &985196651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3569,7 +3573,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3336242206432462134, guid: 35c88b3923127f549b98fe3fda96b355, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3336242206432462134, guid: 35c88b3923127f549b98fe3fda96b355, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3887,7 +3891,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.1
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &1044077738
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4209,7 +4214,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.1
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!1 &1078162988
 GameObject:
   m_ObjectHideFlags: 0
@@ -4255,7 +4261,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.7
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &1078162991
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4353,7 +4360,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.2
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &1093329711
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4551,8 +4559,8 @@ Transform:
   - {fileID: 2005543016}
   - {fileID: 1207041031}
   - {fileID: 428340367}
-  - {fileID: 1015066590}
   - {fileID: 734791336}
+  - {fileID: 1015066590}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4748,7 +4756,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.1
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &1147567403
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4930,7 +4939,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.2
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &1199215261
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5057,74 +5067,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4869743518652738103, guid: d62981c4177acfa4fa75794af68fbe74, type: 3}
   m_PrefabInstance: {fileID: 1207041030}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1220516615
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1220516616}
-  - component: {fileID: 1220516618}
-  - component: {fileID: 1220516617}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1220516616
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1220516615}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1413376077}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1220516617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1220516615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &1220516618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1220516615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
 --- !u!1001 &1227236639
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5441,7 +5383,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.1
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &1361199980
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5770,7 +5713,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1066561852}
-  - {fileID: 1220516616}
   - {fileID: 1517776595}
   - {fileID: 4315152}
   - {fileID: 985196652}
@@ -5824,7 +5766,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.2
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &1422109520
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6453,7 +6396,7 @@ PrefabInstance:
       objectReference: {fileID: 514351607}
     - target: {fileID: 6348649749849883701, guid: 385a23239ebccfc4ebc56c3ed85ba793, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6348649749849883701, guid: 385a23239ebccfc4ebc56c3ed85ba793, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6872,7 +6815,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.9
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &1634165008
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7022,7 +6966,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.1
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!1001 &1641554172
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7711,7 +7656,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.3
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &1765658113
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7879,7 +7825,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.2
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &1792111960
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8459,7 +8406,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.8
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &1972206204
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8788,7 +8736,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.1
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &2008445972
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9002,7 +8951,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 426513708971474921, guid: 5b455cd4e282cf44b83adac97975589b, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 426513708971474921, guid: 5b455cd4e282cf44b83adac97975589b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9187,7 +9136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.1
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!1001 &2059517006
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9442,7 +9392,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.2
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!114 &2136871886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9455,7 +9406,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!1001 &2140861948
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9575,7 +9527,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90998f26b11b4340974d58af0e1e520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: 0.2
+  parallaxMultiplierX: 0
+  parallaxMultiplierY: 0
 --- !u!212 &2142313838
 SpriteRenderer:
   m_ObjectHideFlags: 0

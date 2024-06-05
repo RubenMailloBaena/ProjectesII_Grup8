@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using Unity.VisualScripting;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class GameManager : MonoBehaviour
     private Animator gamePauseAnimator;
     private bool gamePaused = false;
     private bool playerDeath = false;
+
+    [SerializeField] private GameObject EventSystemPrefab;
+    private GameObject eventSystemInstance;
 
     public bool PlayerDeath
     {
@@ -52,8 +56,13 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        eventSystemInstance = Instantiate(EventSystemPrefab, transform.position, Quaternion.identity);
+
         pauseUIInstance = Instantiate(pauseUIPrefab);
         gamePauseAnimator = pauseUIInstance.transform.GetChild(0).GetComponent<Animator>();
+
+        eventSystemInstance.GetComponent<EventSystem>().firstSelectedGameObject =
+            pauseUIInstance.transform.GetChild(0).transform.GetChild(1).gameObject;
 
         GameObject prefabInstance = Instantiate(sceneTransitionPrefab);
         animator = prefabInstance.GetComponent<Animator>();

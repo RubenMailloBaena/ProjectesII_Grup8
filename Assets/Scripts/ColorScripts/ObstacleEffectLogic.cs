@@ -12,6 +12,9 @@ public class ObstacleEffectLogic : MonoBehaviour
     private ColorType currentColorType;
     private GameObject player;
 
+    [SerializeField] private SpriteRenderer PlatformSprite;
+    [SerializeField] private SpriteRenderer PlatformColumn;
+
     public static event Action<ColorType> onChangeEffect;
 
     //LOGICA STRECH
@@ -56,6 +59,8 @@ public class ObstacleEffectLogic : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         initialScale = transform.localScale;
 
+        PlatformColumn.size = new Vector2(PlatformSprite.size.x, PlatformSprite.size.y);
+
         player = GameObject.Find("TongueOrigin"); 
     }
 
@@ -82,10 +87,13 @@ public class ObstacleEffectLogic : MonoBehaviour
 
     private void StrechEffect()
     {
+        if(PlatformColumn.size != PlatformSprite.size)
+            PlatformColumn.size = new Vector2(PlatformSprite.size.x, PlatformSprite.size.y);
         if (currentColorType == ColorType.Strech)
         {
             IStrechEffect effect = currentColorEffect as IStrechEffect;
             effect.ApplyEffect();
+            PlatformColumn.size = new Vector2(PlatformSprite.size.x, PlatformSprite.size.y);
         }
     }
 

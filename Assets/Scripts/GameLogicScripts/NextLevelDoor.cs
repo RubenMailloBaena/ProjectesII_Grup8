@@ -7,7 +7,7 @@ public class NextLevelDoor : MonoBehaviour
     [Header("DOOR LOGIC")]
     [SerializeField] private int doorHits;
     [SerializeField] private GameObject doorGameObject;
-    [SerializeField] private Sprite openDoorSprite;
+    [SerializeField] private GameObject openDoorSprite;
     private bool canGoNextLevel = false;
 
     [Header("NEXT LEVEL")]
@@ -17,8 +17,10 @@ public class NextLevelDoor : MonoBehaviour
     {
         doorHits--;
 
-        if (doorHits <= 0){
-            doorGameObject.GetComponent<SpriteRenderer>().sprite = openDoorSprite;
+        if (doorHits <= 0)
+        {
+            doorGameObject.SetActive(false);
+            openDoorSprite.SetActive(true);
             canGoNextLevel = true;
             CheckPlayerOnTop();
         }

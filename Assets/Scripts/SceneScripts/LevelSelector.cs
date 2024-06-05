@@ -17,15 +17,21 @@ public class LevelSelector : MonoBehaviour
     }
 
     public void LeaveLevel() {
-        Debug.Log("Leaving Game");
-        GameSoundEffects.Instance.PlayUISound(UISounds.ButonEffect);
-;       SceneManager.LoadScene("InitialMenu");
+        if (Time.timeScale == 0f)
+        {
+            Debug.Log("Leaving Game");
+            GameSoundEffects.Instance.PlayUISound(UISounds.ButonEffect);
+            ; SceneManager.LoadScene("InitialMenu");
+        }
     }
 
     public void ResetLevel() {
-        Debug.Log("ResetLevel");
-        GameSoundEffects.Instance.PlayUISound(UISounds.ButonEffect);
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex);
+        if (Time.timeScale == 0f)
+        {
+            Debug.Log("ResetLevel");
+            GameSoundEffects.Instance.PlayUISound(UISounds.ButonEffect);
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(currentSceneIndex);
+        }
     }
 }

@@ -26,7 +26,7 @@ public class PlayerInputs : MonoBehaviour
     // Pausar Juego
     public event Action onPauseGame;
 
-    private bool usingController;
+    private bool usingController = true;
 
     // Variables para el control del ratón con el mando
     private Vector3 joystickMousePosition;
@@ -168,6 +168,11 @@ public class PlayerInputs : MonoBehaviour
     private void InWater()
     {
         inWater = !inWater;
+    }
+
+    public bool GetUsingController()
+    {
+        return usingController;
     }
 
     private void OnEnable()

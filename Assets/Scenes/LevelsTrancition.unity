@@ -123,6 +123,55 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &91487018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 91487020}
+  - component: {fileID: 91487019}
+  m_Layer: 0
+  m_Name: Timeline
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!320 &91487019
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91487018}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 1b7ad6cb74413ec47886607562244745, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings: []
+  m_ExposedReferences:
+    m_References: []
+--- !u!4 &91487020
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91487018}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 319.0257, y: 153.06644, z: 0.9201857}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &865943396
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,6 +923,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerSlime
       objectReference: {fileID: 0}
+    - target: {fileID: 3336242206432462132, guid: a3f25ee1782cde64e81c4edc9506ca1b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3336242206432462134, guid: a3f25ee1782cde64e81c4edc9506ca1b, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1372,6 +1425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2271160574764062175, guid: a3f25ee1782cde64e81c4edc9506ca1b, type: 3}
+    - {fileID: 3336242206432462128, guid: a3f25ee1782cde64e81c4edc9506ca1b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a3f25ee1782cde64e81c4edc9506ca1b, type: 3}
 --- !u!1 &1388719796 stripped
 GameObject:

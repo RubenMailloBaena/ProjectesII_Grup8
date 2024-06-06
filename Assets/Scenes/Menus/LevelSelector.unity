@@ -1596,7 +1596,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: c175b291de72d79479ea45f0a956deed, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -1765,7 +1765,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 6286dc85327dfef45b2e731bb3ef9a5d, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -2353,7 +2353,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 36a8b831ea515f043bd0d5a183d14c24, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -2522,7 +2522,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: f037749e111fe7945ac02e8238419609, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -3003,7 +3003,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: a9e9e19a31348d54d9ea158fe73a1b42, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -3230,18 +3230,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec99e5c483be8634ebd38d7c406c64fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bound: {x: 1, y: 1}
-  resolution: 50
-  waterMaterial: {fileID: 0}
-  springConstant: 0.02
-  damping: 0.1
-  spread: 0.1
-  collisionVelocityFactor: 0.04
-  vertices: []
-  mesh: {fileID: 0}
-  velocities: []
-  accelerations: []
-  timer: 0
 --- !u!1 &1543185473
 GameObject:
   m_ObjectHideFlags: 0
@@ -4518,7 +4506,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: dc0c5792d30ec7a46b25e714979143c3, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0

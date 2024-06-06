@@ -90,6 +90,7 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0f;
             if (PlayerInputs.instance.GetUsingController())
             {
+                Cursor.visible = false;
                 if (lastSelected != eventSystemInstance.currentSelectedGameObject && eventSystemInstance.currentSelectedGameObject != null)
                     lastSelected = eventSystemInstance.currentSelectedGameObject;
                 eventSystemInstance.SetSelectedGameObject(lastSelected);

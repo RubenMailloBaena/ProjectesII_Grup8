@@ -36,6 +36,8 @@ public class NextLevelDoor : MonoBehaviour
         for (int i = 0; i < collider.Length; i++)
             if (collider[i].gameObject.CompareTag("Player"))
                 SceneManager.LoadScene(nextLevelName);
+                transitionAnim.SetTrigger("Start");
+
 
     }
 

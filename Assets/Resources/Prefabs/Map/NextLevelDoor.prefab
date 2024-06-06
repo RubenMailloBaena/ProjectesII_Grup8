@@ -108,6 +108,7 @@ MonoBehaviour:
   nextLevelName: TutorialStretch
   firstLevel: TutorialBounce
   transitionAnim: {fileID: 5656453130073397748}
+  transitionSceneName: LevelsTrancition
 --- !u!61 &426513708971474926
 BoxCollider2D:
   m_ObjectHideFlags: 0

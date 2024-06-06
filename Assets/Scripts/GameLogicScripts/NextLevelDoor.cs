@@ -16,6 +16,7 @@ public class NextLevelDoor : MonoBehaviour
 
     [SerializeField] Animator transitionAnim;
 
+    [SerializeField] private string transitionSceneName; 
     public void DoorCollided()
     {
         doorHits--;
@@ -45,14 +46,23 @@ public class NextLevelDoor : MonoBehaviour
         Debug.Log(collision.gameObject.name + " " + collision.gameObject.tag);
         if (collision.gameObject.CompareTag("Player") && canGoNextLevel)
         {
-            transitionAnim.SetTrigger("End");
-            Invoke("nextLevel", 2f);
+            StartTransition();
         }
     }
 
-    private void nextLevel()
+
+    private void StartTransition()
     {
-        SceneManager.LoadScene(nextLevelName);
-        transitionAnim.SetTrigger("Start");
+        transitionAnim.SetTrigger("End");
+        Invoke("LoadTransitionScene", 1f);
     }
+
+    private void LoadTransitionScene()
+    {
+       
+        SceneTransitionData.NextLevelName = nextLevelName;
+        SceneManager.LoadScene(transitionSceneName);
+    }
+
+
 }

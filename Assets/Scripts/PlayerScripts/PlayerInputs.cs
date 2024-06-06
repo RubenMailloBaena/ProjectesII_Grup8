@@ -14,6 +14,9 @@ public class PlayerInputs : MonoBehaviour
     [SerializeField] private KeyCode swapRightColor;
     [SerializeField] private KeyCode swapLeftColor;
 
+    [Header("MOSCA PARA MANDO")] [SerializeField]
+    private float maxDistanceFromPlayer;
+    
     // Tecla para disparar
     public event Action onShoot;
     // Movimiento
@@ -25,8 +28,9 @@ public class PlayerInputs : MonoBehaviour
     public event Action onSwapLeftColor;
     // Pausar Juego
     public event Action onPauseGame;
+    private bool gamePaused;
 
-    private bool usingController;
+    private bool usingController = true;
 
     // Variables para el control del ratón con el mando
     private Vector3 joystickMousePosition;
@@ -47,6 +51,17 @@ public class PlayerInputs : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(pauseGame))
+        {
+            onPauseGame?.Invoke();
+            usingController = false;
+        }
+        else if (Input.GetButtonDown("Options"))
+        {
+            onPauseGame?.Invoke();
+            usingController = true;
+        }
+
         // SHOOT TONGUE
         if (Input.GetKeyDown(shootKey) || Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Mouse0))
         {
@@ -97,18 +112,8 @@ public class PlayerInputs : MonoBehaviour
             usingController = true;
         }
 
-        if (Input.GetKeyDown(pauseGame))
-        {
-            onPauseGame?.Invoke();
-            usingController = false;
-        }
-        else if (Input.GetButtonDown("Options"))
-        {
-            onPauseGame?.Invoke();
-            usingController = true;
-        }
+        
 
-        // Lógica para mover el "ratón" con el mando
         if (usingController)
         {
             float rightStickHorizontal = Input.GetAxis("RightJoystickHorizontal");
@@ -120,14 +125,17 @@ public class PlayerInputs : MonoBehaviour
                 lastJoystickMousePosition = joystickMousePosition;
                 Vector3 joystickDirection = new Vector3(rightStickHorizontal, rightStickVertical, 0.0f);
                 joystickMousePosition += joystickDirection * joystickSensitivity * Time.deltaTime;
-
-                // Limitar la posición del "ratón" a los límites de la pantalla
-                Vector3 screenPos = Camera.main.WorldToScreenPoint(joystickMousePosition);
-                screenPos.x = Mathf.Clamp(screenPos.x, 0, Screen.width);
-                screenPos.y = Mathf.Clamp(screenPos.y, 0, Screen.height);
-                joystickMousePosition = Camera.main.ScreenToWorldPoint(screenPos);
-                joystickMousePosition.z = 0.0f;
             }
+
+            // Limitar la posición del "ratón" a la distancia máxima desde el jugador en cualquier caso
+            Vector3 offsetFromPlayer = joystickMousePosition - transform.position;
+            if (offsetFromPlayer.magnitude > maxDistanceFromPlayer)
+            {
+                offsetFromPlayer = offsetFromPlayer.normalized * maxDistanceFromPlayer;
+                joystickMousePosition = transform.position + offsetFromPlayer;
+            }
+
+            joystickMousePosition.z = 0.0f; // Mantener z en 0
         }
     }
 
@@ -168,6 +176,11 @@ public class PlayerInputs : MonoBehaviour
     private void InWater()
     {
         inWater = !inWater;
+    }
+
+    public bool GetUsingController()
+    {
+        return usingController;
     }
 
     private void OnEnable()

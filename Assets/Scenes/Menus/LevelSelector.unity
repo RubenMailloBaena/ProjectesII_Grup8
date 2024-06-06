@@ -1077,7 +1077,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: 391}
+  m_AnchoredPosition: {x: 50, y: 366}
   m_SizeDelta: {x: 579.1873, y: 127.4536}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &721238454
@@ -4056,6 +4056,7 @@ GameObject:
   - component: {fileID: 1909223884}
   - component: {fileID: 1909223883}
   - component: {fileID: 1909223888}
+  - component: {fileID: 1909223889}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4186,6 +4187,24 @@ MonoBehaviour:
   DesertLevel: {fileID: 0}
   SnowLevel: {fileID: 0}
   ButtonEffect: {fileID: 8300000, guid: f27e8639864950d4d83da509a9e9c6ff, type: 3}
+--- !u!114 &1909223889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909223882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6435019ad619cc447a1335c921ea74df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseGame: 27
+  shootKey: 13
+  jumpKey: 32
+  swapRightColor: 101
+  swapLeftColor: 113
+  joystickSensitivity: 100
 --- !u!1 &1966156710
 GameObject:
   m_ObjectHideFlags: 0

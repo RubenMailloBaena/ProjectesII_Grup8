@@ -71,6 +71,5 @@ PrefabInstance:
       propertyPath: m_Bounds.m_Extent.y
       value: 0.7993084
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1216051618, guid: 920b4b6e6c484ba44872404e473703f2, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 920b4b6e6c484ba44872404e473703f2, type: 3}

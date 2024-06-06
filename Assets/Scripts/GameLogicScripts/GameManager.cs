@@ -23,8 +23,7 @@ public class GameManager : MonoBehaviour
     private bool playerDeath = false;
 
     [SerializeField] private GameObject EventSystemPrefab;
-    private EventSystem eventSystemInstance;
-    private GameObject lastSelected;
+    private GameObject eventSystemInstance;
 
     public bool PlayerDeath
     {
@@ -57,15 +56,13 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        eventSystemInstance = Instantiate(EventSystemPrefab, transform.position, Quaternion.identity).GetComponent<EventSystem>();
+        eventSystemInstance = Instantiate(EventSystemPrefab, transform.position, Quaternion.identity);
 
         pauseUIInstance = Instantiate(pauseUIPrefab);
         gamePauseAnimator = pauseUIInstance.transform.GetChild(0).GetComponent<Animator>();
 
-        eventSystemInstance.firstSelectedGameObject =
+        eventSystemInstance.GetComponent<EventSystem>().firstSelectedGameObject =
             pauseUIInstance.transform.GetChild(0).transform.GetChild(1).gameObject;
-
-        lastSelected = eventSystemInstance.firstSelectedGameObject;
 
         GameObject prefabInstance = Instantiate(sceneTransitionPrefab);
         animator = prefabInstance.GetComponent<Animator>();
@@ -78,35 +75,20 @@ public class GameManager : MonoBehaviour
         ManagePauseGame();
     }
     
-    private void ManagePauseGame()
-    {
-        if (lastSelected != eventSystemInstance.currentSelectedGameObject &&
-            eventSystemInstance.currentSelectedGameObject != null)
-            lastSelected = eventSystemInstance.currentSelectedGameObject;
-        
+    private void ManagePauseGame() {
         if (gamePaused)
         {
+            //pauseUIInstance.SetActive(true);
             gamePauseAnimator.Play("Appear Animation");
             Time.timeScale = 0f;
-            if (PlayerInputs.instance.GetUsingController())
-            {
-                Cursor.visible = false;
-                if (lastSelected != eventSystemInstance.currentSelectedGameObject && eventSystemInstance.currentSelectedGameObject != null)
-                    lastSelected = eventSystemInstance.currentSelectedGameObject;
-                eventSystemInstance.SetSelectedGameObject(lastSelected);
-            }
-            else
-            {
-                eventSystemInstance.SetSelectedGameObject(null);
-                Cursor.visible = true;
-            }
+            Cursor.visible = true;
         }
         else
         {
+            //pauseUIInstance.SetActive(false);
             gamePauseAnimator.Play("Hide Animation");
             if(!playerDeath)
                 Time.timeScale = 1f;
-            Cursor.lockState = CursorLockMode.None;
             Cursor.visible = false;
         }
     }

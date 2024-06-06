@@ -675,8 +675,7 @@ MonoBehaviour:
   jumpKey: 32
   swapRightColor: 101
   swapLeftColor: 113
-  maxDistanceFromPlayer: 12
-  joystickSensitivity: 150
+  joystickSensitivity: 100
 --- !u!114 &3336242206432462138
 MonoBehaviour:
   m_ObjectHideFlags: 0

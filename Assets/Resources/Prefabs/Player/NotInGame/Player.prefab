@@ -802,7 +802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxTopHeadAngle: 40
-  maxBottomHeadAngle: -20
+  maxBottomHeadAngle: -30
   playerHead: {fileID: 1628114428715075491}
 --- !u!114 &7884690054672578055
 MonoBehaviour:

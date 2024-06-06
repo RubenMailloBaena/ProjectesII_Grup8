@@ -35,8 +35,7 @@ public class NextLevelDoor : MonoBehaviour
         Collider2D[] collider = Physics2D.OverlapBoxAll(transform.position, transform.localScale, 0f, 9);
         for (int i = 0; i < collider.Length; i++)
             if (collider[i].gameObject.CompareTag("Player"))
-                SceneManager.LoadScene(nextLevelName);
-                transitionAnim.SetTrigger("Start");
+                Invoke("nextLevel", 2f);
 
 
     }

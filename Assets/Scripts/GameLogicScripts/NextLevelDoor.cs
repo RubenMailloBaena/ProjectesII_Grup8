@@ -46,7 +46,7 @@ public class NextLevelDoor : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") && canGoNextLevel)
         {
             transitionAnim.SetTrigger("End");
-            Invoke("nextLevel", 1f);
+            Invoke("nextLevel", 2f);
         }
     }
 

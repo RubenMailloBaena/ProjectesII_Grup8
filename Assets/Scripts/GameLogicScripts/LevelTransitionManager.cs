@@ -9,7 +9,7 @@ public class LevelTransitionManager : MonoBehaviour
     {
        
 
-        Invoke("LoadNextLevel", 2f); // Ajusta el tiempo según la duración de la animación
+        Invoke("LoadNextLevel", 3.2f); 
     }
 
     private void LoadNextLevel()

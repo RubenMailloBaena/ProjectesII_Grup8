@@ -35,7 +35,7 @@ public class NextLevelDoor : MonoBehaviour
         Collider2D[] collider = Physics2D.OverlapBoxAll(transform.position, transform.localScale, 0f, 9);
         for (int i = 0; i < collider.Length; i++)
             if (collider[i].gameObject.CompareTag("Player"))
-                Invoke("nextLevel", 2f);
+                Invoke("nextLevel", 1f);
 
 
     }
@@ -46,7 +46,7 @@ public class NextLevelDoor : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") && canGoNextLevel)
         {
             transitionAnim.SetTrigger("End");
-            Invoke("nextLevel", 2f);
+            Invoke("nextLevel", 1f);
         }
     }
 

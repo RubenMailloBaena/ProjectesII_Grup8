@@ -51100,8 +51100,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5856922244267366176, guid: 510fa1c5fc29f444fb6d5b73ad2542a0, type: 3}
       propertyPath: m_text
-      value: Press your left mouse button or yout controller trigger to shoot your
-        tongue!
+      value: Press your mouse left click or R2 to shoot your tongue!
       objectReference: {fileID: 0}
     - target: {fileID: 5856922244267366177, guid: 510fa1c5fc29f444fb6d5b73ad2542a0, type: 3}
       propertyPath: m_Pivot.x

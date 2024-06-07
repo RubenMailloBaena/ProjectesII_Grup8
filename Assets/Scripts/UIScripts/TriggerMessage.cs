@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using UnityEngine.PlayerLoop;
 
 public class TriggerMessage : MonoBehaviour
 {
@@ -28,7 +30,15 @@ public class TriggerMessage : MonoBehaviour
         lastExitTime = -cooldown;
         textAudio = GetComponent<AudioSource>();
     }
-    
+
+    private void Update()
+    {
+        if (Time.timeScale == 0f)
+        {
+            textAudio.Stop();
+        }
+    }
+
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player") && !showedText) 
@@ -68,11 +78,8 @@ public class TriggerMessage : MonoBehaviour
         messageText.enabled = true;
         for (int i = 0; i <= fullText.Length; i++)
         {
-            if(!textAudio.isPlaying && Time.timeScale != 0)
+            if(!textAudio.isPlaying)
                 textAudio.Play();
-            else
-                textAudio.Stop();                
-                
             Debug.Log("IN COROUTINE");
             currentText = fullText.Substring(0, i);
             messageText.text = currentText;

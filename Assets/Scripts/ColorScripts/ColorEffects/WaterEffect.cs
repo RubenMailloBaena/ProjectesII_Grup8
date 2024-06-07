@@ -24,7 +24,6 @@ public class WaterEffect : IWaterEffect
         this.colorType = colorType;
         this.waterLayermask = waterLayermask;
         this.waterMaterial = waterMaterial;
-        this.prevMaterial = prevMaterial;
     }
 
     public void InitializeEffect(GameObject target)

@@ -5,14 +5,30 @@ using UnityEngine;
 
 public class portalPressKey : MonoBehaviour
 {
-    [SerializeField] private string nextSceneName; 
+    [SerializeField] private string nextSceneName;
+    private bool inputEnabled = true;
 
     private void Update()
     {
-        // Verifica si se ha presionado cualquier tecla
-        if (Input.anyKeyDown)
+        if (inputEnabled)
         {
-            SceneManager.LoadScene(nextSceneName);
+            if (Input.anyKeyDown)
+            {
+                StartCoroutine(WaitTillInput());
+            }
+
         }
+        
     }
+
+    private IEnumerator WaitTillInput()
+    {
+        inputEnabled = false; 
+
+        yield return new WaitForSeconds(8f);
+
+        inputEnabled = true;
+        SceneManager.LoadScene(nextSceneName);
+    }
+
 }

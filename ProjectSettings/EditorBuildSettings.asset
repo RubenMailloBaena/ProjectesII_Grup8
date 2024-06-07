@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/LevelSelector.unity
     guid: bd6f631c2e40bc64cad854f581cb2cf8
   - enabled: 1
-    path: Assets/Scenes/LevelsTrancition.unity
+    path: Assets/Scenes/Menus/LevelsTrancition.unity
     guid: 5313ab980b802664e97d151e22ef914b
   - enabled: 1
     path: Assets/Scenes/Levels/TutorialBounce.unity

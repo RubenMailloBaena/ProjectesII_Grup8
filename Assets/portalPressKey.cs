@@ -1,34 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.Playables;
 using UnityEngine;
 
-public class portalPressKey : MonoBehaviour
+public class coverPressKey : MonoBehaviour
 {
     [SerializeField] private string nextSceneName;
-    private bool inputEnabled = true;
+    [SerializeField] private PlayableDirector timeline;
 
-    private void Update()
+    private void Start()
     {
-        if (inputEnabled)
-        {
-            if (Input.anyKeyDown)
-            {
-                StartCoroutine(WaitTillInput());
-            }
-
-        }
-        
+        timeline.stopped += OnTimelineFinished;
     }
 
-    private IEnumerator WaitTillInput()
+    private void OnTimelineFinished(PlayableDirector director)
     {
-        inputEnabled = false; 
-
-        yield return new WaitForSeconds(8f);
-
-        inputEnabled = true;
+        if(Input.anyKeyDown)
         SceneManager.LoadScene(nextSceneName);
     }
-
 }
+

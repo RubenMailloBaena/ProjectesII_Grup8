@@ -30,7 +30,7 @@ public class PlayerInputs : MonoBehaviour
     public event Action onPauseGame;
     private bool gamePaused;
 
-    private bool usingController = false;
+    private bool usingController = true;
 
     // Variables para el control del ratón con el mando
     private Vector3 joystickMousePosition;

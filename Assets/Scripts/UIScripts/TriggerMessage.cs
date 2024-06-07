@@ -66,9 +66,13 @@ public class TriggerMessage : MonoBehaviour
     {
         yield return new WaitForSeconds(0.417f);
         messageText.enabled = true;
-        textAudio.Play();
         for (int i = 0; i <= fullText.Length; i++)
         {
+            if(!textAudio.isPlaying && Time.timeScale != 0)
+                textAudio.Play();
+            else
+                textAudio.Stop();                
+                
             Debug.Log("IN COROUTINE");
             currentText = fullText.Substring(0, i);
             messageText.text = currentText;

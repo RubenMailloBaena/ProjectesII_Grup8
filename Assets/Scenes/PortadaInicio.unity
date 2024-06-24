@@ -552,7 +552,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Group 8 Presents:'
+  m_text: 'Chroma Studios Presents:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 84e097f3ebe060746915c07b3bc0f849, type: 2}
   m_sharedMaterial: {fileID: -7802494460232452043, guid: 84e097f3ebe060746915c07b3bc0f849, type: 2}

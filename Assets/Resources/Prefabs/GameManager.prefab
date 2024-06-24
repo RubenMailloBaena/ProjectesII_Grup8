@@ -58,6 +58,9 @@ MonoBehaviour:
   ForestLevel: {fileID: 8300000, guid: 0f149440a912efa4ebb50176d2952ce0, type: 3}
   DesertLevel: {fileID: 8300000, guid: ace1df7bd8fe93d4dbaffd61bf42c6b3, type: 3}
   SnowLevel: {fileID: 8300000, guid: 333ddd92545570c4f9d0aeeec872d11c, type: 3}
+  StretchTutorial: {fileID: 8300000, guid: 7d02fd092cdac8a41b19b2b0f2e7437f, type: 3}
+  BounceTutorial: {fileID: 8300000, guid: 7b94425ba35f4b04ab5727b5fb39466d, type: 3}
+  WaterTutorial: {fileID: 8300000, guid: 47556c7d4045e364fa58dc29e8d76718, type: 3}
   ButtonEffect: {fileID: 8300000, guid: f27e8639864950d4d83da509a9e9c6ff, type: 3}
 --- !u!114 &1560776995438566935
 MonoBehaviour:

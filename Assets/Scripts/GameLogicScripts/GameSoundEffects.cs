@@ -33,6 +33,10 @@ public class GameSoundEffects : MonoBehaviour
     [SerializeField] private AudioClip ForestLevel;
     [SerializeField] private AudioClip DesertLevel;
     [SerializeField] private AudioClip SnowLevel;
+    [SerializeField] private AudioClip StretchTutorial;
+    [SerializeField] private AudioClip BounceTutorial;
+    [SerializeField] private AudioClip WaterTutorial;
+
 
     [Header("UI SOUND EFFECTS")] 
     [SerializeField] private AudioClip ButtonEffect;
@@ -132,6 +136,15 @@ public class GameSoundEffects : MonoBehaviour
             case levelSounds.Snow:
                 GameAudioSource.clip = SnowLevel;
                 break;
+            case levelSounds.StretchTutorial:
+                GameAudioSource.clip = StretchTutorial;
+                break;
+            case levelSounds.BounceTutorial:
+                GameAudioSource.clip = BounceTutorial;
+                break;
+            case levelSounds.WaterTutorial:
+                GameAudioSource.clip = WaterTutorial;
+                break;
         }
         GameAudioSource.Play();
     }
@@ -169,5 +182,8 @@ public enum levelSounds
     Menu,
     Forest,
     Desert,
-    Snow
+    Snow,
+    StretchTutorial,  
+    BounceTutorial,
+    WaterTutorial
 }

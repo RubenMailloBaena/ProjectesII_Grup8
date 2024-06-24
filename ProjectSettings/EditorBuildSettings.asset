@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/PortadaInicio.unity
     guid: 66056d3fce578d2459e5597e52abb08d
   - enabled: 1
-    path: Assets/Scenes/Cinematica_Inicial.unity
-    guid: 9881abb9878630245992eb2ab3aafbf5
+    path: Assets/Scenes/DefCinematic.unity
+    guid: b62f47663878f154cb002e6f83d5aae2
   - enabled: 1
     path: Assets/Scenes/Menus/InitialMenu.unity
     guid: f82c95a9fd68fc54d96d0b92cba8d7e2
